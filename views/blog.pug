@@ -12,9 +12,8 @@ block content
       .row
         .col-md-8.offset-md-2
           ul.article-list.list-unstyled.mt-4
-            li
-              a(href="/blog/article1") Article 1
-            li
-              a(href="/blog/slug-name-is-long") Article 2
+            each article, ind in articles
+              li
+                a(href="/blog/" + article.slug)= article.title
 
   include partials/footer
