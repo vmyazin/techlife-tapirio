@@ -4,6 +4,8 @@ const md = require('markdown-it')({ html: true});
 
 const fs = require('fs-extra');
 const testFolder = './blog/articles';
+const cachedArticles = [];
+
 
 async function listDir() {
   try {
@@ -15,9 +17,24 @@ async function listDir() {
 
 
 async function getArticles() {
-  const listOfArticleFiles = await listDir();
-  // console.log("Meow", listOfArticleFiles);
-  return listOfArticleFiles;
+  if (cachedArticles.length > 0) {
+    return cachedArticles;
+  }
+  const list = await listDir();
+  list.filter(f => f.endsWith('.json')).forEach(f => {
+    const blogData = JSON.parse(fs.readFileSync('blog/articles/' + f, 'utf8'));
+    blogData.slug = f.substr(0, f.length - 5);
+    const md = 'blog/articles/' + blogData.slug + '.md';
+    if (fs.existsSync(md)) {
+      cachedArticles.push(blogData);
+    } else {
+      console.error("You messed up with file names!");
+      console.error(md, "doesn't exist? Error in .json? Forgot to copy file? Fix your sh*t.");
+      process.exit();
+    }
+    
+  })
+  return cachedArticles;
 };
 
 
@@ -32,26 +49,27 @@ router.get('/about', (req, res) => {
 });
 
 router.get('/blog', async (req, res) => {
-  let list = await getArticles();
-  console.log(list); // <- help here
-  let blogData = fs.readFileSync('blog/articles/article1.md', 'utf8');
-  let content = md.render(blogData);
-
+  const articles = await getArticles();
   console.log(content);
-  res.render('blog', { content });
+  res.render('article-list', { articles });
 });
 
-router.get('/blog/:name', (req, res) => {
-  let blogData = fs.readFileSync('blog/articles/' + req.params.name + '.md', 'utf8');
+router.get('/blog/:name', async (req, res) => {
+  const articles = await getArticles();
+  // Includes json info!!!
+  const articleMetaData = articles.find(a => a.slug == req.params.name);
+  if (!articleMetaData) {
+    es.render('blog-not-found', req.params.name);
+    return;
+  }
+  let blogData = fs.readFileSync('blog/articles/' + articleMetaData.slug + '.md', 'utf8');
+  articleMetaData.content = md.render(blogData);
+  articleMetaData.isBlog = true;
+  articleMetaData.path = req.path;
+  articleMetaData.layout = 'blog';
+  articleMetaData.isBlogPost = true;
 
-  const payload = Object.assign({});
-  payload.content = md.render(blogData);
-  payload.isBlog = true;
-  payload.path = req.path;
-  payload.layout = 'blog';
-  payload.isBlogPost = true;
-
-  res.render('article', payload);
+  res.render('article', articleMetaData);
 });
 
 module.exports = router;
