@@ -2,24 +2,22 @@ const express = require('express');
 const router = express.Router();
 const md = require('markdown-it')({ html: true});
 
-const fs = require('fs');
-const fsPromises = fs.promises;
+const fs = require('fs-extra');
 const testFolder = './blog/articles';
 
-function listDir() {
+async function listDir() {
   try {
-    return fsPromises.readdir(testFolder);
+    return await fs.readdir(testFolder);
   } catch (err) {
     console.error('Error occured while reading directory', err);
   }
 }
 
-let listOfArticleFiles = listDir();
-function getArticles() {
-  listOfArticleFiles.then(function(result) {
-    console.log(result); // I need this outside the function
-    return result;
-  });
+
+async function getArticles() {
+  const listOfArticleFiles = await listDir();
+  console.log("Meow", listOfArticleFiles);
+  return listOfArticleFiles;
 };
 
 getArticles();
