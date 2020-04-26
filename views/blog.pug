@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  include partials/header
+  
+  .container
+    .row
+      .col
+        h2 Blog
+        .blog-content
+          | !{content}
+
+  include partials/footer
