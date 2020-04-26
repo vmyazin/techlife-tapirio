@@ -1,6 +1,7 @@
 body {
   background-color: beige;
   font: 16px "Manrope", Helvetica, Arial, sans-serif;
+  height: 100vh;
 }
 
 a {
@@ -12,6 +13,8 @@ a {
 }
 
 .blog-content {
+  min-height: 65vh;
+
   img {
     max-width: 400px;
   }
@@ -25,6 +28,24 @@ h5 {
   font-weight: 800;
 }
 
+.navbar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .jumbotron {
   background-color: rgba(0, 0, 0, .1);
+}
+
+.page {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.article-list {
+  li {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
 }

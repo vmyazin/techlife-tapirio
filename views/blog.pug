@@ -3,13 +3,18 @@ extends layout
 block content
   include partials/header
   
-  .container
+  .container.page
     .row
       .col
         h2 Blog
+
     .blog-content
       .row
         .col-md-8.offset-md-2
-          | !{content}
+          ul.article-list.list-unstyled.mt-4
+            li
+              a(href="/blog/article1") Article 1
+            li
+              a(href="/blog/slug-name-is-long") Article 2
 
   include partials/footer
