@@ -16,11 +16,13 @@ async function listDir() {
 
 async function getArticles() {
   const listOfArticleFiles = await listDir();
-  console.log("Meow", listOfArticleFiles);
+  // console.log("Meow", listOfArticleFiles);
   return listOfArticleFiles;
 };
 
-getArticles();
+let list = getArticles();
+
+console.log(list); // <- help here
 
 
 router.get('/', function(req, res, next) {
