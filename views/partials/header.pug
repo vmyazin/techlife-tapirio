@@ -1,6 +1,10 @@
-h1 This is a simple site
-ul
-  li
-    a(href="/") Home
-  li
-    a(href="/about") About
+nav
+  .navbar.navbar-expand.navbar-light
+      a.navbar-brand(href="/") This is a simple site
+
+      ul.navbar-nav.ml-auto
+        li.nav-item.d-none.d-sm-block
+          a.nav-link(href='/') Home
+        li.nav-item
+          a.nav-link(href='/about/') About
+        

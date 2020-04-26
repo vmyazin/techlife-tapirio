@@ -1,9 +1,12 @@
 body {
   background-color: beige;
-  padding: 50px;
   font: 16px "Manrope", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+
+  &:hover {
+    color: red;
+  }
 }
