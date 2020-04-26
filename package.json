@@ -1,0 +1,24 @@
+{
+  "name": "markdown-blog",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "sass": "node-sass -w sass -o public/stylesheets",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=markdown-blog:* npm run devstart"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.5",
+    "debug": "~4.1.1",
+    "express": "~4.17.1",
+    "http-errors": "~1.7.3",
+    "morgan": "~1.10.0",
+    "node-sass": "^4.13.1",
+    "node-sass-middleware": "^0.11.0",
+    "pug": "2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
