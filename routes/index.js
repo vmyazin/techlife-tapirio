@@ -20,9 +20,7 @@ async function getArticles() {
   return listOfArticleFiles;
 };
 
-let list = getArticles();
 
-console.log(list); // <- help here
 
 
 router.get('/', function(req, res, next) {
@@ -33,7 +31,9 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
-router.get('/blog', (req, res) => {
+router.get('/blog', async (req, res) => {
+  let list = await getArticles();
+  console.log(list); // <- help here
   let blogData = fs.readFileSync('blog/articles/article1.md', 'utf8');
   let content = md.render(blogData);
 
