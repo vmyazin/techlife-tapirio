@@ -4,6 +4,8 @@ const MarkdownBlog = require('../app.functions');
 const blog = new MarkdownBlog('./blog/articles/');
 const blogInfo = blog.info;
 
+//var arr = [{name:"John"},{name:"Bob"},{name:"abc"},{name:"bac"}];
+
 router.get('/', function (req, res, next) {
   res.render('index', { blogInfo });
 });
@@ -18,6 +20,7 @@ router.get('/contact', (req, res) => {
 
 router.get('/blog', async (req, res) => {
   const articles = blog.posts;
+  blog.sortByDate(articles, 'date');
   res.render('blog', { articles, blogInfo });
 });
 

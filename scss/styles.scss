@@ -1,9 +1,11 @@
 @import url('https://unpkg.com/css.gg/icons/all.css');
+@import '_variables.scss';
 
 body {
-  background-color: beige;
   font: 16px "Manrope", Helvetica, Arial, sans-serif;
   height: 100vh;
+  background-color: $main-bg;
+  color: $text-color;
 }
 
 a {
@@ -42,6 +44,12 @@ h5 {
 
 .hidden-link {
   color: inherit;
+}
+
+small {
+  &.meta {
+    color: $light-gray;
+  }
 }
 
 .navbar {
