@@ -9,11 +9,11 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/about', (req, res) => {
-  res.render('about');
+  res.render('about', { blogInfo });
 });
 
 router.get('/contact', (req, res) => {
-  res.render('contact');
+  res.render('contact', { blogInfo });
 });
 
 router.get('/blog', async (req, res) => {
@@ -21,8 +21,8 @@ router.get('/blog', async (req, res) => {
   res.render('blog', { articles, blogInfo });
 });
 
-router.get('/blog/:name', async (req, res) => {
-  const slug = req.params.name;
+router.get('/blog/:filename', async (req, res) => {
+  const slug = req.params.filename;
   // Includes json info!!!
   const postMetaData = blog.getPostMetadata(slug);
 
@@ -30,15 +30,19 @@ router.get('/blog/:name', async (req, res) => {
     res.render('blog-not-found', slug);
     return;
   }
+
+  console.log(postMetaData);
   res.render('article', Object.assign({},
-    postMetaData,
-    { blogInfo }, {
-    content: blog.renderMarkdown(slug),
-    isBlog: true,
-    path: req.path,
-    layout: 'blog',
-    isBlogPost: true
-  }));
+    { postMetaData },
+    { blogInfo },
+    {
+      content: blog.renderMarkdown(slug),
+      path: req.path,
+      layout: 'blog',
+      isBlog: true,
+      isBlogPost: true
+    }
+  ));
 });
 
 module.exports = router;

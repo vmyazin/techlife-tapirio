@@ -1,7 +1,10 @@
 doctype html
 html
   head
-    title= title
+    if isBlogPost
+      title #{postMetaData.title} • #{blogInfo.blog.title}
+    else
+      title= blogInfo.blog.title
     
     meta(name='viewport' content='width=device-width,initial-scale=1')
 
@@ -13,11 +16,17 @@ html
     link(rel='stylesheet', href='/stylesheets/styles.css')
     link(rel="icon" href="/images/favicon-32x32.png" type="images/x-icon")
 
-    meta(property='og:site_name' content=blogInfo.blog.title)
-    meta(property='og:url' content='/')
-    meta(property='og:description' content=blogInfo.blog.description)
-    meta(property='og:type' content='website')
-    meta(property='og:image' content='/images/og-image.jpg')
-    
+    if isBlogPost
+      meta(property='og:title' content=postMetaData.title)
+      meta(property='og:url' content='/')
+      meta(property='og:description' content=blogInfo.blog.title)
+      meta(property='og:type' content='website')
+      meta(property='og:image' content='/images/og-image.jpg')
+    else
+      meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
+      meta(property='og:url' content='/')
+      meta(property='og:description' content=blogInfo.blog.description)
+      meta(property='og:type' content='website')
+      meta(property='og:image' content='/images/og-image.jpg')
   body
     block content

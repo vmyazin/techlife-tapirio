@@ -13,12 +13,12 @@ block content
               | Blog
         .col-md-8
           p.author
-            if author
-              =author
+            if postMetaData.author
+              =postMetaData.author
             else
               =blogInfo.blog.author
             span.separator | 
-            =date
+            =postMetaData.date
           | !{content}
 
 
