@@ -63,7 +63,7 @@ class MarkdownBlog {
   sortByDate(obj) {
     let u = obj.sort(function(a, b){
       var alc = a.date.toLowerCase(), blc = b.date.toLowerCase();
-      return alc > blc ? 1 : alc < blc ? -1 : 0;
+      return alc > blc ? -1 : alc < blc ? 1 : 0;
     });
     return u;
   }  
