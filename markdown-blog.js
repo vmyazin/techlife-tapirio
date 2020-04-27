@@ -31,17 +31,13 @@ class MarkdownBlog {
           // Check a post has title and a description
           ['title', 'description'].forEach(requiredField => {
             if (!postData[requiredField]) {
-              console.error("You messed up the file names. 😅");
-              console.error(`${f} is missing`, requiredField);
-              process.exit();
+              throwError(`${f} is missing`, requiredField);
             }
           })
           if (fs.existsSync(md)) {
             this.cachedPosts.push(postData);
           } else {
-            console.error("You messed up the file names. 😅");
-            console.error(md, "doesn't exist? Error in .json? Forgot to copy file?");
-            process.exit();
+            throwError(md, "doesn't exist? Error in .json? Forgot to copy file?");
           }
       
         })
@@ -56,6 +52,12 @@ class MarkdownBlog {
       renderMarkdown(slug) {
         return md.render(this.getPostMarkdown(slug));
       }
+}
+
+function throwError(message) {
+  console.error("You messed up the file names. 😅");
+  console.error(message);
+  process.exit();
 }
 
 module.exports = MarkdownBlog;
