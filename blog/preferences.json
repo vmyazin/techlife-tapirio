@@ -2,7 +2,8 @@
   "blog": {
     "title": "Markdown Blog",
     "author": "Bobby Bong",
-    "description": "It's a blog where I post deep and fun thoughts"
+    "description": "It's a blog where I post deep and fun thoughts",
+    "URL": "https://mymarkdown.blog"
   },
   "appIds": {
     "googleAnalytics": "AABBCC",
