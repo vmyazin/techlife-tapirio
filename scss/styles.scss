@@ -103,3 +103,18 @@ h5 {
     font-size: 1.5rem;
   }
 }
+
+.form-control {
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, .2);
+
+  &:focus {
+    background-color: white;
+  }
+}
+
+.search-container {
+  .form-control {
+    max-width: 300px;
+  }
+}

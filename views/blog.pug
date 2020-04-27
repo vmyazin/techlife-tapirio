@@ -6,14 +6,20 @@ block content
   .container.page
     .blog-content
       .row
-        .col.col-md-2
+        .col.col-lg-2
           h2 Blog
-        .col-md-8
+        .col-lg-7
           ul.article-list.list-unstyled
             each article, ind in articles
               li
                 a(href="/blog/" + article.slug)
                   ion-icon(name='document-text')
                   =article.title
+        .col.col-lg-3
+          .input-group.search-container.mb-3
+            input.form-control(type='text' placeholder='Search posts' aria-label='Search posts' aria-describedby='basic-addon2')
+            .input-group-append
+              button.btn.btn-outline-secondary(type="button")
+                i.gg-search
 
   include partials/footer
