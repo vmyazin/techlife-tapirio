@@ -28,6 +28,10 @@ h5 {
   font-weight: 800;
 }
 
+.hidden-link {
+  color: inherit;
+}
+
 .navbar {
   padding-left: 0;
   padding-right: 0;
@@ -48,4 +52,10 @@ h5 {
     font-size: 20px;
     margin-bottom: 1rem;
   }
+}
+
+.separator {
+  display: inline-block;
+  color: lightgrey;
+  padding: 0 10px;
 }

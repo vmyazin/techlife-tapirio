@@ -4,14 +4,12 @@ block content
   include partials/header
   
   .container.page
-    .row
-      .col
-        h2 Blog
-
     .blog-content
       .row
-        .col-md-8.offset-md-2
-          ul.article-list.list-unstyled.mt-4
+        .col.col-md-2
+          h2 Blog
+        .col-md-8
+          ul.article-list.list-unstyled
             each article, ind in articles
               li
                 a(href="/blog/" + article.slug)= article.title

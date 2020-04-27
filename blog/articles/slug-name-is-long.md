@@ -1,4 +1,4 @@
-# 10 Reasons Why This Is The Future Of Blogging
+### 10 Reasons Why This Is The Future Of Blogging
 
 <div class="my-4"></div>
 
