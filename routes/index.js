@@ -43,10 +43,12 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
+router.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
 router.get('/blog', async (req, res) => {
   const articles = await getArticles();
-  
-  console.log(articles);
   res.render('blog', { articles });
 });
 
