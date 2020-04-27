@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const MarkdownBlog = require('../markdown-blog');
+const MarkdownBlog = require('../app.functions');
 const blog = new MarkdownBlog('./blog/articles/');
 const blogInfo = blog.info;
 
