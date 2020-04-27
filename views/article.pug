@@ -11,7 +11,10 @@ block content
             a.hidden-link(href="/blog/") Blog
         .col-md-8
           p.author
-            =author
+            if author
+              =author
+            else
+              =blogInfo.blog.author
             span.separator | 
             =date
           | !{content}
