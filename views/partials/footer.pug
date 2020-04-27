@@ -2,15 +2,25 @@ block content
   footer.footer.container
     nav.row.text-center
       .col
-        ul.list-inline
+        ul.list-inline.d-flex-inline
           li.list-inline-item
             a(href='/about/') About
           li.list-inline-item
             a(href='/blog/') Blog
           li.list-inline-item
             a(href='/contact/') Contact
+          li.list-inline-item.ml-4
+            a.social-link.align-middle(href=blogInfo.social.twitter)
+              ion-icon(name='logo-twitter')
+          li.list-inline-item
+            a.social-link.align-middle(href=blogInfo.social.instagram)
+              ion-icon(name='logo-instagram')
+          li.list-inline-item
+            a.social-link.align-middle(href=blogInfo.social.linkedin)
+              ion-icon(name='logo-linkedin')
+          
 
-    .row.text-center
+    .row.text-center.mb-3
       .col
         small
           | &copy; 2020 

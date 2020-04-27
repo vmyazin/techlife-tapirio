@@ -12,6 +12,8 @@ block content
           ul.article-list.list-unstyled
             each article, ind in articles
               li
-                a(href="/blog/" + article.slug)= article.title
+                a(href="/blog/" + article.slug)
+                  ion-icon(name='document-text')
+                  =article.title
 
   include partials/footer
