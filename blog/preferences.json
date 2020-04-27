@@ -1,0 +1,15 @@
+{
+  "blog": {
+    "author": "Bobby",
+    "title": "Bobbys fun blog",
+    "description": "It's a blog where Bobby posts different fun cat videos"
+  },
+  "meta": {
+    "googleAnalytics": "AABBCC",
+    "facebookApp": "BBCCDD"
+  },
+  "socail": {
+    "facebook": "http://",
+    "myspace": "http://"
+  }
+}

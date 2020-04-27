@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const md = require('markdown-it')({ html: true});
+const md = require('markdown-it')({ html: true });
+const blogInfo = require('../blog/preferences.json');
 
 const fs = require('fs-extra');
 const articlesFolder = './blog/articles/';
@@ -30,13 +31,13 @@ async function getArticles() {
       console.error(md, "doesn't exist? Error in .json? Forgot to copy file?");
       process.exit();
     }
-    
+
   })
   return cachedArticles;
 };
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Markdown Blog' });
+router.get('/', function (req, res, next) {
+  res.render('index', { blogInfo });
 });
 
 router.get('/about', (req, res) => {
@@ -49,7 +50,7 @@ router.get('/contact', (req, res) => {
 
 router.get('/blog', async (req, res) => {
   const articles = await getArticles();
-  res.render('blog', { articles });
+  res.render('blog', { articles, blogInfo });
 });
 
 router.get('/blog/:name', async (req, res) => {
@@ -60,14 +61,16 @@ router.get('/blog/:name', async (req, res) => {
     es.render('blog-not-found', req.params.name);
     return;
   }
-  let blogData = fs.readFileSync(articlesFolder + articleMetaData.slug + '.md', 'utf8');
-  articleMetaData.content = md.render(blogData);
-  articleMetaData.isBlog = true;
-  articleMetaData.path = req.path;
-  articleMetaData.layout = 'blog';
-  articleMetaData.isBlogPost = true;
-
-  res.render('article', articleMetaData);
+  let postData = fs.readFileSync(articlesFolder + articleMetaData.slug + '.md', 'utf8');
+  res.render('article', Object.assign({},
+    articleMetaData,
+    { blogInfo }, {
+    content: md.render(postData),
+    isBlog: true,
+    path: req.path,
+    layout: 'blog',
+    isBlogPost: true
+  }));
 });
 
 module.exports = router;
