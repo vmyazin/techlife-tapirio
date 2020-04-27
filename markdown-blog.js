@@ -4,7 +4,7 @@ const md = require('markdown-it')({ html: true });
 
 class MarkdownBlog {
     constructor(path) {
-        this.cachedPosts = [];
+        this._posts = [];
         this.info = info;
         this.path = path;
         this.getPosts();
@@ -17,11 +17,11 @@ class MarkdownBlog {
         }
       }
     get posts() {
-      return this.cachedPosts;
+      return this._posts;
     }
     async getPosts() {
-        if (this.cachedPosts.length > 0) {
-          return this.cachedPosts;
+        if (this._posts.length > 0) {
+          return this._posts;
         }
         const list = await this.listFiles();
         list.filter(f => f.endsWith('.json')).forEach(f => {
@@ -35,16 +35,16 @@ class MarkdownBlog {
             }
           })
           if (fs.existsSync(md)) {
-            this.cachedPosts.push(postData);
+            this._posts.push(postData);
           } else {
             throwError(md, "doesn't exist? Error in .json? Forgot to copy file?");
           }
       
         })
-        return this.cachedPosts;
+        return this._posts;
       }
       getPostMetadata(slug) {
-        return articles.find(a => a.slug === slug);
+        return this._posts.find(a => a.slug === slug);
       }
       getPostMarkdown(slug) {
         return fs.readFileSync(this.path + slug + '.md', 'utf8');

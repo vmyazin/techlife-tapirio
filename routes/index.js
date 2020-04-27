@@ -24,10 +24,10 @@ router.get('/blog', async (req, res) => {
 router.get('/blog/:name', async (req, res) => {
   const slug = req.params.name;
   // Includes json info!!!
-  const postMetaData = blog.getPostMetadata();
+  const postMetaData = blog.getPostMetadata(slug);
 
   if (!postMetaData) {
-    es.render('blog-not-found', slug);
+    res.render('blog-not-found', slug);
     return;
   }
   res.render('article', Object.assign({},
