@@ -29,9 +29,9 @@ class MarkdownBlog {
           postData.slug = f.substr(0, f.length - 5);
           const md = this.path + postData.slug + '.md';
           // Check a post has title and a description
-          ['title', 'description'].forEach(requiredField => {
+          MarkdownBlog.requiredFields.forEach(requiredField => {
             if (!postData[requiredField]) {
-              throwError(`${f} is missing`, requiredField);
+              throwError(`${f} is missing ${requiredField}`);
             }
           })
           if (fs.existsSync(md)) {
@@ -59,5 +59,7 @@ function throwError(message) {
   console.error(message);
   process.exit();
 }
+
+MarkdownBlog.requiredFields = ['title', 'description'];
 
 module.exports = MarkdownBlog;
