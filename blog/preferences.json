@@ -1,15 +1,15 @@
 {
   "blog": {
-    "author": "Bobby",
-    "title": "Bobbys fun blog",
-    "description": "It's a blog where Bobby posts different fun cat videos"
+    "title": "Markdown Blog",
+    "author": "Bobby Bong",
+    "description": "It's a blog where Bobby posts deep and fun thoughts"
   },
   "meta": {
     "googleAnalytics": "AABBCC",
     "facebookApp": "BBCCDD"
   },
-  "socail": {
-    "facebook": "http://",
-    "myspace": "http://"
+  "social": {
+    "facebook": "http://facebook.com",
+    "twitter": "http://twitter.com"
   }
 }
