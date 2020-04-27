@@ -1,5 +1,7 @@
 # Markdown Blog
-Simple static website foundation built with ExpressJS, Pug, Sass
+Simple static website foundation built with ExpressJS, Pug, Sass.
+
+Blog posts support Markdown and HTML.
 
 How to get going:
 
@@ -7,8 +9,8 @@ How to get going:
 
 `cd markdown-blog`
 
-`npm i`
+`yarn`
 
-`npm start`
+`yarn start`
 
 Proceed to http://localhost:3501
