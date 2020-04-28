@@ -61,12 +61,16 @@ class MarkdownBlog {
   }
   // outside blog.sortBy("date", true)
   // inside this class this.sortBy("date", true)
-  sortBy(field, asc = true) {
-    const ascSign = asc ? 1 : -1;
+  sortBy(props) {
+    let asc = 1; // ascending true, default
+    if(props.asc !== undefined) {
+      asc = props.asc ? 1 : -1;
+    } 
+
     this._posts = this._posts.sort((a, b) => {
-      const alc = a[field].toLowerCase();
-      const blc = b[field].toLowerCase();
-      return alc > blc ? -1 * ascSign : alc < blc ? 1 * ascSign : 0;
+      const alc = a[props.property].toLowerCase();
+      const blc = b[props.property].toLowerCase();
+      return alc < blc ? -1 * asc : alc > blc ? 1 * asc : 0;
     });
   }  
 }
