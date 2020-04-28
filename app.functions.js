@@ -59,9 +59,9 @@ class MarkdownBlog {
   renderMarkdown(slug) {
     return md.render(this.getPostMarkdown(slug));
   }
-  // outside blog.sotBy("date", true)
-  // inside this class this.sotBy("date", true)
-  sortByDate(field, asc = true) {
+  // outside blog.sortBy("date", true)
+  // inside this class this.sortBy("date", true)
+  sortBy(field, asc = true) {
     const ascSign = asc ? 1 : -1;
     this._posts = this._posts.sort((a, b) => {
       const alc = a[field].toLowerCase();
