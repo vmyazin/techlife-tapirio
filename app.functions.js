@@ -72,6 +72,8 @@ class MarkdownBlog {
       const blc = b[props.property].toLowerCase();
       return alc < blc ? -1 * asc : alc > blc ? 1 * asc : 0;
     });
+    
+    return this;
   }  
 }
 
