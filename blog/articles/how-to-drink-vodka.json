@@ -1,7 +1,9 @@
 {
     "title": "How To Drink Vodka",
-    "date": "04-26-2020",
+    "date": "04-20-2020",
     "author": "Jason Smith",
     "description": "One Reason Why You Should Not Marry A Dolphin",
-    "otherMetaTagsAndImageSource": "erger"
+    "meta": {
+        "mainImg": "/images/blog/pexels-photo-441379.jpg"
+    }
 }

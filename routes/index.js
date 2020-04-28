@@ -3,11 +3,12 @@ const router = express.Router();
 const MarkdownBlog = require('../app.functions');
 const blog = new MarkdownBlog('./blog/articles/');
 const blogInfo = blog.info;
+const articles = blog.sortBy({ property: "date", asc: false }).posts;
 
 //var arr = [{name:"John"},{name:"Bob"},{name:"abc"},{name:"bac"}];
 
 router.get('/', function (req, res, next) {
-  res.render('index', { blogInfo });
+  res.render('index', { articles, blogInfo });
 });
 
 router.get('/about', (req, res) => {
@@ -19,7 +20,6 @@ router.get('/contact', (req, res) => {
 });
 
 router.get('/blog', async (req, res) => {
-  const articles = blog.sortBy({ property: "date", asc: false }).posts;
   res.render('blog', { articles, blogInfo });
 });
 
