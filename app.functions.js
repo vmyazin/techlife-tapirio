@@ -63,7 +63,7 @@ class MarkdownBlog {
   // inside this class this.sotBy("date", true)
   sortByDate(field, asc = true) {
     const ascSign = asc ? 1 : -1;
-    return this.posts_.sort((a, b) => {
+    this._posts = this._posts.sort((a, b) => {
       const alc = a[field].toLowerCase();
       const blc = b[field].toLowerCase();
       return alc > blc ? -1 * ascSign : alc < blc ? 1 * ascSign : 0;
