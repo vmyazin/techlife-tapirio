@@ -68,6 +68,7 @@ class MarkdownBlog {
       const blc = b[field].toLowerCase();
       return alc > blc ? -1 * ascSign : alc < blc ? 1 * ascSign : 0;
     });
+    return this;
   }  
 }
 
