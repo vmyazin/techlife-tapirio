@@ -19,7 +19,7 @@ router.get('/contact', (req, res) => {
 });
 
 router.get('/blog', async (req, res) => {
-  blog.sortByDate('date', true);
+  blog.sortBy('date', true);
   const articles = blog.posts;
   res.render('blog', { articles, blogInfo });
 });
