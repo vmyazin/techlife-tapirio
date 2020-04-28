@@ -59,12 +59,14 @@ class MarkdownBlog {
   renderMarkdown(slug) {
     return md.render(this.getPostMarkdown(slug));
   }
-
-  sortByDate(obj) {
-    return obj.sort((a, b) => {
-      const alc = a.date.toLowerCase();
-      const blc = b.date.toLowerCase();
-      return alc > blc ? -1 : alc < blc ? 1 : 0;
+  // outside blog.sotBy("date", true)
+  // inside this class this.sotBy("date", true)
+  sortByDate(field, asc = true) {
+    const ascSign = asc ? 1 : -1;
+    return this.posts_.sort((a, b) => {
+      const alc = a[field].toLowerCase();
+      const blc = b[field].toLowerCase();
+      return alc > blc ? -1 * ascSign : alc < blc ? 1 * ascSign : 0;
     });
   }  
 }
