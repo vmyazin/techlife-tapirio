@@ -1,5 +1,5 @@
 const fs = require('fs-extra');
-const info = require('./blog/preferences.json');
+const info = require('./content/preferences.json');
 const md = require('markdown-it')({ html: true });
 
 class MarkdownBlog {
@@ -72,7 +72,7 @@ class MarkdownBlog {
       const blc = b[props.property].toLowerCase();
       return alc < blc ? -1 * asc : alc > blc ? 1 * asc : 0;
     });
-    
+
     return this;
   }  
 }
