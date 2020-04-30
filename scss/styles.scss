@@ -79,6 +79,11 @@ small {
   }
 }
 
+.font-light {
+  font-weight: 300;
+}
+
+
 .article-list {
   li {
     display: block;
@@ -134,22 +139,28 @@ small {
       .img-gradient {
         background: linear-gradient(45deg, rgba(191,195,0,0.3) 0%, rgba(37,37,189,0.3) 35%, rgba(0,212,255,0.5) 100%);
         max-width: 300px;
+        margin-top: .5rem;
+        overflow: hidden;
       }
 
       img {
-        margin-top: .5rem;
         object-fit: cover;
         max-height: 160px;
         width: 100%;
         position: relative;
         z-index: -1;
         display: block;
+        transition: transform 8s ease-in;
       }
 
       a {
         &:hover {
           .img-gradient {
             background: linear-gradient(45deg, rgba(191,195,0,0.1) 0%, rgba(37,37,189,0.1) 35%, rgba(0,212,255,0.5) 100%);
+          }
+
+          img {
+            transform: scale(1.5);
           }
         }
       }
