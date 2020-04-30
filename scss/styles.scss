@@ -132,7 +132,6 @@ small {
       }
 
       .img-gradient {
-        background: rgb(191,195,0);
         background: linear-gradient(45deg, rgba(191,195,0,0.3) 0%, rgba(37,37,189,0.3) 35%, rgba(0,212,255,0.5) 100%);
         max-width: 300px;
       }
@@ -145,6 +144,14 @@ small {
         position: relative;
         z-index: -1;
         display: block;
+      }
+
+      a {
+        &:hover {
+          .img-gradient {
+            background: linear-gradient(45deg, rgba(191,195,0,0.1) 0%, rgba(37,37,189,0.1) 35%, rgba(0,212,255,0.5) 100%);
+          }
+        }
       }
     }
   }
