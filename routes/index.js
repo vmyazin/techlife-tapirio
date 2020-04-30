@@ -25,7 +25,9 @@ router.get('/blog', async (req, res) => {
 });
 
 router.route('/api/search').get(cors(), async (req, res) => {
+  const articles = blog.posts;
   const search = req.query.name.toLowerCase()
+
   if (search) {
     results = articles.filter((a) => (a.title + a.description + a.author).toLowerCase().includes(search));
     console.log(search, results)
