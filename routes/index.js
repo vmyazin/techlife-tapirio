@@ -6,8 +6,6 @@ const blog = new MarkdownBlog('./content/articles/');
 const blogInfo = blog.info;
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
-//var arr = [{name:"John"},{name:"Bob"},{name:"abc"},{name:"bac"}];
-
 router.get('/', function (req, res, next) {
   const articles = blog.posts;
   res.render('index', { articles, blogInfo, path: req.path });
@@ -45,6 +43,9 @@ router.get('/blog/:filename', async (req, res) => {
     res.render('blog-not-found', slug);
     return;
   }
+
+  console.log(postMetaData);
+  console.log(res);
 
   res.render('article', Object.assign({},
     { postMetaData },

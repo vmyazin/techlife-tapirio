@@ -21,12 +21,14 @@ html
     if isBlogPost
       meta(property='og:title' content=postMetaData.title)
       meta(property='og:description' content=blogInfo.blog.title)
-      meta(property='og:image' content='/images/og-image.jpg')
-      meta(property='og:url' content='/')
+      meta(property='og:url' content=path)
     else
       meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
       meta(property='og:url' content='/')
       meta(property='og:description' content=blogInfo.blog.description)
+    if isBlogPost && postMetaData.meta.mainImg !== undefined
+      meta(property='og:image' content=postMetaData.meta.mainImg)
+    else
       meta(property='og:image' content='/images/og-image.jpg')
 
   body

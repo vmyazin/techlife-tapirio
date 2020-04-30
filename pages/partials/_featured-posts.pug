@@ -3,7 +3,7 @@ ul.article-list.featured.list-unstyled.justify-content-between
     if ind < 2
       li.featured
         a(href="/blog/" + article.slug)
-          h3.heading
+          h3.heading(title=article.title)
             =article.title
           small.meta.text-nowrap= article.date
           p.img-gradient
