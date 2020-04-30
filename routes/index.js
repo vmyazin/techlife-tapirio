@@ -8,24 +8,23 @@ const articles = blog.sortBy({ property: "date", asc: false }).posts;
 //var arr = [{name:"John"},{name:"Bob"},{name:"abc"},{name:"bac"}];
 
 router.get('/', function (req, res, next) {
-  res.render('index', { articles, blogInfo });
+  res.render('index', { articles, blogInfo, path: req.path });
 });
 
 router.get('/about', (req, res) => {
-  res.render('about', { blogInfo });
+  res.render('about', { blogInfo, path: req.path });
 });
 
 router.get('/contact', (req, res) => {
-  res.render('contact', { blogInfo });
+  res.render('contact', { blogInfo, path: req.path });
 });
 
 router.get('/blog', async (req, res) => {
-  res.render('blog', { articles, blogInfo });
+  res.render('blog', { articles, blogInfo, path: req.path });
 });
 
 router.get('/blog/:filename', async (req, res) => {
   const slug = req.params.filename;
-  // Includes json info!!!
   const postMetaData = blog.getPostMetadata(slug);
 
   if (!postMetaData) {
@@ -33,7 +32,6 @@ router.get('/blog/:filename', async (req, res) => {
     return;
   }
 
-  console.log(postMetaData);
   res.render('article', Object.assign({},
     { postMetaData },
     { blogInfo },

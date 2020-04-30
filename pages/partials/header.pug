@@ -7,9 +7,9 @@ nav.top-nav
 
           ul.navbar-nav.ml-auto
             li.nav-item.d-none.d-sm-block
-              a.nav-link(href='/') Home
+              a.nav-link(href='/' class=(path.includes('home') ? 'active' : '')) Home
             li.nav-item
-              a.nav-link(href='/blog/') Blog
+              a.nav-link(href='/blog/' class=(path.includes('blog') ? 'active' : '')) Blog
             li.nav-item
-              a.nav-link(href='/about/') About
+              a.nav-link(href='/about/' class=(path.includes('about') ? 'active' : '')) About
             
