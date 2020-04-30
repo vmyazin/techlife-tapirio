@@ -10,6 +10,12 @@ class MarkdownBlog {
     this.getPosts();
   }
 
+  init() {
+    return new Promise((resolve) => {
+      this.resolve_ = resolve;
+    });
+  }
+
   async listFiles() {
     try {
       return await fs.readdir(this.path);
@@ -44,6 +50,8 @@ class MarkdownBlog {
       throwError(md, "doesn't exist? Error in .json? Forgot to copy file?");
       }
     })
+
+    if (this.resolve_) this.resolve_();
     
     return this._posts;
   }
@@ -66,12 +74,21 @@ class MarkdownBlog {
     if(props.asc !== undefined) {
       asc = props.asc ? 1 : -1;
     } 
+    const field = props.property;
 
-    this._posts = this._posts.sort((a, b) => {
-      const alc = a[props.property].toLowerCase();
-      const blc = b[props.property].toLowerCase();
-      return alc < blc ? -1 * asc : alc > blc ? 1 * asc : 0;
-    });
+    if (field === 'date') {
+      this._posts = this._posts.sort((a, b) => {
+        const alc = new Date(a[field]);
+        const blc = new Date(b[field]);
+        return alc > blc ? 1 * asc : -1 * asc;
+      });
+    } else {
+      this._posts = this._posts.sort((a, b) => {
+        const alc = a[field].toLowerCase();
+        const blc = b[field].toLowerCase();
+        return alc > blc ? -1 * asc : alc < blc ? 1 * asc : 0;
+      });
+    }
 
     return this;
   }  

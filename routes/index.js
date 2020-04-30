@@ -4,11 +4,12 @@ const router = express.Router();
 const MarkdownBlog = require('../scripts/app.functions');
 const blog = new MarkdownBlog('./content/articles/');
 const blogInfo = blog.info;
-const articles = blog.sortBy({ property: "date", asc: false }).posts;
+blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
 //var arr = [{name:"John"},{name:"Bob"},{name:"abc"},{name:"bac"}];
 
 router.get('/', function (req, res, next) {
+  const articles = blog.posts;
   res.render('index', { articles, blogInfo, path: req.path });
 });
 
@@ -21,6 +22,7 @@ router.get('/contact', (req, res) => {
 });
 
 router.get('/blog', async (req, res) => {
+  const articles = blog.posts;
   res.render('blog', { articles, blogInfo, path: req.path });
 });
 
