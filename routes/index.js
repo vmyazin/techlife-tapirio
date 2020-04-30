@@ -44,9 +44,6 @@ router.get('/blog/:filename', async (req, res) => {
     return;
   }
 
-  console.log(postMetaData);
-  console.log(res);
-
   res.render('article', Object.assign({},
     { postMetaData },
     { blogInfo },
