@@ -1,3 +1,4 @@
+const cors = require('cors')
 const express = require('express');
 const router = express.Router();
 const MarkdownBlog = require('../scripts/app.functions');
@@ -22,6 +23,17 @@ router.get('/contact', (req, res) => {
 router.get('/blog', async (req, res) => {
   res.render('blog', { articles, blogInfo, path: req.path });
 });
+
+router.route('/api/search').get(cors(), async (req, res) => {
+  const search = req.query.name.toLowerCase()
+  if (search) {
+    results = articles.filter((a) => (a.title + a.description + a.author).toLowerCase().includes(search));
+    console.log(search, results)
+  } else {
+    results = []
+  }
+  res.json(results)
+})
 
 router.get('/blog/:filename', async (req, res) => {
   const slug = req.params.filename;

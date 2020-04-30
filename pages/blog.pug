@@ -23,9 +23,10 @@ block content
 
         .col.col-lg-3
           .input-group.search-container.mb-3
-            input.form-control(type='text' placeholder='Search posts' aria-label='Search posts' aria-describedby='basic-addon2')
+            input#search.form-control(type='text' placeholder='Search posts' aria-label='Search posts' aria-describedby='basic-addon2')
             .input-group-append
               button.btn.btn-outline-secondary(type="button")
                 i.gg-search
+            #search-results
 
   include partials/footer
