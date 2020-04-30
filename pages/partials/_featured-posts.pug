@@ -1,0 +1,11 @@
+ul.article-list.featured.list-unstyled.justify-content-between
+  each article, ind in articles
+    if ind < 2
+      li.featured
+        a(href="/blog/" + article.slug)
+          h3.heading
+            =article.title
+          small.meta.text-nowrap= article.date
+          p.img-gradient
+            img(src=article.meta.mainImg, alt=article.description)
+          p= article.description

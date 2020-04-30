@@ -9,17 +9,7 @@ block content
         .col.col-lg-2
           h2 Blog
         .col-lg-7
-          ul.article-list.featured.list-unstyled.justify-content-between
-            each article, ind in articles
-              if ind < 2
-                li.featured
-                  a(href="/blog/" + article.slug)
-                    h3.heading
-                      =article.title
-                    small.meta.text-nowrap= article.date
-                    p
-                      img(src=article.meta.mainImg, alt=article.description)
-                    p= article.description
+          include partials/_featured-posts.pug
 
           ul.article-list.list-unstyled
             each article, ind in articles

@@ -46,17 +46,6 @@ block content
             
       .col-md-6
         h4.mb-3 Latest On The Blog
-        ul.article-list.featured.list-unstyled.justify-content-between
-          each article, ind in articles
-            if ind < 2
-              li.featured
-                a(href="/blog/" + article.slug)
-                  h5.heading
-                    =article.title
-                  small.meta.text-nowrap= article.date
-                  p
-                    img(src=article.meta.mainImg, alt=article.description)
-                  p= article.description
-
+        include partials/_featured-posts.pug
 
   include partials/footer

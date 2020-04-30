@@ -3,6 +3,7 @@
 @import 'bootstrap/_variables.scss';
 @import 'bootstrap/_breakpoints.scss';
 @import '_variables.scss';
+@import '_mixins.scss';
 
 body {
   font: 16px "Manrope", Helvetica, Arial, sans-serif;
@@ -117,6 +118,8 @@ small {
 
       .heading {
         margin-bottom: .1rem;
+        padding-bottom: 2px;
+        @include clamped(2);
       }
 
       p {
@@ -128,11 +131,20 @@ small {
         margin-top: 2.5rem;
       }
 
+      .img-gradient {
+        background: rgb(191,195,0);
+        background: linear-gradient(45deg, rgba(191,195,0,0.3) 0%, rgba(37,37,189,0.3) 35%, rgba(0,212,255,0.5) 100%);
+        max-width: 300px;
+      }
+
       img {
         margin-top: .5rem;
         object-fit: cover;
         max-height: 160px;
         width: 100%;
+        position: relative;
+        z-index: -1;
+        display: block;
       }
     }
   }

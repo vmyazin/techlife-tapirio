@@ -1,0 +1,51 @@
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin clamped($lines...) {
+  @if length($lines) == 0 {
+    $lines: 4;
+  }
+
+  display: -webkit-box;
+  display: box;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  line-clamp: $lines;
+  overflow: hidden; 
+}
+
+@mixin placeholder-color($color) {
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: $color;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $color;
+    opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $color;
+    opacity:  1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $color;
+  }
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color: $color;
+  }
+  &::placeholder { /* Most modern browsers support this now. */
+    color: $color;
+  }
+}
+
+@mixin disable-select() {
+  -webkit-touch-callout:none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
