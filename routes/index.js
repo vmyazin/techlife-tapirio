@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const MarkdownBlog = require('../app.functions');
+const MarkdownBlog = require('../scripts/app.functions');
 const blog = new MarkdownBlog('./content/articles/');
 const blogInfo = blog.info;
 const articles = blog.sortBy({ property: "date", asc: false }).posts;

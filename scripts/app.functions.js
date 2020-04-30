@@ -1,5 +1,5 @@
 const fs = require('fs-extra');
-const info = require('./content/preferences.json');
+const info = require('../content/preferences.json');
 const md = require('markdown-it')({ html: true });
 
 class MarkdownBlog {
