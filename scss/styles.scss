@@ -200,5 +200,51 @@ small {
 .search-container {
   .form-control {
     max-width: 300px;
+    padding-right: 28px;
+  }
+
+  [class*="close"] {
+    position: absolute;
+    right: 43px;
+    top: 8px;
+    z-index: 3;
+    cursor: pointer;
+    --ggs: 1;
+  }
+}
+
+.search-results {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+
+  li {
+    a {
+      display: block;
+      padding: 10px 15px;
+      color: $text-color;
+
+      &:hover {
+        background-color: $main-bg;
+        color: inherit;
+      }
+    }
+
+    &:first-child {
+      a {
+        padding-top: 15px;
+        border-radius: 4px 4px 0 0;
+      }
+    }
+    &:last-child {
+      a {
+        padding-bottom: 15px;
+        border-radius: 0 0 4px 4px;
+      }
+    }
+
+    &:only-child {
+      a { border-radius: 4px; }
+    }
   }
 }

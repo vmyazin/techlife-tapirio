@@ -5,7 +5,9 @@
       // add listeners for the search input to toggle active/inactive states
       this.searchEl.addEventListener('focus', this.activate.bind(this))
       this.searchEl.addEventListener('blur', this.deactivate.bind(this))
-      this.searchEl.addEventListener('keydown', debounce(this.renderCities.bind(this)), 500)
+      this.searchEl.addEventListener('keydown', debounce(this.renderResults.bind(this)), 500)
+      this.clearSearchEl.addEventListener('click', this.clearSearchInput.bind(this))
+      this.clearSearchEl.style.display = 'none'
     }
 
     get searchEl () {
@@ -17,7 +19,7 @@
 
     get resultsEl () {
       if (!this.resultsEl_) {
-        this.resultsEl_ = document.getElementById('search-results')
+        this.resultsEl_ = document.getElementsByClassName("search-results")[0]
       }
       return this.resultsEl_
     }
@@ -29,22 +31,37 @@
       return this.bodyEl_
     }
 
-    async renderCities (event) {
+    get clearSearchEl () {
+      if (!this.clearSearchEl_) {
+        this.clearSearchEl_ = document.getElementsByClassName("clear-search-input")[0]
+      }
+      return this.clearSearchEl_
+    }
+
+    async renderResults (event) {
       const value = event.target.value
       this.resultsEl.innerHTML = ''
-      this.cities = await this.getCities({ name: value })
+      this.posts = await this.getPosts({ name: value })
+
+      this.clearSearchEl.style.display = 'block'
 
       // in case of no search results
       this.resultsEl.style.display = this.hasResults ? 'none' : 'block'
 
-      this.cities.forEach((c) => {
+      this.posts.forEach((c) => {
         this.resultsEl.style.display = 'block'
         this.resultsEl.appendChild(this.createSearchResultEl(c))
       })
     }
 
+    clearSearchInput () {
+      this.searchEl.value = ''
+      this.resultsEl.style.display = 'none'
+      this.clearSearchEl.style.display = 'none'
+    }
+
     get hasResults () {
-      return this.cities ? this.cities.length !== 0 : false
+      return this.posts ? this.posts.length !== 0 : false
     }
 
     activate () {
@@ -59,7 +76,7 @@
       } // if no search results, remove .focus from input
     }
 
-    async getCities (query) {
+    async getPosts (query) {
       const params = new URLSearchParams('')
       for (const key in query) { params.append(key, query[key]) }
       return await fetch('/api/search?' + params.toString())
@@ -71,13 +88,13 @@
         })
     }
 
-    createSearchResultEl (city) {
+    createSearchResultEl (post) {
       const el = document.createElement('li')
       const a = document.createElement('a')
-      const textEl = document.createTextNode(city.title + ' by  ' + city.author)
+      const textEl = document.createTextNode(post.title)
       a.appendChild(textEl)
-      a.title = city.title + ', ' + city.description
-      a.href = ('/blog/' + city.slug).toLowerCase()
+      a.title = post.title + ', ' + post.description
+      a.href = ('/blog/' + post.slug).toLowerCase()
       el.appendChild(a)
       return el
     }
