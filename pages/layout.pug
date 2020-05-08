@@ -26,8 +26,8 @@ html
       meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
       meta(property='og:url' content='/')
       meta(property='og:description' content=blogInfo.blog.description)
-    if isBlogPost && postMetaData.meta.mainImg !== undefined
-      meta(property='og:image' content=postMetaData.meta.mainImg)
+    if isBlogPost && postMetaData.image !== undefined
+      meta(property='og:image' content=postMetaData.image)
     else
       meta(property='og:image' content='/images/og-image.jpg')
 
