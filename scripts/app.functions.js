@@ -1,12 +1,13 @@
-const fs = require('fs-extra');
+const Compiler = require('./compiler');
 const info = require('../content/preferences.json');
-const md = require('markdown-it')({ html: true });
 
 class MarkdownBlog {
   constructor(path) {
-    this._posts = [];
+    this.posts_ = [];
     this.info = info;
     this.path = path;
+    this.compiler_ =  new Compiler(path);
+    this.compiler_.compileAll();
     this.getPosts();
   }
 
@@ -25,47 +26,27 @@ class MarkdownBlog {
   }
 
   get posts() {
-    return this._posts;
+    return this.posts_;
   }
 
   async getPosts() {
-    if (this._posts.length > 0) {
-      return this._posts;
+    if (this.posts_.length > 0) {
+      return this.posts_;
     }
 
-    const list = await this.listFiles();
-    list.filter(f => f.endsWith('.json')).forEach(f => {
-      const postData = JSON.parse(fs.readFileSync(this.path + f, 'utf8'));
-      postData.slug = f.substr(0, f.length - 5);
-      const md = this.path + postData.slug + '.md';
-      // Check a post has title and a description
-      MarkdownBlog.requiredFields.forEach(requiredField => {
-      if (!postData[requiredField]) {
-        throwError(`${f} is missing ${requiredField}`);
-      }
-      })
-      if (fs.existsSync(md)) {
-      this._posts.push(postData);
-      } else {
-      throwError(md, "doesn't exist? Error in .json? Forgot to copy file?");
-      }
-    })
+    this.posts_ = await this.compiler_.listMeta();
 
     if (this.resolve_) this.resolve_();
     
-    return this._posts;
+    return this.posts_;
   }
   
   getPostMetadata(slug) {
-    return this._posts.find(a => a.slug === slug);
+    return this.posts_.find(a => a.slug === slug);
   }
   
-  getPostMarkdown(slug) {
-    return fs.readFileSync(this.path + slug + '.md', 'utf8');
-  }
-
-  renderMarkdown(slug) {
-    return md.render(this.getPostMarkdown(slug));
+  async renderMarkdown(slug) {
+    return await this.compiler_.renderContent(slug);
   }
   // outside blog.sortBy("date", true)
   // inside this class this.sortBy("date", true)
@@ -77,13 +58,13 @@ class MarkdownBlog {
     const field = props.property;
 
     if (field === 'date') {
-      this._posts = this._posts.sort((a, b) => {
+      this.posts_ = this.posts_.sort((a, b) => {
         const alc = new Date(a[field]);
         const blc = new Date(b[field]);
         return alc > blc ? 1 * asc : -1 * asc;
       });
     } else {
-      this._posts = this._posts.sort((a, b) => {
+      this.posts_ = this.posts_.sort((a, b) => {
         const alc = a[field].toLowerCase();
         const blc = b[field].toLowerCase();
         return alc > blc ? -1 * asc : alc < blc ? 1 * asc : 0;
@@ -99,7 +80,5 @@ function throwError(message) {
   console.error(message);
   process.exit();
 }
-
-MarkdownBlog.requiredFields = ['title', 'description'];
 
 module.exports = MarkdownBlog;

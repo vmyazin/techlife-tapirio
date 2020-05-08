@@ -4,11 +4,14 @@ const router = express.Router();
 const MarkdownBlog = require('../scripts/app.functions');
 const blog = new MarkdownBlog('./content/articles/');
 const blogInfo = blog.info;
+console.log(blogInfo)
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
-router.get('/', function (req, res, next) {
+router.get('/', async (req, res) => {
   const articles = blog.posts;
-  res.render('index', { articles, blogInfo, path: req.path });
+  const data = { articles, blogInfo, path: req.path };
+  console.log("INFO!:", data);
+  res.render('index', data);
 });
 
 router.get('/about', (req, res) => {
@@ -50,7 +53,7 @@ router.get('/blog/:filename', async (req, res) => {
     { postMetaData },
     { blogInfo },
     {
-      content: blog.renderMarkdown(slug),
+      content: await blog.renderMarkdown(slug),
       path: req.path,
       layout: 'blog',
       isBlog: true,
