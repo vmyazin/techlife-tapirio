@@ -46,7 +46,7 @@ class MarkdownBlog {
   }
   
   async renderMarkdown(slug) {
-    return await this.compiler_.renderContent(slug);
+    return await this.compiler_.renderContent(slug + '.xml');
   }
   // outside blog.sortBy("date", true)
   // inside this class this.sortBy("date", true)

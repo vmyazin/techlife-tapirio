@@ -18,8 +18,10 @@ class Compiler {
             const parsedXml = await this.parseXml(f);
         })
     }
-    async renderContent() {
-        return md.render(this.compiler_.getContent(slug))
+    async renderContent(file) {
+        const content = (await this.getContent(file)).content;
+        console.log("FILE", this.path + file, content);
+        return md.render(content)
     }
 
     async parseXml(file) {
@@ -52,7 +54,8 @@ class Compiler {
         return meta;
     }
     async getContent(file) {
-        return await parseXml(file).content;
+        const content = await this.parseXml(file);
+        return content;
     }
 
     async listFiles() {

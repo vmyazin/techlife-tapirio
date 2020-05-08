@@ -7,11 +7,9 @@ const blogInfo = blog.info;
 console.log(blogInfo)
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
-router.get('/', async (req, res) => {
+router.get('/', (req, res) => {
   const articles = blog.posts;
-  const data = { articles, blogInfo, path: req.path };
-  console.log("INFO!:", data);
-  res.render('index', data);
+  res.render('index', { articles, blogInfo, path: req.path });
 });
 
 router.get('/about', (req, res) => {
