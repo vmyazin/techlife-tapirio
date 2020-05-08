@@ -3,21 +3,26 @@ extends layout
 block content
   include partials/header
   
+  .jumbotron
+    .container
+      .row
+        .col
+          .text-center
+            h1 A Toolkit For Building Robust &amp; SEO-Friendly Websites
+            p.lead.caption
+              span= blogInfo.blog.description
+
   .container.page
-    .row
-      .col
-        .jumbotron
-          h1= blogInfo.blog.title
-          p.lead= blogInfo.blog.description
     .row
       .col-md-6
         p Welcome to #{blogInfo.blog.title}!
 
         h3 Markdown Syntax Examples
 
-        p # Heading 1
-        p ## Heading 2
-        p !(Alt Attr)[http://image.com/img.jpg]        
+        .highlight
+          pre # Heading 1
+          pre ## Heading 2
+          pre !(Alt Attr)[http://image.com/img.jpg]        
 
         h3.mt-5 Reference
 
