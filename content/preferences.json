@@ -1,9 +1,9 @@
 {
   "blog": {
-    "title": "Markdown Blog",
-    "author": "Bobby Bong",
+    "title": "Tapirio",
+    "author": "Vasily Myazin",
     "description": "Made for the dev-savvy. Great for blogs and static websites. Customizeable, flexible, fast.",
-    "URL": "https://mymarkdown.blog"
+    "URL": "https://tapirio.com"
   },
   "appIds": {
     "googleAnalytics": "AABBCC",
@@ -11,7 +11,7 @@
   },
   "social": {
     "facebook": "http://facebook.com",
-    "twitter": "http://twitter.com",
+    "twitter": "http://twitter.com/usetapirio",
     "instagram": "http://instagram.com",
     "linkedin": "http://linkedin.com"
   }
