@@ -16,6 +16,7 @@ describe('blog posts', () => {
                 .get(`/blog/${meta[i].slug}`);
             expect(response.text).toContain(meta[i].title);
             expect(response.text).toContain(meta[i].image);
+            expect(response.statusCode).toBe(200);
         }
     })
     it('All blog posts compile', async () => {
