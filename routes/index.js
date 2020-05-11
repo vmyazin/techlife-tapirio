@@ -1,10 +1,10 @@
 const cors = require('cors')
 const express = require('express');
 const router = express.Router();
+router.blogPath = './content/articles/';
 const MarkdownBlog = require('../scripts/app.functions');
-const blog = new MarkdownBlog('./content/articles/');
+const blog = new MarkdownBlog(router.blogPath);
 const blogInfo = blog.info;
-console.log(blogInfo)
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
 router.get('/', (req, res) => {

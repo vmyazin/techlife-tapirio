@@ -17,6 +17,7 @@ class Compiler {
         (await this.getFiles()).forEach(async (f) => {
             const parsedXml = await this.parseXml(f);
         })
+        return true;
     }
     async renderContent(file) {
         const content = (await this.getContent(file)).content;

@@ -4,9 +4,16 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "test": "jest",
     "sass": "node-sass -w sass -o public/stylesheets",
     "devstart": "nodemon ./bin/www",
     "serverstart": "DEBUG=tapirio:* npm run devstart"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "dependencies": {
     "bootstrap": "^4.4.1",
@@ -24,6 +31,8 @@
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
   }
 }
