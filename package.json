@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "admin": "node ./admin/bin/www",
     "test": "jest",
     "sass": "node-sass -w sass -o public/stylesheets",
     "devstart": "nodemon ./bin/www",
