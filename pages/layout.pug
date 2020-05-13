@@ -1,13 +1,7 @@
 doctype html
 html
   head
-    if isBlogPost
-      title #{postMetaData.title} • #{blogInfo.blog.title}
-    else
-      title= blogInfo.blog.title
-    
     meta(name='viewport' content='width=device-width,initial-scale=1')
-
     link(href='https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap' rel='stylesheet')
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
     script(type="module" src='https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js')
@@ -17,19 +11,25 @@ html
     link(rel='stylesheet', href='/stylesheets/styles.css')
     link(rel="icon" href="/images/favicon-32x32.png" type="images/x-icon")
 
-    meta(property='og:type' content='website')
-    if isBlogPost
-      meta(property='og:title' content=postMetaData.title)
-      meta(property='og:description' content=blogInfo.blog.title)
-      meta(property='og:url' content=path)
-    else
-      meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
-      meta(property='og:url' content='/')
-      meta(property='og:description' content=blogInfo.blog.description)
-    if isBlogPost && postMetaData.image !== undefined
-      meta(property='og:image' content=postMetaData.image)
-    else
-      meta(property='og:image' content='/images/og-image.jpg')
+    if blogInfo
+      if isBlogPost
+        title #{postMetaData.title} • #{blogInfo.blog.title}
+      else
+        title= blogInfo.blog.title
+    
+      meta(property='og:type' content='website')
+      if isBlogPost
+        meta(property='og:title' content=postMetaData.title)
+        meta(property='og:description' content=blogInfo.blog.title)
+        meta(property='og:url' content=path)
+      else
+        meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
+        meta(property='og:url' content='/')
+        meta(property='og:description' content=blogInfo.blog.description)
+      if isBlogPost && postMetaData.image !== undefined
+        meta(property='og:image' content=postMetaData.image)
+      else
+        meta(property='og:image' content='/images/og-image.jpg')
 
   body
     block content
