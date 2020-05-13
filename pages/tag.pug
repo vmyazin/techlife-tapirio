@@ -7,6 +7,11 @@ block content
     .blog-content
       .row
         .col
+          h2
+            span.badge.badge-warning Tag
+            | 
+            =tag
+
           ul.article-list.list-unstyled
             each article, ind in articles
               li
