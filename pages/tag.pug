@@ -1,7 +1,19 @@
-each article, ind in articles
-    li
-        a(href="/blog/" + article.slug)
-        ion-icon(name='document-text')
-        =article.title
-        | 
-        small.text-nowrap.meta= article.date
+extends layout
+
+block content
+  include partials/header
+
+  .container.page
+    .blog-content
+      .row
+        .col
+          ul.article-list.list-unstyled
+            each article, ind in articles
+              li
+                a(href="/blog/" + article.slug)
+                  ion-icon(name='document-text')
+                  =article.title
+                  | 
+                  small.text-nowrap.meta= article.date
+
+  include partials/footer

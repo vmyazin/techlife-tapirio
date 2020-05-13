@@ -21,7 +21,6 @@ router.get('/tags/:tag', async (req, res) => {
   const tag = req.params.tag;
   const tags = blog.tags;
   const articles = await blog.getPostsByTag(tag);
-  console.log ("TAGS!", articles);
   res.render('tag', { tag, tags, articles, blogInfo, path: req.path });
 });
 

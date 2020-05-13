@@ -22,5 +22,11 @@ block content
           h3= postMetaData.title
           | !{content}
 
+          p Tags: 
+            each tag, ind in postMetaData.tags
+              a(href="/tags/" + tag)= tag
+              if ind !== postMetaData.tags.length - 1
+                |, 
+
 
   include partials/footer

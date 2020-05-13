@@ -1,4 +1,16 @@
-each tag, ind in tags
-    li
-        =tag
-        | Make link here /tags/sometag 
+extends layout
+
+block content
+  include partials/header
+
+  .container.page
+    .blog-content
+      .row
+        .col
+          h2 Posts' Tags
+
+          each tag, ind in tags
+            li
+              a(href="/tags/" + tag)=tag
+              
+  include partials/footer
