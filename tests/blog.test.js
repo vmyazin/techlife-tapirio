@@ -24,8 +24,8 @@ describe('blog posts', () => {
             .get('/blog');
         for (let i = 0; i < meta.length; i++) {
             expect(response.text).toContain(meta[i].image);
-            expect(response.statusCode).toBe(200);
         }
+        expect(response.statusCode).toBe(200);
     })
 
     it('contains post title in each post', async () => {

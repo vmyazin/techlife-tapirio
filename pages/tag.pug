@@ -1,0 +1,7 @@
+each article, ind in articles
+    li
+        a(href="/blog/" + article.slug)
+        ion-icon(name='document-text')
+        =article.title
+        | 
+        small.text-nowrap.meta= article.date

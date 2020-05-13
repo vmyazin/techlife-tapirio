@@ -6,6 +6,7 @@ class MarkdownBlog {
     this.posts_ = [];
     this.info = info;
     this.path = path;
+    this.tagsHash_ = {};
     this.compiler_ =  new Compiler(path);
     this.compiler_.compileAll();
     this.getPosts();
@@ -29,12 +30,32 @@ class MarkdownBlog {
     return this.posts_;
   }
 
+  async getTagsHash() {
+    this.posts_.forEach(p => {
+      console.log("Post tags", p.slug, p.tags);
+      p.tags.forEach(t => {
+        console.log("Adding", t);
+        if(!this.tagsHash_[t]) this.tagsHash_[t] = [];
+        this.tagsHash_[t].push(p.slug);
+      })
+    })
+  }
+
+  get tags() {
+    return Object.keys(this.tagsHash_);
+  }
+
+  async getPostsByTag(tag) {
+    return this.posts_.filter(p => p.tags.includes(tag));
+  }
+
   async getPosts() {
     if (this.posts_.length > 0) {
       return this.posts_;
     }
 
     this.posts_ = await this.compiler_.listMeta();
+    this.getTagsHash();
 
     if (this.resolve_) this.resolve_();
     

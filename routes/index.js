@@ -12,6 +12,19 @@ router.get('/', (req, res) => {
   res.render('index', { articles, blogInfo, path: req.path });
 });
 
+router.get('/tags', async (req, res) => {
+  const tags = blog.tags;
+  res.render('tags', { tags, blogInfo, path: req.path });
+});
+
+router.get('/tags/:tag', async (req, res) => {
+  const tag = req.params.tag;
+  const tags = blog.tags;
+  const articles = await blog.getPostsByTag(tag);
+  console.log ("TAGS!", articles);
+  res.render('tag', { tag, tags, articles, blogInfo, path: req.path });
+});
+
 router.get('/about', (req, res) => {
   res.render('about', { blogInfo, path: req.path });
 });

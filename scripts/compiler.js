@@ -40,6 +40,8 @@ class Compiler {
                 }
             })
             parsedXml.meta.slug = file.substr(0, file.length - 4);
+            const tags = parsedXml.meta.tags;
+            parsedXml.meta.tags = tags ? tags.split(',') : [];
             return parsedXml;
         } catch (err) {
             console.log("ERROR in", file, "\n", err);
