@@ -32,7 +32,7 @@ class MarkdownBlog {
 
   async getTagsHash() {
     this.posts_.forEach(p => {
-      console.log("Post tags", p.slug, p.tags);
+      console.log("Post tags", p.slug, p);
       p.tags.forEach(t => {
         console.log("Adding", t);
         if(!this.tagsHash_[t]) this.tagsHash_[t] = [];
@@ -67,7 +67,7 @@ class MarkdownBlog {
   }
   
   async renderMarkdown(slug) {
-    return await this.compiler_.renderContent(slug + '.xml');
+    return await this.compiler_.renderContent(slug + '.md');
   }
   // outside blog.sortBy("date", true)
   // inside this class this.sortBy("date", true)

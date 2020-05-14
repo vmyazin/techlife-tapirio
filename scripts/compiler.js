@@ -1,7 +1,5 @@
-const xml2js = require('xml2js');
 const md = require('markdown-it')({ html: true });
 const fs = require('fs-extra');
-const xmlParser = new xml2js.Parser({explicitArray : false});
 
 class Compiler {
     constructor(path) {
@@ -15,7 +13,7 @@ class Compiler {
     }
     async compileAll() {
         (await this.getFiles()).forEach(async (f) => {
-            const parsedXml = await this.parseXml(f);
+            const parsedXml = await this.parseFile(f);
         })
         return true;
     }
@@ -25,26 +23,34 @@ class Compiler {
         return md.render(content)
     }
 
-    async parseXml(file) {
+    async parseMeta(string, file) {
+        const lines = string.split("\n");
+        const meta = {};
+        lines.forEach(l => {
+            const i = l.indexOf(':');
+            if (i > -1) meta[l.substring(0, i)] = l.substring(i + 1).trim();
+        })
+        Compiler.requiredMetaFields.forEach(requiredField => {
+            if (!meta[requiredField]) {
+                throwError(`${requiredField} is not included in <meta> for ${file}`);
+            }
+        })
+        meta.slug = file.substr(0, file.length - 3);
+        const tags = meta.tags;
+        meta.tags = tags ? tags.split(',') : [];
+        return meta;
+    }
+    async parseFile(file) {
         const string = fs.readFileSync(this.path + file, 'utf8')
         try {
-            const parsedXml = (await xmlParser.parseStringPromise(string)).article;
-            Compiler.requiredTags.forEach(requiredField => {
-                if (!parsedXml[requiredField]) {
-                    throwError(`${file} is missing a tag: ${requiredField}`);
-                }
-            })
-            Compiler.requiredMetaFields.forEach(requiredField => {
-                if (!parsedXml.meta[requiredField]) {
-                    throwError(`${requiredField} is not included in <meta> for ${file}`);
-                }
-            })
-            parsedXml.meta.slug = file.substr(0, file.length - 4);
-            const tags = parsedXml.meta.tags;
-            parsedXml.meta.tags = tags ? tags.split(',') : [];
-            return parsedXml;
+            const metaIndexStart = string.indexOf('---');
+            const metaIndexEnds = string.indexOf('---', metaIndexStart + 1);
+            const content = string.substring(metaIndexEnds + 3);
+            const metaString = string.substring(0, metaIndexEnds);
+            const meta = await this.parseMeta(metaString, file);
+            return { meta, content };
         } catch (err) {
-            console.log("ERROR in", file, "\n", err);
+            console.log("Error in format occured. Follow the pattren to create a file.", file, "\n", err);
         }
     }
 
@@ -52,12 +58,12 @@ class Compiler {
         const files = await this.getFiles();
         const meta = [];
         for(let i = 0; i < files.length; i++) {
-            meta.push((await this.parseXml(files[i])).meta)
+            meta.push((await this.parseFile(files[i])).meta)
         }
         return meta;
     }
     async getContent(file) {
-        const content = await this.parseXml(file);
+        const content = await this.parseFile(file);
         return content;
     }
 
