@@ -19,7 +19,6 @@ class Compiler {
     }
     async renderContent(file) {
         const content = (await this.getContent(file)).content;
-        console.log("FILE", this.path + file, content);
         return md.render(content)
     }
 
@@ -37,7 +36,7 @@ class Compiler {
         })
         meta.slug = file.substr(0, file.length - 3);
         const tags = meta.tags;
-        meta.tags = tags ? tags.split(',') : [];
+        meta.tags = tags ? tags.split(',').map(t => t.trim()) : [];
         return meta;
     }
     async parseFile(file) {
