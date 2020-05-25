@@ -43,7 +43,6 @@ router.route('/api/search').get(cors(), async (req, res) => {
 
   if (search) {
     results = articles.filter((a) => (a.title + a.description + a.author).toLowerCase().includes(search));
-    console.log(search, results)
   } else {
     results = []
   }

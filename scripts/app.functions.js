@@ -32,9 +32,8 @@ class MarkdownBlog {
 
   async getTagsHash() {
     this.posts_.forEach(p => {
-      console.log("Post tags", p.slug, p);
+
       p.tags.forEach(t => {
-        console.log("Adding", t);
         if(!this.tagsHash_[t]) this.tagsHash_[t] = [];
         this.tagsHash_[t].push(p.slug);
       })
