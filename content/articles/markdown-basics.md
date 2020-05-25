@@ -10,7 +10,7 @@ tags: markdown, blogging
 
 Markdown is a lightweight [markup language](https://en.wikipedia.org/wiki/Markdown) with plain-text-formatting syntax developed by John Gruber.
 
-Even people experienced in HTML, [Pug](https://pugjs.org/api/getting-started.html) and the like can find it weary to use intricate markup langauges for blogging, as opposed to plain text. It's important to note that classic HTML is fully supported inside of the MD files on Tapirio. Markdown is as close to so called _"rich plain text"_ as we can get today. The beauty of is that it doesn't necessarily need to be "rich," unless you need to turn some chunks of text into links and insert images. Let's review some examples.
+Even people experienced in HTML, [Pug](https://pugjs.org/api/getting-started.html) and the like can find it weary to use intricate markup langauges for blogging, as opposed to plain text. It is important to note that classic HTML is fully supported inside of the MD files on Tapirio. Markdown is as close to the so called _"rich plain text"_ as we can get today. The beauty of it is that it doesn't necessarily need to be "rich," unless you need to turn some chunks of text into links and insert images. Let's review some examples.
 
 ## Adding an H1 Heading
 
@@ -18,7 +18,7 @@ Even people experienced in HTML, [Pug](https://pugjs.org/api/getting-started.htm
   <pre># Main Heading</pre>
 </div>
 
-By adding the **#** symbol we control the number of the heading, i.e. **## = h2, ### = h3,** etc.
+By adding the **#** (hash) symbol we control the number of the heading, i.e. **## = h2, ### = h3,** etc.
 
 ## Styling lists
 
