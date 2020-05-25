@@ -11,6 +11,7 @@ html
     link(rel='stylesheet', href='/stylesheets/styles.css')
     link(rel="icon" href="/images/favicon-32x32.png" type="images/x-icon")
 
+    //- check if blogInfo object is present, a lot depends on it
     if blogInfo
       if isBlogPost
         title #{postMetaData.title} • #{blogInfo.blog.title}

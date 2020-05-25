@@ -10,6 +10,72 @@ tags: markdown, blogging
 
 Markdown is a lightweight [markup language](https://en.wikipedia.org/wiki/Markdown) with plain-text-formatting syntax developed by John Gruber.
 
-Occupy portland umami, literally la croix glossier letterpress snackwave fashion axe succulents butcher yuccie. Hot chicken truffaut jean shorts farm-to-table bespoke mlkshk. Put a bird on it typewriter chillwave adaptogen sriracha food truck fam retro mumblecore yr sartorial austin tumeric shabby chic tofu. Viral whatever lumbersexual, salvia actually shabby chic chillwave williamsburg.
+Even people experienced in HTML, [Pug](https://pugjs.org/api/getting-started.html) and the like can find it weary to use intricate markup langauges for blogging, as opposed to plain text. It's important to note that classic HTML is fully supported inside of the MD files on Tapirio. Markdown is as close to so called _"rich plain text"_ as we can get today. The beauty of is that it doesn't necessarily need to be "rich," unless you need to turn some chunks of text into links and insert images. Let's review some examples.
 
-Dreamcatcher salvia organic lo-fi sartorial. Letterpress franzen lumbersexual, vice mustache meggings semiotics normcore keytar hoodie offal banjo chillwave dreamcatcher. Skateboard man bun chartreuse tilde snackwave cronut lo-fi lyft fam pok pok +1 succulents.
+## Adding an H1 Heading
+
+<div class="highlight">
+  <pre># Main Heading</pre>
+</div>
+
+By adding the **#** symbol we control the number of the heading, i.e. **## = h2, ### = h3,** etc.
+
+## Styling lists
+
+### Unordered
+
+<div class="highlight">
+  <pre>
+    - First item
+    - Second item
+    - Third item</pre>
+</div>
+
+The code above results in:
+
+- First item
+- Second item
+- Third item
+
+### Ordered
+
+<div class="highlight">
+  <pre>
+    1. First item
+    2. Second item
+    3. Third item</pre>
+</div>
+
+Results in:
+
+1. First item
+2. Second item
+3. Third item
+
+## Adding links
+
+Another thing to add to your muscle memory as a Markdown blogger is typing a link.
+
+<div class="highlight">
+  <pre>[DuckDuckGo Search](https://www.duckduckgo.com/)</pre>
+</div>
+
+This will show up as a link to our preferred alternative to Google search called [DuckDuckGo](https://www.duckduckgo.com/).
+
+## Inserting Images
+
+Very similar to links is the syntax for referencing images. You just need to add **!** in front of the opening square bracket.
+
+<div class="highlight">
+  <pre>![DuckDuckGo Search](https://images.techhive.com/images/article/2014/05/duckduckgo-logo-100266737-large.jpg)</pre>
+</div>
+
+![DuckDuckGo Search](/images/blog/duckduckgo-logo.jpg)
+
+This is something to get you started. An entirely comprehensive list of Markdown syntax examples can be [found here](https://www.markdownguide.org/basic-syntax).
+
+## Native OS Editors
+
+Our recommendation for a macOS MD editor is [MacDown](https://macdown.uranusjr.com) created by [Tzu-ping Chung](https://uranusjr.com), it is influenced by [Chen Luo](https://twitter.com/chenluois)’s [Mou](http://mouapp.com/).
+
+For Windows you can  give [MarkdownPad](https://markdownpad.com/) a shot.
