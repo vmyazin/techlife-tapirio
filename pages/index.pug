@@ -3,55 +3,9 @@ extends layout
 block content
   include partials/header
   
-  .jumbotron
-    .container
-      .row
-        .col
-          .text-center
-            h1 A Toolkit For Building Robust &amp; SEO-Friendly Websites
-            p.lead.caption
-              span= blogInfo.blog.description
-
-  .container.page
+  .container
     .row
-      .col-md-6
-        p Welcome to #{blogInfo.blog.title}!
-
-        h3 Markdown Syntax Examples
-
-        .highlight
-          pre # Heading 1
-          pre ## Heading 2
-          pre !(Alt Attr)[http://image.com/img.jpg]
-          pre [Link](http://link.com/index.html)
-
-        h3.mt-5 Reference
-
-        p
-          a(href="https://www.markdownguide.org/" rel="external" target="_blank")
-            | The Markdown Guide
-            |&nbsp;
-            i.gg-external
-
-        p
-          a(href="https://github.com/astrit/css.gg" rel="external" target="_blank")
-            | CSS.gg Icons
-            |&nbsp;
-            i.gg-external
-        p
-          a(href="https://css.gg/app" rel="external" target="_blank")
-            | Search in CSS.gg icons collection
-            |&nbsp;
-            i.gg-external
-
-        p
-          a(href="https://ionicons.com" rel="external" target="_blank")
-            | Ion Icons collection
-            |&nbsp;
-            i.gg-external
-            
-      .col-md-6
-        h4.mb-3 Latest On The Blog
-        include partials/_featured-posts.pug
+      .col-sm-12
+        h2 Наши выпуски
 
   include partials/footer

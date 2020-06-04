@@ -1,18 +1,15 @@
 {
   "blog": {
-    "title": "Tapirio",
+    "title": "Технологии и жизнь: подкаст",
     "author": "Vasily Myazin",
-    "description": "Made for the dev-savvy. Great for blogs and static websites. Customizeable, flexible, fast.",
-    "URL": "https://tapirio.com"
+    "description": "Интернет радио-программа про современные технологии, их влияние на нашу жизнь, и прочие мысли.",
+    "URL": "https://www.techlifepodcast.com"
   },
   "appIds": {
     "googleAnalytics": "AABBCC",
     "facebookApp": "BBCCDD"
   },
   "social": {
-    "facebook": "http://facebook.com",
-    "twitter": "http://twitter.com/usetapirio",
-    "instagram": "http://instagram.com",
-    "linkedin": "http://linkedin.com"
+    "telegram": "http://telegram.org"
   }
 }

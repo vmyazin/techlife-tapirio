@@ -1,15 +1,27 @@
-nav.top-nav
-  .container
-    .row
-      .col
-        .navbar.navbar-expand.navbar-light
-          a.navbar-brand(href="/")= blogInfo.blog.title
+<div class="master-container">
+  <div class="container-fluid">
+    <h1><img src="/images/tehnologii-head.svg" alt="Технологии и жизнь" /></h1>
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="spacer-xs spacer-sm"></div>
+        <div class="spacer-xs spacer-sm"></div>
+        <p>Интернет радио-программа (или <b>подкаст</b>) про современные технологии, их влияние на нашу жизнь, и прочие мысли.</p>
+        <div class="spacer-md"></div>
+        <div class="spacer-lg"></div>
+        <div class="spacer-lg"></div>
+        <p>
+          <a class="link-ext" href="https://t.me/techlifepodcast" rel="external">&nbsp;t.me/techlifepodcast&nbsp;</a><br/>
+          <a class="link-ext" href="mailto:talk@techlifepodcast.com" rel="external">&nbsp;talk@techlifepodcast.com&nbsp;</a>
+        </p>
+      </div>
 
-          ul.navbar-nav.ml-auto
-            li.nav-item.d-none.d-sm-block
-              a.nav-link(href='/' class=(path.length < 2 ? 'active' : '')) Home
-            li.nav-item
-              a.nav-link(href='/blog/' class=(path.includes('blog') ? 'active' : '')) Blog
-            li.nav-item
-              a.nav-link(href='/about/' class=(path.includes('about') ? 'active' : '')) About
-            
+      <div class="col-lg-4 col-md-6">
+        <p><b>Ведущие:</b><br/> <NavLink to="/about">Дмитрий Здоров и Василий Мязин.</NavLink></p>
+      </div>
+
+      <div class="col-lg-4 col-md-12">
+        //- <SubscribeLinks />
+      </div>
+    </div>
+  </div>
+</div>

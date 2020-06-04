@@ -1,0 +1,11 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.21 71">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>big-thin-angle</title>
+  <path class="cls-1" d="M2,70.47a1,1,0,0,1-.71-1.71l33-33-33-33a1,1,0,0,1,0-1.42,1,1,0,0,1,1.41,0L36.39,35a1,1,0,0,1,0,1.41L2.65,70.17A1,1,0,0,1,2,70.47Z"/>
+</svg>
