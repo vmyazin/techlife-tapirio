@@ -2,7 +2,7 @@ const Compiler = require('./compiler');
 const info = require('../content/preferences.json');
 const GetPodcastFeed = require('./get-feed');
 
-class MarkdownBlog {
+class Project {
   constructor(path, params) {
     this.posts_ = [];
     this.info = info;
@@ -108,4 +108,4 @@ function throwError(message) {
   process.exit();
 }
 
-module.exports = MarkdownBlog;
+module.exports = Project;
