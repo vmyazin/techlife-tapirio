@@ -2,15 +2,10 @@ const cors = require('cors')
 const express = require('express');
 const router = express.Router();
 router.blogPath = './content/articles/';
-const GetFeed = require('../scripts/get-feed')
-const feeder = new GetFeed()
-feeder.init()
 const MarkdownBlog = require('../scripts/app.functions');
 const blog = new MarkdownBlog(router.blogPath);
 const blogInfo = blog.info;
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
-
-GetFeed.init()
 
 router.get('/', (req, res) => {
   const articles = blog.posts;
