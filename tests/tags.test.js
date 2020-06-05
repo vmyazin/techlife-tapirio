@@ -2,14 +2,14 @@ const request = require('supertest');
 const app = require('../app');
 const router = require('../routes/index');
 
-const MarkdownBlog = require('../scripts/app.functions');
+const Project = require('../scripts/app.functions');
 
 let posts;
 let tags;
 let getPostsByTag;
 describe('blog posts', () => {
     beforeAll(async () => {
-        const blog = new MarkdownBlog(router.blogPath);
+        const blog = new Project(router.blogPath);
         const promise = new Promise((resolve) => {
             blog.init().then(() => {
                 posts = blog.posts;

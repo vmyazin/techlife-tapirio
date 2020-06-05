@@ -16,22 +16,22 @@ html
     link(rel='stylesheet', href='/stylesheets/styles.css')
     link(rel="icon" href="/images/favicon.ico" type="images/x-icon")
 
-    //- check if blogInfo object is present, a lot depends on it
-    if blogInfo
+    //- check if projectInfo object is present, a lot depends on it
+    if projectInfo
       if isBlogPost
-        title #{postMetaData.title} • #{blogInfo.blog.title}
+        title #{postMetaData.title} • #{projectInfo.project.title}
       else
-        title= blogInfo.blog.title
+        title= projectInfo.project.title
     
       meta(property='og:type' content='website')
       if isBlogPost
         meta(property='og:title' content=postMetaData.title)
-        meta(property='og:description' content=blogInfo.blog.title)
+        meta(property='og:description' content=projectInfo.project.title)
         meta(property='og:url' content=path)
       else
-        meta(property='og:title' content=blogInfo.blog.description + ' • ' + blogInfo.blog.title)
+        meta(property='og:title' content=projectInfo.project.description + ' • ' + projectInfo.project.title)
         meta(property='og:url' content='/')
-        meta(property='og:description' content=blogInfo.blog.description)
+        meta(property='og:description' content=projectInfo.project.description)
       if isBlogPost && postMetaData.image !== undefined
         meta(property='og:image' content=postMetaData.image)
       else

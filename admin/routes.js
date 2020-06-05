@@ -2,14 +2,14 @@ const cors = require('cors')
 const express = require('express');
 const router = express.Router();
 router.blogPath = './content/articles/';
-const MarkdownBlog = require('../scripts/app.functions');
-const blog = new MarkdownBlog(router.blogPath);
-const blogInfo = blog.info;
+const Project = require('../scripts/app.functions');
+const blog = new Project(router.blogPath);
+const projectInfo = blog.info;
 blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
 
 router.get('/', (req, res) => {
   const articles = blog.posts;
-  res.render('home', { articles, blogInfo, path: req.path });
+  res.render('home', { articles, projectInfo, path: req.path });
 });
 
 router.route('/api/search').get(cors(), async (req, res) => {
@@ -36,7 +36,7 @@ router.get('/blog/:filename', async (req, res) => {
 
   res.render('article', Object.assign({},
     { postMetaData },
-    { blogInfo },
+    { projectInfo },
     {
       content: await blog.renderMarkdown(slug),
       path: req.path,
