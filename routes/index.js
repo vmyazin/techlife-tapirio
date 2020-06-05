@@ -21,19 +21,16 @@ project.init().then(() => {
   podcast = project.podcastModule.json.rss;
   episodes = podcast.channel.item.map(episode => {
     let episodeNumber = episode.title.split(":")[0];
-    // add episode number key
-    episode.episodeNum = episodeNumber.replace("#",""); // add clean episode number to object
-    // add clean title
-    episode.title = episode.title.replace(episodeNumber + ": ", ""); // add clean episode title;
-
-    episode.pubDateConverted = moment(episode.pubDate).locale('ru').format("LL"); // add neat episode date in Russian
+    // add clean episode number to object
+    episode.episodeNum = episodeNumber.replace("#","");
+    // add clean episode title
+    episode.title = episode.title.replace(episodeNumber + ": ", ""); 
+    // add neat episode date in Russian
+    episode.pubDateConverted = moment(episode.pubDate).locale('ru').format("LL"); 
     
     return episode;
   })
-
-  console.log(episodes);
 });
-
 
 router.get('/', (req, res) => {
   const articles = project.posts;
@@ -65,14 +62,6 @@ router.get('/blog', async (req, res) => {
   res.render('blog', { articles, projectInfo, path: req.path });
 });
 
-router.get('/podcast', async (req, res) => {
-  ///
-  const articles = project.posts;
-  res.render('blog', { articles, projectInfo, path: req.path });
-});
-
-
-
 router.route('/api/search').get(cors(), async (req, res) => {
   const articles = project.posts;
   const search = req.query.name.toLowerCase()
@@ -83,6 +72,17 @@ router.route('/api/search').get(cors(), async (req, res) => {
     results = []
   }
   res.json(results)
+})
+
+router.route('/api/episode/:id').get(cors(), async (req, res) => {
+  if (req.params.id) {
+    result = episodes.find(obj => {
+      return obj.episodeNum === req.params.id;
+    });
+  } else {
+    result = []
+  }
+  res.json(result)
 })
 
 router.get('/blog/:filename', async (req, res) => {
