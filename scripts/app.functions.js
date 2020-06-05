@@ -1,8 +1,9 @@
 const Compiler = require('./compiler');
 const info = require('../content/preferences.json');
+const GetPodcastFeed = require('./get-feed');
 
 class MarkdownBlog {
-  constructor(path) {
+  constructor(path, params) {
     this.posts_ = [];
     this.info = info;
     this.path = path;
@@ -10,6 +11,12 @@ class MarkdownBlog {
     this.compiler_ =  new Compiler(path);
     this.compiler_.compileAll();
     this.getPosts();
+    if (params) {
+      if (params.podcastFeedXml) {
+        this.podcastModule = new GetPodcastFeed(params.podcastFeedXml);
+        this.podcastModule.convert();
+      }
+    }
   }
 
   init() {

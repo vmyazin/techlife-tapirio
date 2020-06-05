@@ -3,13 +3,21 @@ const express = require('express');
 const router = express.Router();
 router.blogPath = './content/articles/';
 const MarkdownBlog = require('../scripts/app.functions');
-const blog = new MarkdownBlog(router.blogPath);
+const blog = new MarkdownBlog(router.blogPath, {
+  podcastFeedXml: './public/podcast-feed.xml'
+});
+
 const blogInfo = blog.info;
-blog.init().then(() => blog.sortBy({ property: "date", asc: false }));
+let podcast = {};
+
+blog.init().then(() => {
+  blog.sortBy({ property: "date", asc: false })
+  podcast = blog.podcastModule.json;
+});
 
 router.get('/', (req, res) => {
   const articles = blog.posts;
-  res.render('index', { articles, blogInfo, path: req.path });
+  res.render('index', { podcast, articles, blogInfo, path: req.path });
 });
 
 router.get('/tags', async (req, res) => {
@@ -36,6 +44,14 @@ router.get('/blog', async (req, res) => {
   const articles = blog.posts;
   res.render('blog', { articles, blogInfo, path: req.path });
 });
+
+router.get('/podcast', async (req, res) => {
+  ///
+  const articles = blog.posts;
+  res.render('blog', { articles, blogInfo, path: req.path });
+});
+
+
 
 router.route('/api/search').get(cors(), async (req, res) => {
   const articles = blog.posts;
