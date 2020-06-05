@@ -1,0 +1,20 @@
+{
+  "short_name": "Технологии и жизнь",
+  "name": "Подкаст 'Технологии и жизнь'",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/techlife-artwork-192-2019.jpg",
+      "type": "image/jpeg",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#42c8fc",
+  "background_color": "#111111"
+}

@@ -1,5 +1,5 @@
 {
-  "name": "tapirio",
+  "name": "techlife-tapirio",
   "version": "0.1.2",
   "private": true,
   "scripts": {
@@ -29,7 +29,8 @@
     "node-sass": "^4.13.1",
     "node-sass-middleware": "^0.11.0",
     "pug": "2.0.4",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "jest": "^26.0.1",
