@@ -7,7 +7,7 @@ const blog = new MarkdownBlog(router.blogPath, {
   podcastFeedXml: './public/podcast-feed.xml'
 });
 
-const blogInfo = blog.info;
+const projectInfo = blog.info;
 let podcast = {};
 
 blog.init().then(() => {
@@ -17,38 +17,38 @@ blog.init().then(() => {
 
 router.get('/', (req, res) => {
   const articles = blog.posts;
-  res.render('index', { podcast, articles, blogInfo, path: req.path });
+  res.render('index', { podcast, articles, projectInfo, path: req.path });
 });
 
 router.get('/tags', async (req, res) => {
   const tags = blog.tags;
-  res.render('tags', { tags, blogInfo, path: req.path });
+  res.render('tags', { tags, projectInfo, path: req.path });
 });
 
 router.get('/tags/:tag', async (req, res) => {
   const tag = req.params.tag;
   const tags = blog.tags;
   const articles = await blog.getPostsByTag(tag);
-  res.render('tag', { tag, tags, articles, blogInfo, path: req.path });
+  res.render('tag', { tag, tags, articles, projectInfo, path: req.path });
 });
 
 router.get('/about', (req, res) => {
-  res.render('about', { blogInfo, path: req.path });
+  res.render('about', { projectInfo, path: req.path });
 });
 
 router.get('/contact', (req, res) => {
-  res.render('contact', { blogInfo, path: req.path });
+  res.render('contact', { projectInfo, path: req.path });
 });
 
 router.get('/blog', async (req, res) => {
   const articles = blog.posts;
-  res.render('blog', { articles, blogInfo, path: req.path });
+  res.render('blog', { articles, projectInfo, path: req.path });
 });
 
 router.get('/podcast', async (req, res) => {
   ///
   const articles = blog.posts;
-  res.render('blog', { articles, blogInfo, path: req.path });
+  res.render('blog', { articles, projectInfo, path: req.path });
 });
 
 
@@ -76,7 +76,7 @@ router.get('/blog/:filename', async (req, res) => {
 
   res.render('article', Object.assign({},
     { postMetaData },
-    { blogInfo },
+    { projectInfo },
     {
       content: await blog.renderMarkdown(slug),
       path: req.path,

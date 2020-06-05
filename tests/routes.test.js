@@ -12,7 +12,7 @@ describe('main route', () => {
         const response = await request(app)
             .get("/")
 
-        expect(response.text).toContain(preferences.blog.title);
+        expect(response.text).toContain(preferences.project.title);
     })
 
 })
