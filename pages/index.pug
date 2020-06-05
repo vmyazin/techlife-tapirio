@@ -11,7 +11,7 @@ block content
         ul.episode-list
           each item, ind in podcast.channel.item
             li.selected-00
-              .num-and-title
+              .num-and-title(title=item.pubDateConverted)
                 span.episode-num №#{item.episodeNum}
                 |  
                 span.pseudo-link #{item.title}

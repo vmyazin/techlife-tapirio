@@ -3,32 +3,52 @@ const express = require('express');
 const router = express.Router();
 router.blogPath = './content/articles/';
 const Project = require('../scripts/app.functions');
-const blog = new Project(router.blogPath, {
+const project = new Project(router.blogPath, {
   podcastFeedXml: './public/podcast-feed.xml'
 });
 
-const projectInfo = blog.info;
-let podcast = {};
+const moment = require('moment');
+require('moment/locale/ru');
 
-blog.init().then(() => {
-  blog.sortBy({ property: "date", asc: false })
-  podcast = blog.podcastModule.json.rss;
+let projectInfo = project.info;
+let podcast = {},
+    episodes = {}
+projectInfo.currentYear = moment().year()
+
+project.init().then(() => {
+  project.sortBy({ property: "date", asc: false })
+  
+  podcast = project.podcastModule.json.rss;
+  episodes = podcast.channel.item.map(episode => {
+    let episodeNumber = episode.title.split(":")[0];
+    // add episode number key
+    episode.episodeNum = episodeNumber.replace("#",""); // add clean episode number to object
+    // add clean title
+    episode.title = episode.title.replace(episodeNumber + ": ", ""); // add clean episode title;
+
+    episode.pubDateConverted = moment(episode.pubDate).locale('ru').format("LL"); // add neat episode date in Russian
+    
+    return episode;
+  })
+
+  console.log(episodes);
 });
 
+
 router.get('/', (req, res) => {
-  const articles = blog.posts;
+  const articles = project.posts;
   res.render('index', { podcast, articles, projectInfo, path: req.path });
 });
 
 router.get('/tags', async (req, res) => {
-  const tags = blog.tags;
+  const tags = project.tags;
   res.render('tags', { tags, projectInfo, path: req.path });
 });
 
 router.get('/tags/:tag', async (req, res) => {
   const tag = req.params.tag;
-  const tags = blog.tags;
-  const articles = await blog.getPostsByTag(tag);
+  const tags = project.tags;
+  const articles = await project.getPostsByTag(tag);
   res.render('tag', { tag, tags, articles, projectInfo, path: req.path });
 });
 
@@ -41,20 +61,20 @@ router.get('/contact', (req, res) => {
 });
 
 router.get('/blog', async (req, res) => {
-  const articles = blog.posts;
+  const articles = project.posts;
   res.render('blog', { articles, projectInfo, path: req.path });
 });
 
 router.get('/podcast', async (req, res) => {
   ///
-  const articles = blog.posts;
+  const articles = project.posts;
   res.render('blog', { articles, projectInfo, path: req.path });
 });
 
 
 
 router.route('/api/search').get(cors(), async (req, res) => {
-  const articles = blog.posts;
+  const articles = project.posts;
   const search = req.query.name.toLowerCase()
 
   if (search) {
@@ -67,7 +87,7 @@ router.route('/api/search').get(cors(), async (req, res) => {
 
 router.get('/blog/:filename', async (req, res) => {
   const slug = req.params.filename;
-  const postMetaData = blog.getPostMetadata(slug);
+  const postMetaData = project.getPostMetadata(slug);
 
   if (!postMetaData) {
     res.render('blog-not-found', slug);
@@ -78,7 +98,7 @@ router.get('/blog/:filename', async (req, res) => {
     { postMetaData },
     { projectInfo },
     {
-      content: await blog.renderMarkdown(slug),
+      content: await project.renderMarkdown(slug),
       path: req.path,
       layout: 'blog',
       isBlog: true,
