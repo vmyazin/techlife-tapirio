@@ -8,4 +8,12 @@ block content
       .col-sm-12
         h2 Наши выпуски
 
+        ul.episode-list
+          each item, ind in podcast.channel.item
+            li.selected-00
+              .num-and-title
+                span.episode-num №#{item.episodeNum}
+                |  
+                span.pseudo-link #{item.title}
+
   include partials/footer

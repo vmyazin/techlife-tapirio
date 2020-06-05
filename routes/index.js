@@ -12,7 +12,7 @@ let podcast = {};
 
 blog.init().then(() => {
   blog.sortBy({ property: "date", asc: false })
-  podcast = blog.podcastModule.json;
+  podcast = blog.podcastModule.json.rss;
 });
 
 router.get('/', (req, res) => {
