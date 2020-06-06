@@ -85,6 +85,30 @@ router.route('/api/episode/:id').get(cors(), async (req, res) => {
   res.json(result)
 })
 
+router.get('/episodes/:id', async (req, res) => {
+  const slug = req.params.id;
+  if (slug) {
+    result = episodes.find(obj => {
+      if (obj.episodeNum !== 'undefined') {
+        return obj.episodeNum === slug;
+      } else {
+        res.render('error');
+      }
+    })
+  } else {
+    result = []
+  }
+
+  res.render('episode', Object.assign({},
+    { projectInfo },
+    {
+      episode: result,
+      path: req.path,
+      layout: 'episode'
+    }
+  ));
+});
+
 router.get('/blog/:filename', async (req, res) => {
   const slug = req.params.filename;
   const postMetaData = project.getPostMetadata(slug);

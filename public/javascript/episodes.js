@@ -57,7 +57,6 @@
     }
 
     constructElement(episode) {
-      console.log(episode);
       const fragment = document.createDocumentFragment(),
             tagTitle = document.createElement("h3"),
             title = document.createTextNode(episode.title),
