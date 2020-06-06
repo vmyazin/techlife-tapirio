@@ -57,14 +57,18 @@
     }
 
     constructElement(episode) {
-      const tagTitle = document.createElement("h3");
-      const title = document.createTextNode(episode.title);
-      const tagCaption = document.createElement("h4");
-      const caption = document.createTextNode(episode['itunes:subtitle']);
-      const fragment = document.createDocumentFragment()
-      tagTitle.appendChild(title);
-      tagCaption.appendChild(caption);
-      fragment.appendChild(tagTitle)
+      console.log(episode);
+      const fragment = document.createDocumentFragment(),
+            tagTitle = document.createElement("h3"),
+            title = document.createTextNode(episode.title),
+            tagCaption = document.createElement("h4"),
+            caption = document.createTextNode(episode['itunes:subtitle']),
+            tagLink = document.createElement("a")
+            tagLink.href = '/episodes/' + episode.episodeNum
+
+      tagLink.appendChild(title)
+      tagCaption.appendChild(caption)
+      fragment.appendChild(tagTitle).appendChild(tagLink)
       fragment.appendChild(tagCaption)
       return fragment;
     }
