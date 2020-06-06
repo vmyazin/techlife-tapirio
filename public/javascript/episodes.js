@@ -1,4 +1,4 @@
-(function () {
+(async function () {
   class Episodes {
     constructor () {
       // this.searchEl.toggleAttribute('active')
@@ -6,10 +6,14 @@
       // this.episodeEl.addEventListener('click', this.showDetails.bind(this))
       // this.clearSearchEl.style.display = 'none'
 
-      const episodeEls = this;
 
-      Array.from(episodeEls.episodeEl).forEach(function(element) {
-        element.addEventListener('click', episodeEls.showDetails.bind(element))
+    }
+
+    async init() {
+      Array.from(this.episodeEl).forEach((element) => {
+        element.addEventListener('click', async () => {
+          await this.showDetails.bind(this, element)();
+        })
       });
     }
 
@@ -30,16 +34,36 @@
         })
     }
 
-    showDetails () {
-      // let epi = this.getEpisode(1)
-      console.log('details', this);
+    async showDetails (el) {
+      const li = el.parentNode.parentNode;
+      const id = li.getAttribute('data-episode-num');
+      if (this.currentEp) {
+        const oldEl = document.querySelector(`[data-episode-num='${this.currentEp}']`)
+        oldEl.classList.remove('selected');
+      }
+      this.currentEp = id;
+      if (!li.classList.contains('content-added')) {
+        const episode = await this.getEpisode(id);
+        li.appendChild(this.constructElement(episode));
+        li.classList.add('content-added');  
+      }
+      li.classList.add('selected')
+    }
+
+    constructElement(episode) {
+      const tag = document.createElement("div");
+      const text = document.createTextNode(episode.title);
+      tag.appendChild(text);
+      return tag;
     }
   }
 
-  document.addEventListener('DOMContentLoaded', init)
+  document.addEventListener('DOMContentLoaded', async () => await init())
 
-  function init() {
-    new Episodes()
+  async function init() {
+    const ep = new Episodes();
+    await ep.init();
+    
   }
 
 })()
