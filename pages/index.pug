@@ -10,10 +10,11 @@ block content
 
         ul.episode-list
           each item, ind in podcast.channel.item
-            li(data-episode-num=item.episodeNum).selected-00
+            li(data-episode-num=item.episodeNum)
               .num-and-title(title=item.pubDateConverted)
                 span.episode-num №#{item.episodeNum}
                 |  
                 span.show-episode.pseudo-link #{item.title}
+              .selected-box
 
   include partials/footer

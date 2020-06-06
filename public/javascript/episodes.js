@@ -37,24 +37,36 @@
     async showDetails (el) {
       const li = el.parentNode.parentNode;
       const id = li.getAttribute('data-episode-num');
+      const box = li.getElementsByClassName("selected-box")[0]
+
       if (this.currentEp) {
         const oldEl = document.querySelector(`[data-episode-num='${this.currentEp}']`)
+        const oldBox = oldEl.getElementsByClassName("selected-box")[0]
+        oldBox.innerHTML = ''
         oldEl.classList.remove('selected');
       }
+
       this.currentEp = id;
-      if (!li.classList.contains('content-added')) {
+      if (!li.classList.contains('selected')) {
         const episode = await this.getEpisode(id);
-        li.appendChild(this.constructElement(episode));
-        li.classList.add('content-added');  
+        box.appendChild(this.constructElement(episode));
+        li.classList.add('selected');  
+      } else {
+        li.classList.remove('selected');
       }
-      li.classList.add('selected')
     }
 
     constructElement(episode) {
-      const tag = document.createElement("div");
-      const text = document.createTextNode(episode.title);
-      tag.appendChild(text);
-      return tag;
+      const tagTitle = document.createElement("h3");
+      const title = document.createTextNode(episode.title);
+      const tagCaption = document.createElement("h4");
+      const caption = document.createTextNode(episode['itunes:subtitle']);
+      const fragment = document.createDocumentFragment()
+      tagTitle.appendChild(title);
+      tagCaption.appendChild(caption);
+      fragment.appendChild(tagTitle)
+      fragment.appendChild(tagCaption)
+      return fragment;
     }
   }
 
