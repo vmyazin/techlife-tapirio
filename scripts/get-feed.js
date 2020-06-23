@@ -7,9 +7,8 @@ class GetPodcastFeed {
     this.xmlSourcePath = xmlSourcePath;
   }
 
-  async convert() {
+  async convertXMLtoJSON() {
     const file = this.xmlSourcePath;
-    console.log(file);
     const string = fs.readFileSync(file, 'utf8')
     this.json = (await xmlParser.parseStringPromise(string));
     // this.podcastItems = this.json.someItems.ChangeThis.ChangeThis

@@ -14,7 +14,7 @@ class Project {
     if (params) {
       if (params.podcastFeedXml) {
         this.podcastModule = new GetPodcastFeed(params.podcastFeedXml);
-        this.podcastModule.convert();
+        this.podcastModule.convertXMLtoJSON();
       }
     }
   }
