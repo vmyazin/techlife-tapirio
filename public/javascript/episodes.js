@@ -5,8 +5,6 @@
       // this.searchEl.addEventListener('focus', this.activate.bind(this))
       // this.episodeEl.addEventListener('click', this.showDetails.bind(this))
       // this.clearSearchEl.style.display = 'none'
-
-
     }
 
     async init() {
@@ -55,20 +53,17 @@
         li.classList.remove('selected');
       }
     }
-
+    
     constructElement(episode) {
-      const fragment = document.createDocumentFragment(),
-            tagTitle = document.createElement("h3"),
-            title = document.createTextNode(episode.title),
-            tagCaption = document.createElement("h4"),
-            caption = document.createTextNode(episode['itunes:subtitle']),
-            tagLink = document.createElement("a")
-            tagLink.href = '/episodes/' + episode.episodeNum
-
-      tagLink.appendChild(title)
-      tagCaption.appendChild(caption)
-      fragment.appendChild(tagTitle).appendChild(tagLink)
-      fragment.appendChild(tagCaption)
+      const fragment = document.createElement('div'),
+            href = '/episodes/' + episode.episodeNum,
+            template = `<h3><span class="episode-num">№${episode.episodeNum}</span><a href="${href}">${episode.title}</a> <span class="small-caps date">${episode.pubDateConverted}</span></h3>
+                        <h4>${episode['itunes:subtitle']}</h4>
+                        <section class="episode-desc">${episode.description}</section>
+                        <div class="player">
+                          <p class="btn-play">Play</p>
+                        </div>`;
+      fragment.innerHTML = template;
       return fragment;
     }
   }
@@ -77,8 +72,7 @@
 
   async function init() {
     const ep = new Episodes();
-    await ep.init();
-    
+    await ep.init();    
   }
 
 })()
