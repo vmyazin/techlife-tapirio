@@ -494,6 +494,11 @@ pre {
   height: 10px;
   background: #ffffffcc;
   border-radius: 50px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #fff;
+  }
 
   .so-far {
     content: '';

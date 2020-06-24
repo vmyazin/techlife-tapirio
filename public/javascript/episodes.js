@@ -56,7 +56,7 @@
         li.classList.remove('selected');
       }
 
-      const player = new Player(li, episode.enclosure.$.url, this.everPlayer);
+      const player = new Player(li, episode, this.everPlayer);
     }
     
     constructElement(episode) {

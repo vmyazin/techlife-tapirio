@@ -1,8 +1,7 @@
 class Player {
-  constructor (element, source, everPlayer) {
+  constructor (element, episode, everPlayer) {
     this.everPlayer = everPlayer;
-    this.source = source;
-    console.log(element);
+    this.source = episode.enclosure.$.url;
     //this.audioPlayerEl = element.querySelector('#player')
     this.controls = {
       play: element.querySelector('.btn-play'),
@@ -10,7 +9,8 @@ class Player {
     this.started = false;
     this.controls.play.addEventListener('click', () => {
       if (!this.started) {
-        everPlayer.source = source;
+        everPlayer.source = episode.enclosure.$.url;
+        everPlayer.title = episode.title;
       }
       if (this.isPlaying) {
         this.everPlayer.pause()
@@ -30,20 +30,27 @@ class EverPlayer {
     this.container = document.querySelector('.player-wrapper')
     this.player = this.container.querySelector('#player')
     this.player.addEventListener('timeupdate', () => this.updateBar());
+    this.audioLoaded = false
     
     this.controls = {
       play: this.container.querySelector('.btn-play'),
       bar: this.container.querySelector('.progress-bard'),
       soFar: this.container.querySelector('.so-far'),
-      title: this.container.querySelector('title')
+      title: this.container.querySelector('.title')
     }
+    
+    this.player.addEventListener('canplay', () => {
+      this.audioLoaded = true
+      console.log(this.title)
+      this.controls.title.innerHTML = this.title
+    })
 
     this.controls.bar.addEventListener('click', (e) => {
       // from E find %
-      // const p = e.clientX-this.offsetLeft
       const percentagePlayed = e.offsetX / this.controls.bar.offsetWidth * 100
-      console.log(percentagePlayed + "%");
-      this.player.currentTime = percentagePlayed;
+      if (this.audioLoaded) {
+        this.player.currentTime = this.player.duration / 100 * percentagePlayed;
+      }
     });
 
     this.controls.play.addEventListener('click', () => {
@@ -69,7 +76,6 @@ class EverPlayer {
   }
   updateBar() {
     const progress = this.player.currentTime / this.player.duration * 100;
-    console.log("progress", progress);
     this.controls.soFar.style.width = progress + '%';
   }
 }
