@@ -342,7 +342,8 @@ pre {
     opacity: 0.7;
   }
 
-  &.is-playing {
+  &.is-playing,
+  &[data-is-playing="true"] {
     background-image: url(/images/btn-pause.svg);
     position: relative;
 
@@ -468,5 +469,40 @@ pre {
     columns: 1;
     -webkit-columns: 1;
     -moz-columns: 1;
+  }
+}
+
+// Player Player
+
+.player-wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 30px;
+  background-color: #000000dd;
+  display: flex;
+  align-items: center;
+}
+
+.progress-wrapper {
+  width: 100%;
+}
+
+.progress-bard {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background: #ffffffcc;
+  border-radius: 50px;
+
+  .so-far {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background-color: $highlight;
+    border-radius: 50px 0 0 50px;
   }
 }

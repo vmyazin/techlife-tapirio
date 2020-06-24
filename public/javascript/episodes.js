@@ -1,6 +1,7 @@
 (async function () {
   class Episodes {
     constructor () {
+      this.everPlayer = new EverPlayer();
       // this.searchEl.toggleAttribute('active')
       // this.searchEl.addEventListener('focus', this.activate.bind(this))
       // this.episodeEl.addEventListener('click', this.showDetails.bind(this))
@@ -10,7 +11,7 @@
     async init() {
       Array.from(this.episodeEl).forEach((element) => {
         element.addEventListener('click', async () => {
-          await this.showDetails.bind(this, element)();
+          await this.showDetails.bind(this, element)();          
         })
       });
     }
@@ -45,13 +46,17 @@
       }
 
       this.currentEp = id;
+
+      const episode = await this.getEpisode(id);
+
       if (!li.classList.contains('selected')) {
-        const episode = await this.getEpisode(id);
         box.appendChild(this.constructElement(episode));
         li.classList.add('selected');  
       } else {
         li.classList.remove('selected');
       }
+
+      const player = new Player(li, episode.enclosure.$.url, this.everPlayer);
     }
     
     constructElement(episode) {
@@ -61,8 +66,10 @@
                         <h4>${episode['itunes:subtitle']}</h4>
                         <section class="episode-desc">${episode.description}</section>
                         <div class="player">
+                          <audio src="${episode.enclosure.$.url}" id="player"></audio>
                           <p class="btn-play">Play</p>
-                        </div>`;
+                        </div>
+                        <progress id="seekbar" value="0" max="1" style="width:400px;"></progress>`;
       fragment.innerHTML = template;
       return fragment;
     }
