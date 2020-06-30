@@ -54,6 +54,7 @@
       if (!li.classList.contains('selected')) {
         box.appendChild(this.constructElement(episode));
         li.classList.add('selected');  
+        li.scrollIntoView({behavior: "smooth"})
       } else {
         li.classList.remove('selected');
       }
