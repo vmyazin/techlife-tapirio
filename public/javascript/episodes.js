@@ -10,9 +10,12 @@
     async init() {
       Array.from(this.episodeEl).forEach((element) => {
         element.addEventListener('click', async () => {
-          await this.showDetails.bind(this, element)();          
+          await this.showDetails.bind(this, element)();
         })
       });
+
+      // Показать самый свежий эпизод
+      this.showDetails(this.episodeEl[0]);
     }
 
     get episodeEl () {
