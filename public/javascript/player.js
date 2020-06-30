@@ -53,6 +53,10 @@ class EverPlayer {
       }
     })
 
+    this.player.addEventListener('ended', (event) => {
+      this.pause()
+    })
+
     // настроить функционал выбора позиции времени на прогресс-баре
     this.controls.bar.addEventListener('click', (e) => {
       const percentagePlayed = e.offsetX / this.controls.bar.offsetWidth * 100
