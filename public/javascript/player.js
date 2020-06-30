@@ -10,7 +10,7 @@ class Player {
     this.controls.play.addEventListener('click', () => {
       if (!this.started) {
         everPlayer.source = episode.enclosure.$.url;
-        everPlayer.title = episode.title;
+        everPlayer.title = episode.episodeNum + ': ' + episode.title;
       }
       if (this.isPlaying) {
         this.everPlayer.pause()
@@ -29,7 +29,7 @@ class EverPlayer {
     // console.log(element);
     this.container = document.querySelector('.player-wrapper')
     this.player = this.container.querySelector('#player')
-    this.player.addEventListener('timeupdate', () => this.updateBar());
+    this.player.addEventListener('timeupdate', () => this.updateBar())
     this.audioLoaded = false
     
     this.controls = {
@@ -41,17 +41,9 @@ class EverPlayer {
     
     this.player.addEventListener('canplay', () => {
       this.audioLoaded = true
-      console.log(this.title)
+      this.container.classList.add("active")
       this.controls.title.innerHTML = this.title
     })
-
-    this.controls.bar.addEventListener('click', (e) => {
-      // from E find %
-      const percentagePlayed = e.offsetX / this.controls.bar.offsetWidth * 100
-      if (this.audioLoaded) {
-        this.player.currentTime = this.player.duration / 100 * percentagePlayed;
-      }
-    });
 
     this.controls.play.addEventListener('click', () => {
       if (this.isPlaying) {
@@ -59,7 +51,15 @@ class EverPlayer {
       } else {
         this.play()
       }
-    });
+    })
+
+    // настроить функционал выбора позиции времени на прогресс-баре
+    this.controls.bar.addEventListener('click', (e) => {
+      const percentagePlayed = e.offsetX / this.controls.bar.offsetWidth * 100
+      if (this.audioLoaded) {
+        this.player.currentTime = this.player.duration / 100 * percentagePlayed;
+      }
+    })
   }  
   set source(s) {
     this.player.setAttribute('src', s);

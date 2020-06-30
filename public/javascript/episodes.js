@@ -5,7 +5,6 @@
       // this.searchEl.toggleAttribute('active')
       // this.searchEl.addEventListener('focus', this.activate.bind(this))
       // this.episodeEl.addEventListener('click', this.showDetails.bind(this))
-      // this.clearSearchEl.style.display = 'none'
     }
 
     async init() {
@@ -66,8 +65,7 @@
                         <h4>${episode['itunes:subtitle']}</h4>
                         <section class="episode-desc">${episode.description}</section>
                         <div class="player">
-                          <audio src="${episode.enclosure.$.url}" id="player"></audio>
-                          <p class="btn-play">Play</p>
+                          <div class="btn-play">Play</div>
                         </div>
                         <progress id="seekbar" value="0" max="1" style="width:400px;"></progress>`;
       fragment.innerHTML = template;

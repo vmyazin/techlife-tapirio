@@ -13,8 +13,9 @@ block content
             span.small-caps.date= episode.pubDateConverted
           h2 №#{episode.episodeNum} #{episode.title}
           h4= episode['itunes:subtitle']
-          .player
-            p.btn-play Play
+          
+          .player.my-3
+            .btn-play Play
           p.mb-4
             a(href=episode.enclosure.$.url download=episode.enclosure.$.url )
               span.mask-link-style
