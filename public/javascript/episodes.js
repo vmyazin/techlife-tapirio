@@ -10,12 +10,12 @@
     async init() {
       Array.from(this.episodeEl).forEach((element) => {
         element.addEventListener('click', async () => {
-          await this.showDetails.bind(this, element)();
+          await this.showDetails.bind(this, element)(true);
         })
       });
 
       // Показать самый свежий эпизод
-      this.showDetails(this.episodeEl[0]);
+      this.showDetails(this.episodeEl[0], false);
     }
 
     get episodeEl () {
@@ -35,7 +35,7 @@
         })
     }
 
-    async showDetails (el) {
+    async showDetails (el, scrollView) {
       const li = el.parentNode.parentNode;
       const id = li.getAttribute('data-episode-num');
       const box = li.getElementsByClassName("selected-box")[0]
@@ -53,8 +53,11 @@
 
       if (!li.classList.contains('selected')) {
         box.appendChild(this.constructElement(episode));
-        li.classList.add('selected');  
-        li.scrollIntoView({behavior: "smooth"})
+        li.classList.add('selected');
+
+        if (scrollView) {
+          li.scrollIntoView({ behavior: "smooth" })
+        }
       } else {
         li.classList.remove('selected');
       }
