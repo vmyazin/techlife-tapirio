@@ -14,6 +14,10 @@ body {
   font-family: 'Fira Sans', 'Helvetica Nueu', Arial, sans-serif;
   font-weight: 400;
   color: #fff;
+
+  &[class*="about"] {
+    background-image: url("/images/bg-lightning.jpg");
+  }
 }
 
 @media (max-width: $min-scr-width) {
