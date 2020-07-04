@@ -68,13 +68,12 @@
     constructElement(episode) {
       const fragment = document.createElement('div'),
             href = '/episodes/' + episode.episodeNum,
-            template = `<h3><span class="episode-num">№${episode.episodeNum}</span><a href="${href}">${episode.title}</a> <span class="small-caps date">${episode.pubDateConverted}</span></h3>
+            template = `<h3><span class="episode-num">№${episode.episodeNum}</span> <a href="${href}">${episode.title}</a> <span class="small-caps date">${episode.pubDateConverted}</span></h3>
                         <h4>${episode['itunes:subtitle']}</h4>
                         <section class="episode-desc">${episode.description}</section>
                         <div class="player">
                           <div class="btn-play">Play</div>
-                        </div>
-                        <progress id="seekbar" value="0" max="1" style="width:400px;"></progress>`;
+                        </div>`;
       fragment.innerHTML = template;
       return fragment;
     }
