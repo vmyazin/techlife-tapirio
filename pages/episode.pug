@@ -1,29 +1,34 @@
 extends layout
 
-block content
-  include partials/header
-  
+block content  
+  .container
+    .row
+      .text-center.w-100
+        include partials/_top-nav
+    include partials/_sec-nav
+
   #episode-details.container
     .row
       .col-sm-12.mt-2
-        div
-          p
-            a(aria-current='page' href='/') < на главную
-          h3
-            span.small-caps.date= episode.pubDateConverted
-          h2 №#{episode.episodeNum} #{episode.title}
-          h4= episode['itunes:subtitle']
-          
-          .player.my-3
-            .btn-play Play
-          p.mb-4
-            a(href=episode.enclosure.$.url download=episode.enclosure.$.url )
-              span.mask-link-style
-                img(src='/images/icon-download.svg' alt='Download')
-                |  
-              | Скачать MP3 файл
-          section.episode-desc
-            div !{episode.description}
+        h3
+          span.small-caps.date= episode.pubDateConverted
+        h2 №#{episode.episodeNum} #{episode.title}
+        h4= episode['itunes:subtitle']
+        
+        .player.my-3
+          .btn-play Play
+        p.mb-4
+          a(href=episode.enclosure.$.url download=episode.enclosure.$.url )
+            span.mask-link-style
+              img(src='/images/icon-download.svg' alt='Download')
+              |  
+            | Скачать MP3 файл
+        section.episode-desc
+          div !{episode.description}
+
+  .mb-5
+
+  include partials/header
 
   include partials/footer
 
