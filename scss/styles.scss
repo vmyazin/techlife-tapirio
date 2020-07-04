@@ -15,7 +15,8 @@ body {
   font-weight: 400;
   color: #fff;
 
-  &[class*="about"] {
+  &[class*="about"],
+  &[class*="resources"] {
     background-image: url("/images/bg-lightning.jpg");
   }
 }
@@ -35,7 +36,7 @@ body {
   white-space: nowrap;
 }
 
-p {
+p, li {
   font-size: $font-s3;
   color: #F2F2F2;
   line-height: 1.35;
@@ -126,7 +127,7 @@ h3 + h2 {
 }
 
 @media (min-width: $min-scr-width) and (max-width: $scr-width-sm) {
-  p {
+  p, li {
     font-size: $font-s4;
   }
 

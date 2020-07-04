@@ -40,6 +40,10 @@ html
         meta(property='og:image' content='/images/og-image.jpg')
 
   body(class=path)
-    block content
+    .master-container
+      .container-fluid
+        h1
+          a.reset-link-style(href="/")
+            img(src='/images/tehnologii-head.svg' alt='Технологии и жизнь')
+      block content
     
-    include partials/_player

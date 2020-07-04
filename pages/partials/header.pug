@@ -1,26 +1,26 @@
-.master-container
-  .container-fluid
-    h1
-      a.reset-link-style(href="/")
-        img(src='/images/tehnologii-head.svg' alt='Технологии и жизнь')
-    .row
-      .col-lg-4.col-md-6
-        .spacer-xs.spacer-sm
-        .spacer-xs.spacer-sm
-        p
-          | Интернет радио-программа (или 
-          b подкаст
-          | ) про современные технологии, их влияние на нашу жизнь, и прочие мысли.
-        p
-          a.link-ext(href='https://t.me/techlifepodcast' rel='external')  t.me/techlifepodcast 
-          br
-          a.link-ext(href='mailto:talk@techlifepodcast.com' rel='external')  talk@techlifepodcast.com 
-        .spacer-lg
-      .col-lg-4.col-md-6
-        p
-          b Ведущие:
-          br
-          a(href='/about') Дмитрий Здоров и Василий Мязин.
-      .col-lg-4.col-md-12
-        include _subscribe-links
-        
+.container-fluid
+  .row
+    .col-lg-4.col-md-6
+      .spacer-xs.spacer-sm
+      .spacer-xs.spacer-sm
+      p
+        | Интернет радио-программа (или 
+        b подкаст
+        | ) про современные технологии, их влияние на нашу жизнь, и прочие мысли.
+      p
+        a.link-ext(href='https://t.me/techlifepodcast' rel='external')  t.me/techlifepodcast 
+        br
+        a.link-ext(href='mailto:talk@techlifepodcast.com' rel='external')  talk@techlifepodcast.com 
+      .spacer-lg
+    .col-lg-4.col-md-6
+      nav.mb-4
+        ul.bulleted
+          li
+            a(href="/resources") Ресурсы
+      p
+        b Ведущие:
+        br
+        a(href='/about') Дмитрий Здоров и Василий Мязин.
+    .col-lg-4.col-md-12
+      include _subscribe-links
+      

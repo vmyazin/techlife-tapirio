@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .container.page
+    .blog-content
+      include partials/_sec-nav
+      .row
+        .col-8
+          h2 Ресурсы
+          h3 Дополнительные материалы в качестве приложения к подкасту
+          .my-5
+          p В этой секции мы будем размещать статьи, картинки, ссылки, и прочие контент, который не вошёл в другие страницы нашего сайта.
+      .row
+        .col
+          ul.bulleted
+            li
+              a(href="https://www.ocenaudio.com") Ocenaudio: прекрасный редактор аудио для Мака (бесплатный!)
+
+  .mt-5
+  .spacer-lg
+  include partials/header
+
+  include partials/footer

@@ -53,8 +53,8 @@ router.get('/about', (req, res) => {
   res.render('about', { projectInfo, path: req.path });
 });
 
-router.get('/contact', (req, res) => {
-  res.render('contact', { projectInfo, path: req.path });
+router.get('/resources', (req, res) => {
+  res.render('resources', { projectInfo, path: req.path });
 });
 
 router.get('/blog', async (req, res) => {
