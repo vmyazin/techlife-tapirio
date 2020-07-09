@@ -39,7 +39,7 @@ body {
 p, li {
   font-size: $font-s3;
   color: #F2F2F2;
-  line-height: 1.35;
+  line-height: 1.5;
 }
 
 p.small {
@@ -528,4 +528,9 @@ pre {
   .badge {
     font-size: 100%;
   }
+}
+
+.avatar {
+  border-radius: 50%;
+  max-width: 150px;
 }
