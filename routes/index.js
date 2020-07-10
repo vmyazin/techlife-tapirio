@@ -34,7 +34,7 @@ project.init().then(() => {
 
 router.get('/', (req, res) => {
   const articles = project.posts;
-  res.render('index', { podcast, articles, projectInfo, path: req.path });
+  res.render('index', { podcast, articles, projectInfo, path: "home" });
 });
 
 router.get('/tags', async (req, res) => {
