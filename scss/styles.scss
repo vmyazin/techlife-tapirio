@@ -39,7 +39,7 @@ body {
 p, li {
   font-size: $font-s3;
   color: #F2F2F2;
-  line-height: 1.35;
+  line-height: 1.5;
 }
 
 p.small {
@@ -79,7 +79,7 @@ a.link-ext {
 
 h1 {
   text-align: center;
-  margin: 1% 0;
+  margin: 0 0 1% 0;
 }
 
 h2 {
@@ -167,6 +167,43 @@ pre {
 .master-container {
   max-width: $max-scr-width;
   margin: 0 auto;
+}
+
+.top-nav {
+  margin-bottom: -1rem;
+}
+
+.nav-pill {
+  display: inline-block;
+  background-color: $dark-grey;
+  text-decoration: none;
+  border: 0;
+  border-radius: 3px;
+  color: $light-grey;
+  padding: 8px 20px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.07rem;
+
+  svg {
+    margin: -5px 0 0;
+  }
+
+  &.active {
+    color: $highlight;
+
+    path {
+      fill: $highlight;
+    }
+  }
+}
+
+@media screen and (max-width: $scr-width-sm) {
+  .nav-pill {
+    svg {
+      height: 22px;
+    }
+  }  
 }
 
 .episode-list {
@@ -528,4 +565,9 @@ pre {
   .badge {
     font-size: 100%;
   }
+}
+
+.avatar {
+  border-radius: 50%;
+  max-width: 150px;
 }

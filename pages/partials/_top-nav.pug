@@ -1,7 +1,12 @@
-nav.mt-3.mb-4
-  ul.list-inline
-    li.list-inline-item
-      a(href="/about").badge.badge-pill.badge-light О нас
-    li.list-inline-item
-      a(href="/resources").badge.badge-pill.badge-light Pecypcы
+.d-flex.flex-column.align-items-end.top-nav
+  nav.mt-3
+    ul.list-inline
+      li.list-inline-item
+        a.nav-pill(href="/" class=(path.includes('home') ? 'active' : ''))
+          //- img(src="/images/icon-home.svg", alt="Домашняя")
+          include ../../public/images/icon-home.svg
+      li.list-inline-item
+        a.nav-pill(href="/about" class=(path.includes('about') ? 'active' : '')) О нас
+      li.list-inline-item
+        a.nav-pill(href="/resources" class=(path.includes('resources') ? 'active' : '')) Pecypcы
 
