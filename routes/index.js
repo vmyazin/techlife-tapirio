@@ -37,42 +37,21 @@ router.get('/', (req, res) => {
   res.render('index', { podcast, articles, projectInfo, path: "home" });
 });
 
-router.get('/tags', async (req, res) => {
-  const tags = project.tags;
-  res.render('tags', { tags, projectInfo, path: req.path });
-});
-
-router.get('/tags/:tag', async (req, res) => {
-  const tag = req.params.tag;
-  const tags = project.tags;
-  const articles = await project.getPostsByTag(tag);
-  res.render('tag', { tag, tags, articles, projectInfo, path: req.path });
-});
-
 router.get('/about', (req, res) => {
-  res.render('about', { projectInfo, path: req.path });
+  res.render('about', {
+    projectInfo,
+    path: req.path,
+    pageTitle: 'О нас'
+ });
 });
 
 router.get('/resources', (req, res) => {
-  res.render('resources', { projectInfo, path: req.path });
+  res.render('resources', {
+    projectInfo,
+    path: req.path,
+    pageTitle: 'Ресурсы'
+  });
 });
-
-router.get('/blog', async (req, res) => {
-  const articles = project.posts;
-  res.render('blog', { articles, projectInfo, path: req.path });
-});
-
-router.route('/api/search').get(cors(), async (req, res) => {
-  const articles = project.posts;
-  const search = req.query.name.toLowerCase()
-
-  if (search) {
-    results = articles.filter((a) => (a.title + a.description + a.author).toLowerCase().includes(search));
-  } else {
-    results = []
-  }
-  res.json(results)
-})
 
 router.route('/api/episode/:id').get(cors(), async (req, res) => {
   if (req.params.id) {
@@ -104,9 +83,40 @@ router.get('/episodes/:id', async (req, res) => {
     {
       episode: result,
       path: req.path,
+      isEpisodePage: true,
       layout: 'episode'
     }
   ));
+
+  router.get('/tags', async (req, res) => {
+    const tags = project.tags;
+    res.render('tags', { tags, projectInfo, path: req.path });
+  });
+
+  router.get('/tags/:tag', async (req, res) => {
+    const tag = req.params.tag;
+    const tags = project.tags;
+    const articles = await project.getPostsByTag(tag);
+    res.render('tag', { tag, tags, articles, projectInfo, path: req.path });
+  });
+
+  router.get('/blog', async (req, res) => {
+    const articles = project.posts;
+    res.render('blog', { articles, projectInfo, path: req.path });
+  });
+
+  router.route('/api/search').get(cors(), async (req, res) => {
+    const articles = project.posts;
+    const search = req.query.name.toLowerCase()
+
+    if (search) {
+      results = articles.filter((a) => (a.title + a.description + a.author).toLowerCase().includes(search));
+    } else {
+      results = []
+    }
+    res.json(results)
+  })
+
 });
 
 router.get('/blog/:filename', async (req, res) => {

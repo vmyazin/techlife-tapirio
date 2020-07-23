@@ -20,13 +20,21 @@ html
 
     //- check if projectInfo object is present, a lot depends on it
     if projectInfo
-      if isBlogPost
+      if isEpisodePage
+        title №#{episode.episodeNum} #{episode.title} • #{projectInfo.project.title}
+      else if isBlogPost
         title #{postMetaData.title} • #{projectInfo.project.title}
+      else if path == 'home'
+        title #{projectInfo.project.title}
       else
-        title= projectInfo.project.title
+        title #{projectInfo.project.title} • #{pageTitle}
     
       meta(property='og:type' content='website')
-      if isBlogPost
+      if isEpisodePage
+        meta(property='og:title' content='№' + episode.episodeNum + ' ' + episode.title + ' • ' + projectInfo.project.title)
+        meta(property='og:description' content=episode['itunes:subtitle'])
+        meta(property='og:url' content=path)
+      else if isBlogPost
         meta(property='og:title' content=postMetaData.title)
         meta(property='og:description' content=projectInfo.project.title)
         meta(property='og:url' content=path)
