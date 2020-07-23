@@ -368,6 +368,10 @@ pre {
   p {
     font-size: $font-s4;
     color: $mid-grey;
+    
+    @media screen and (max-width: $scr-width-sm) {
+      font-size: $font-s5;
+    }
   }
 }
 
