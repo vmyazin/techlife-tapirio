@@ -8,6 +8,18 @@
     }
 
     async init() {
+      if (location.pathname == '/') {
+        await this.initHomePage()
+      } else if (location.pathname.includes('episode')) {
+        await this.initPlayer()
+      }
+    }
+
+    async initPlayer(episode) {
+      const player = new Player(document.querySelector('.player'), window.currentEpisode, this.everPlayer);
+    }
+
+    async initHomePage() {
       Array.from(this.episodeEl).forEach((element) => {
         element.addEventListener('click', async () => {
           await this.showDetails.bind(this, element)(true);
