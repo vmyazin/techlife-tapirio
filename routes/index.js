@@ -4,7 +4,7 @@ const router = express.Router();
 router.blogPath = './content/articles/';
 const Project = require('../scripts/app.functions');
 const project = new Project(router.blogPath, {
-  podcastFeedXml: './public/podcast-feed.xml'
+  podcastFeedXml: __dirname + '/../public/podcast-feed.xml'
 });
 
 const moment = require('moment');
