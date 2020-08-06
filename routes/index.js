@@ -1,7 +1,7 @@
 const cors = require('cors')
 const express = require('express');
 const router = express.Router();
-router.blogPath = './content/articles/';
+router.blogPath = __dirname + '/../content/articles/';
 const Project = require('../scripts/app.functions');
 const project = new Project(router.blogPath, {
   podcastFeedXml: __dirname + '/../public/podcast-feed.xml'
