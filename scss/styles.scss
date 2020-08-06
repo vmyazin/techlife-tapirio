@@ -359,6 +359,16 @@ pre {
   li {
     padding-left: 0;
     margin-left: 20px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+
+    a {
+      color: $light-grey;
+
+      b {
+        color: white;
+      }
+    }
   }
 }
 
