@@ -443,7 +443,7 @@ pre {
   }
 }
 
-// episode nav
+// Episode Nav
 
 .episode-nav {
   font-size: $font-s4;
@@ -453,6 +453,7 @@ pre {
     border: 0;
     display: inline-block;
     position: relative;
+    line-height: 1.4;
 
     .arrow {
       height: 60px;
@@ -476,9 +477,27 @@ pre {
   .num {
     color: $highlight;
   }
+
+  @media (max-width: $scr-width-sm) {
+    padding: 0 25px;
+
+    a {
+      .arrow {
+        height: 40px;
+
+        &.prev {
+          left: -30px;
+        }
+        &.next {
+          right: -30px;
+        }
+      }
+    }
+  }
 }
 
 // 404
+
 .huge {
   font-size: 260px;
   line-height: 1;
