@@ -1,14 +1,14 @@
-.episode-nav
-  .row.mt-5
-    .col-6.col-md-4
-      a(href='/episodes/45')
-        img.arrow.prev(src='/images/big-thin-angle.svg' alt='На предыдущий')
-        b №45
-        br
-        | Виртуальности
-    .col-6.offset-md-4.col-md-4
-      a(href='/episodes/47')
-        b №47
-        br
-        | JRE
-        img.arrow.next(src='/images/big-thin-angle.svg' alt='На следующий')
+.episode-nav.d-flex.justify-content-between.w-100.flex-row.my-5
+  if nextEpisode
+    a(href='/episodes/' + nextEpisode.episodeNum)
+      img.arrow.prev(src='/images/big-thin-angle.svg' alt='На предыдущий')
+      b.num №#{nextEpisode.episodeNum}
+      br
+      | #{nextEpisode.title}
+  .px-4
+  if prevEpisode
+    a(href='/episodes/' + prevEpisode.episodeNum)
+      b.num №#{prevEpisode.episodeNum}
+      br
+      | #{prevEpisode.title}
+      img.arrow.next(src='/images/big-thin-angle.svg' alt='На следующий')

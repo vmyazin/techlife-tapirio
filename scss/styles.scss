@@ -447,7 +447,7 @@ pre {
 
 .episode-nav {
   font-size: $font-s4;
-  margin: 0 50px;
+  padding: 0 50px;
 
   a {
     border: 0;
@@ -471,6 +471,10 @@ pre {
     &:hover {
       opacity: .8;
     }
+  }
+
+  .num {
+    color: $highlight;
   }
 }
 

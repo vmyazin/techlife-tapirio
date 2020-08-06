@@ -66,58 +66,58 @@ router.route('/api/episode/:id').get(cors(), async (req, res) => {
 
 router.get('/episodes/:id', async (req, res) => {
   const slug = req.params.id;
+  
   if (slug) {
-    result = episodes.find(obj => {
-      if (obj.episodeNum !== 'undefined') {
-        return obj.episodeNum === slug;
-      } else {
-        res.render('error');
-      }
-    })
-  } else {
-    result = []
-  }
+    const i = episodes.findIndex(obj => obj.episodeNum === slug);
+    const episode = episodes[i];
+    const nextEpisode = episodes[i + 1];
+    const prevEpisode = episodes[i - 1];
 
-  res.render('episode', Object.assign({},
-    { projectInfo },
-    {
-      episode: result,
-      path: req.path,
-      isEpisodePage: true,
-      layout: 'episode'
+    if (episode) {
+      res.render('episode', Object.assign({},
+        { projectInfo },
+        {
+          episode, nextEpisode, prevEpisode,
+          path: req.path,
+          isEpisodePage: true,
+          layout: 'episode'
+        }
+      )) 
+      return;
     }
-  ));
-
-  router.get('/tags', async (req, res) => {
-    const tags = project.tags;
-    res.render('tags', { tags, projectInfo, path: req.path });
+   }
+   res.render('error beach');
   });
-
-  router.get('/tags/:tag', async (req, res) => {
-    const tag = req.params.tag;
-    const tags = project.tags;
-    const articles = await project.getPostsByTag(tag);
-    res.render('tag', { tag, tags, articles, projectInfo, path: req.path });
-  });
-
-  router.get('/blog', async (req, res) => {
-    const articles = project.posts;
-    res.render('blog', { articles, projectInfo, path: req.path });
-  });
-
-  router.route('/api/search').get(cors(), async (req, res) => {
-    const articles = project.posts;
-    const search = req.query.name.toLowerCase()
-
-    if (search) {
-      results = articles.filter((a) => (a.title + a.description + a.author).toLowerCase().includes(search));
-    } else {
-      results = []
-    }
-    res.json(results)
-  })
-
+  
+router.get('/tags', async (req, res) => {
+  const tags = project.tags;
+  res.render('tags', { tags, projectInfo, path: req.path });
 });
+
+router.get('/tags/:tag', async (req, res) => {
+  const tag = req.params.tag;
+  const tags = project.tags;
+  const articles = await project.getPostsByTag(tag);
+  res.render('tag', { tag, tags, articles, projectInfo, path: req.path });
+});
+
+router.get('/blog', async (req, res) => {
+  const articles = project.posts;
+  res.render('blog', { articles, projectInfo, path: req.path });
+});
+
+router.route('/api/search').get(cors(), async (req, res) => {
+  const articles = project.posts;
+  const search = req.query.name.toLowerCase()
+
+  if (search) {
+    results = articles.filter((a) => (a.title + a.description + a.author).toLowerCase().includes(search));
+  } else {
+    results = []
+  }
+  res.json(results)
+});
+
 
 router.get('/blog/:filename', async (req, res) => {
   const slug = req.params.filename;
