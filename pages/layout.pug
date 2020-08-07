@@ -47,7 +47,7 @@ html
       if isEpisodePage
         if episode.shareImg
           meta(property='og:image' content=episode.shareImg)
-      if isBlogPost && postMetaData.image !== undefined
+      else if isBlogPost && postMetaData.image !== undefined
         meta(property='og:image' content=postMetaData.image)
       else
         meta(property='og:image' content='/images/og-techlife-artwork-1200.jpg')
