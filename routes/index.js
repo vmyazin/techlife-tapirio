@@ -6,6 +6,7 @@ const Project = require('../scripts/app.functions');
 const project = new Project(router.blogPath, {
   podcastFeedXml: __dirname + '/../public/podcast-feed.xml'
 });
+const { parse } = require('node-html-parser');
 
 const moment = require('moment');
 require('moment/locale/ru');
@@ -27,7 +28,15 @@ project.init().then(() => {
     episode.title = episode.title.replace(episodeNumber + ": ", ""); 
     // add neat episode date in Russian
     episode.pubDateConverted = moment(episode.pubDate).locale('ru').format("LL"); 
-    
+
+    // get first available image for sharing
+    const root = parse(episode.description)
+    img = root.querySelector('img')
+    if (img !== null) {
+      const url = img.getAttribute('src')
+      episode.shareImg = url
+    }
+
     return episode;
   })
 });

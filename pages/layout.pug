@@ -31,7 +31,7 @@ html
     
       meta(property='og:type' content='website')
       if isEpisodePage
-        meta(property='og:title' content='№' + episode.episodeNum + ' ' + episode.title + ' • ' + projectInfo.project.title)
+        meta(property='og:title' content=projectInfo.project.title + ' • №' + episode.episodeNum + ' ' + episode.title)
         meta(property='og:description' content=episode['itunes:subtitle'])
         meta(property='og:url' content=path)
       else if isBlogPost
@@ -42,6 +42,11 @@ html
         meta(property='og:title' content=projectInfo.project.description + ' • ' + projectInfo.project.title)
         meta(property='og:url' content='/')
         meta(property='og:description' content=projectInfo.project.description)
+
+      //- OG:Image
+      if isEpisodePage
+        if episode.shareImg
+          meta(property='og:image' content=episode.shareImg)
       if isBlogPost && postMetaData.image !== undefined
         meta(property='og:image' content=postMetaData.image)
       else
