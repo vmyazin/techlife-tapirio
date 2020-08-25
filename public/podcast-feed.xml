@@ -29,6 +29,21 @@
     <!-- начало эпизодов -->
 				
     <item>
+      <title>#51: Провода и как уйти от Эппл</title>
+      <itunes:subtitle>Обсудили зарядные устройства, цветные провода, причины отказаться от айфона в пользу андроида, а может даже перестать пользоваться маком</itunes:subtitle>
+      <description>
+        <![CDATA[<p><b>Заметки к эпизоду:</b></p><p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep51-hyppr.jpg" width="640" height="480"></p><ul class="bulleted"><li><a href="https://www.amazon.com/Charger-Hyppr-Macbook-Foldable-Compatible/dp/B087B6YJYJ">Зарядка Hyppr 100W USB-C</a></li><li><a href="http://digitrode.ru/articles/1132-chto-takoe-tehnologiya-gan-dlya-sozdaniya-silovyh-komponentov.html">Технология GaN</a></li><li><a href="https://www.dream-cables.com/shop/custom-cables/custom-usb-cables/">Цветные провода</a></li><li><a href="https://www.mi.com/ru/redmi-9/">Xiaomi Redmi 9</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
+      </description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/880890112-techlifepodcast-episode-51-provoda.mp3" length="42496399"/>
+      <guid>ac73ebba-82a8-49ae-a6e0-1a0df1bab75a</guid>
+      <itunes:duration>0:44:15</itunes:duration>
+      <itunes:explicit>clean</itunes:explicit>
+      <pubDate>Sun, 23 Aug 2020 00:05:00 EST</pubDate>
+    </item>
+
+    <!-- разделитель эпизодов -->
+				
+    <item>
       <title>#50: Кино</title>
       <itunes:subtitle>Важнейшее из искусств</itunes:subtitle>
       <description>
@@ -103,259 +118,259 @@
 
     <!-- разделитель эпизодов -->
 				
-    <item>
-      <title>#45: Виртуальности</title>
-      <itunes:subtitle>Замена реального в наши дни</itunes:subtitle>
-      <description>
+	  <item>
+	    <title>#45: Виртуальности</title>
+	    <itunes:subtitle>Замена реального в наши дни</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Ссылки к эпизоду:</b></p><ul class="bulleted"><li><a href="https://shirt-pocket.com/SuperDuper/SuperDuperDescription.html">SuperDuper</a></li><li><a href="https://jumpdesktop.com/">Jump Desktop</a></li><li><a href="https://www.remotemouse.net/">emoteMousePro</a></li><li><a href="https://www.kinopoisk.ru/film/1143242/">Фильм “Джентельмены” (2019)</a></li><li><a href="https://www.kinopoisk.ru/series/574688/">Телесериал Homeland (“Родина”) (2011 – 2020)</a></li><li><a href="https://www.youtube.com/watch?v=1tyrxFfQT5k">Русские Грузины Парфенова</a></li><li><a href="https://www.patternbrands.com/">Cтудия patternbrands.com</a></li><li><a href="https://www.kinopoisk.ru/film/1190387/">Фильм “Extraction” (2020)</a></li><li><a href="https://www.kinopoisk.ru/film/1162604/">Фильм “Спутник” (2020)</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/815961712-techlifepodcast-techlife-45-virtualnosti.mp3" length="31954446"/>
-      <guid>8f067fac-ed0b-4f3a-bd42-68c998726375</guid>
-      <itunes:duration>0:33:16</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Fri, 08 May 2020 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/815961712-techlifepodcast-techlife-45-virtualnosti.mp3" length="31954446"/>
+	    <guid>8f067fac-ed0b-4f3a-bd42-68c998726375</guid>
+	    <itunes:duration>0:33:16</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Fri, 08 May 2020 00:05:00 EST</pubDate>
     </item>
 
     <!-- разделитель эпизодов -->
 				
-    <item>
-      <title>#44: Творчество как лесной пожар</title>
-      <itunes:subtitle>Что и как можно делать по-новому</itunes:subtitle>
-      <description>
+	  <item>
+	    <title>#44: Творчество как лесной пожар</title>
+	    <itunes:subtitle>Что и как можно делать по-новому</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Ссылки к эпизоду:</b></p><ul class="bulleted"><li><a href="https://a16z.com/2020/04/18/its-time-to-build/">Марк Андриссен, который сделал браузер Mosaic и статья Время создавать</a></li><li><a href="https://stratechery.com/2020/how-tech-can-build/">Как техсектор может созадавать — Stratechery by Ben Thomposon</a></li><li><a href="https://www.youtube.com/user/Fotki2">Игорь Шойфот на YouTube</a></li><li><a href="https://ru.wikipedia.org/wiki/Automattic">Компания Аутоматтик и Мэтт Мулленвег</a></li><li><a href="https://www.makarovcomedy.com">Михаил Макаров, русский комик в США</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/807138463-techlifepodcast-episode-44-tvorchestvo-kak-lesnoj-pozhar.mp3" length="33911496"/>
-      <guid>a4d5d43c-4033-4232-a610-e594b5a36bc9</guid>
-      <itunes:duration>0:35:18</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Sat, 25 Apr 2020 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/807138463-techlifepodcast-episode-44-tvorchestvo-kak-lesnoj-pozhar.mp3" length="33911496"/>
+	    <guid>a4d5d43c-4033-4232-a610-e594b5a36bc9</guid>
+	    <itunes:duration>0:35:18</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Sat, 25 Apr 2020 00:05:00 EST</pubDate>
     </item>
 
     <!-- разделитель эпизодов -->
 				
-    <item>
-      <title>#43: Корона новой империи</title>
-      <itunes:subtitle>Гусары, ни слова о короне</itunes:subtitle>
-      <description>
+	  <item>
+	    <title>#43: Корона новой империи</title>
+	    <itunes:subtitle>Гусары, ни слова о короне</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Заметки к эпизоду:</b></p><ul class="bulleted"><li><a href="https://thedimka.livejournal.com/536055.html">Рассказ Эдварда Форстера Машина останавливается</a></li><li>Лесной пожар и гигантские Секвои</li><li><a href="https://ru.wikipedia.org/wiki/Первому_игроку_приготовиться_(роман)">Книга: Эрнест Клайн - Первому игроку приготовиться</a></li><li><a href="https://zoom.us/">Zoom</a></li><li>Бизнесы которые вырастут</li><li>Urban Farming</li><li>Культурная революция</li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
-      </description>
-      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/797939377-techlifepodcast-episode-43-korona-novoj-imperii.mp3" length="34903603"/>
-      <guid>710c0a5b-bf2d-46bc-9588-911792b0062b</guid>
-      <itunes:duration>0:36:20</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Mon, 13 Apr 2020 00:05:00 EST</pubDate>
+       </description>
+	    <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/797939377-techlifepodcast-episode-43-korona-novoj-imperii.mp3" length="34903603"/>
+	    <guid>710c0a5b-bf2d-46bc-9588-911792b0062b</guid>
+	    <itunes:duration>0:36:20</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Mon, 13 Apr 2020 00:05:00 EST</pubDate>
     </item>
 
-    <!-- разделитель эпизодов -->
-			
-    <item>
-      <title>#42: Дано ли Яндексу предугадать?</title>
-      <itunes:subtitle>“Как поиск в Яндексе стал еще умнее” со специальным гостем Сергеем Юдиным</itunes:subtitle>
-      <description>
-        <![CDATA[<p><b>Заметки к эпизоду:</b></p><ul class="bulleted"><li><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep42-skypecall.jpg" width="420" height="254"></li><li><a href="https://yandex.ru">yandex.ru</a></li><li><a href="https://toloka.yandex.ru/">Яндекс Толока</a></li><li><a href="https://www.corpus.ru/products/maks-tegmark-zhizn-3-0-chelovek-ehpoha-iskusstv-intellekta.htm">Макс Тегмарг - Жизнь 3.0</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
-      </description>
-      <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/768235954-techlifepodcast-episode-42-yandex.mp3" length="39415601"/>
-      <guid>8c2fe2aa-4fd4-4b22-849e-cb68a3b69f84</guid>
-      <itunes:duration>0:41:02</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Fri, 28 Feb 2020 00:05:00 EST</pubDate>
-    </item>
-   
     <!-- далее список архивных эпизодов -->
   
     <!-- разделитель эпизодов -->
+			
+  	<item>
+	    <title>#42: Дано ли Яндексу предугадать?</title>
+	    <itunes:subtitle>“Как поиск в Яндексе стал еще умнее” со специальным гостем Сергеем Юдиным</itunes:subtitle>
+	    <description>
+        <![CDATA[<p><b>Заметки к эпизоду:</b></p><ul class="bulleted"><li><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep42-skypecall.jpg" width="420" height="254"></li><li><a href="https://yandex.ru">yandex.ru</a></li><li><a href="https://toloka.yandex.ru/">Яндекс Толока</a></li><li><a href="https://www.corpus.ru/products/maks-tegmark-zhizn-3-0-chelovek-ehpoha-iskusstv-intellekta.htm">Макс Тегмарг - Жизнь 3.0</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
+      </description>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-42-Yandex.mp3" length="39415601"/>
+	    <guid>8c2fe2aa-4fd4-4b22-849e-cb68a3b69f84</guid>
+	    <itunes:duration>0:41:02</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Fri, 28 Feb 2020 00:05:00 EST</pubDate>
+    </item>
+   
+    <!-- разделитель эпизодов -->
 	
-    <item>
-      <title>#41: Кибертрак</title>
-      <itunes:subtitle>Насколько Тесла пойдёт</itunes:subtitle>
-      <description>
+	  <item>
+	    <title>#41: Кибертрак</title>
+	    <itunes:subtitle>Насколько Тесла пойдёт</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Заметки к эпизоду:</b></p><ul class="bulleted"><li><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep41-cybertruck.jpg" width="620" height="310"></li><li><a href="https://tesla.com/cybertruck/">Тесла Кибертрак</a> - Официальный сайт</li><li><a href="https://youtube.com/watch?v=9P_1_oLGREM">Видео презентации кибертрака</a></li><li><a href="https://g.co/fi/r/AA7NC9">fi.google.com</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-41-Cybertruck.mp3" length="14771864"/>
-      <guid>3fc96100-4943-41d0-9651-43f1b140e0a7</guid>
-      <itunes:duration>0:15:18</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Sun, 2 Feb 2020 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-41-Cybertruck.mp3" length="14771864"/>
+	    <guid>3fc96100-4943-41d0-9651-43f1b140e0a7</guid>
+	    <itunes:duration>0:15:18</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Sun, 2 Feb 2020 00:05:00 EST</pubDate>
     </item>
 
     <!-- разделитель эпизодов -->
 	
-    <item>
-      <title>#40: Плюшки с Маком</title>
-      <itunes:subtitle>Можно ли мак купить дешевле, и что ещё можно попробовать</itunes:subtitle>
-      <description>
+	  <item>
+	    <title>#40: Плюшки с Маком</title>
+	    <itunes:subtitle>Можно ли мак купить дешевле, и что ещё можно попробовать</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Заметки к эпизоду:</b></p><ul class="bulleted"><li><a href="https://www.picogear.com/store/picomic-kit-dual/">Беспроводной микрофон PicoMic</a></li><li><a href="https://sixcolors.com/post/2018/03/its-not-quite-a-mac-mini-but-its-my-server/">Хакинтош на основе мини компьютера Intel NUC</a></li><li><a href="http://wiki.osx86project.org/wiki/index.php/Main_Page">wiki.osx86project.org</a></li><li><a href="https://www.samsung.com/ru/apps/samsung-dex/">Система Samsung Dex</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-40-Plyushki-s-makom.mp3" length="22499584"/>
-      <guid>94144cc8-b903-46b1-a612-daeb7bf495f8</guid>
-      <itunes:duration>0:23:21</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Sun, 5 Jan 2020 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-40-Plyushki-s-makom.mp3" length="22499584"/>
+	    <guid>94144cc8-b903-46b1-a612-daeb7bf495f8</guid>
+	    <itunes:duration>0:23:21</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Sun, 5 Jan 2020 00:05:00 EST</pubDate>
     </item>
    
     <!-- разделитель эпизодов -->
 		
-    <item>
-      <title>#39: Ресайклинг</title>
-      <itunes:subtitle>Имеет ли всё это смысл или это хайп</itunes:subtitle>
-      <description>
+	  <item>
+	    <title>#39: Ресайклинг</title>
+	    <itunes:subtitle>Имеет ли всё это смысл или это хайп</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Заметки к эпизоду:</b></p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep39-types-of-recycling.png" width="531" height="125"><ul class="bulleted"><li>В Великобритании и США очень много пластикового мусора, который создаётся, а перерабатывается всего-то чуть-чуть</li><li>Самая вкусная вода в Сан-Франциско</li><li>Цена и качество мусора</li><li>Консумеризм и перепотребление</li><li>Правильные практические привычки</li><li>Выгода от ресайклинга</li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-39-Recycling.mp3" length="31060655"/>
-      <guid>4123c7db-5121-4bd6-a67e-27ac2a9698d3</guid>
-      <itunes:duration>0:32:16</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Mon, 4 Nov 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-39-Recycling.mp3" length="31060655"/>
+	    <guid>4123c7db-5121-4bd6-a67e-27ac2a9698d3</guid>
+	    <itunes:duration>0:32:16</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Mon, 4 Nov 2019 00:05:00 EST</pubDate>
     </item>
 
     <!-- разделитель эпизодов -->
 	
-    <item>
-      <title>#38: Детерминизм</title>
-      <itunes:subtitle>Предопределена ли наша жизнь в симуляции или это нам говорит наше сознание</itunes:subtitle>
-      <description>
+  	<item>
+	    <title>#38: Детерминизм</title>
+	    <itunes:subtitle>Предопределена ли наша жизнь в симуляции или это нам говорит наше сознание</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Cсылки к эпизоду:</b></p><ul class="bulleted"><li><a href="https://www.youtube.com/watch?v=5c4cv7rVlE8">Ник Бостром в подкасте Джо Рогана</a></li><li><a href="https://nickbostrom.com/">Ник Бостром</a> и его <a href="https://www.youtube.com/watch?v=nnl6nY8YKHs">аргументы о гипотезе симуляции</a></li><li>к/ф <a href="https://www.kinopoisk.ru/film/7569/">eXistenZ / Экзистенция</a></li><li>к/ф <a href="https://www.kinopoisk.ru/film/4739/">Dark City / Тёмный город</a></li><li>к/ф <a href="https://www.kinopoisk.ru/film/1099/">Strange Days / Странные дни</a></li><li><a href="https://ru.wikipedia.org/wiki/Неигровой_персонаж">Неигровой персонаж (NPC)</a></li><li>Игра <a href="https://clashroyale.com/">Клеш Роял</a></li><li>книга <a href="https://fantlab.ru/work156806">Симулакрон-3</a> (<a href="https://amzn.to/2p3CWXn">kindle</a>  и  <a href="https://amzn.to/35pLYhV">audible</a>)</li><li><a href="https://ru.wikipedia.org/wiki/Детерминизм">Детерминизм</a></li><li><a href="https://ru.wikipedia.org/wiki/Толле,_Экхарт">Экхарт Толле</a></li><li><a href="https://ru.wikipedia.org/wiki/Випассана">Випассана</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-38-Determinism.mp3" length="40356659"/>
-      <guid>14cdc2a1-d7d3-4bc9-86b2-afbcd0a256ac</guid>
-      <itunes:duration>0:41:57</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Thu, 10 Oct 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-38-Determinism.mp3" length="40356659"/>
+	    <guid>14cdc2a1-d7d3-4bc9-86b2-afbcd0a256ac</guid>
+	    <itunes:duration>0:41:57</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Thu, 10 Oct 2019 00:05:00 EST</pubDate>
     </item>
     
     <!-- разделитель эпизодов -->
 	
-    <item>
-      <title>#37: Что у нас в рюкзаках</title>
-      <itunes:subtitle>Как пакуем багаж для поездок</itunes:subtitle>
-      <description>
+	  <item>
+	    <title>#37: Что у нас в рюкзаках</title>
+	    <itunes:subtitle>Как пакуем багаж для поездок</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Cсылки к эпизоду:</b></p><ul class="bulleted"><li>Рюкзаки: <a href="https://www.amronintl.com/kelty-redwing-t-44-pack-taa-forest-green-kel-t2615617fg.html">Kelty Redwing 44 Backpack</a> и <a href="https://www.rei.com/product/886304/the-north-face-overhaul-40-pack">Northface Overhaul 40</a></li><li>Батарея <a href="https://www.aukey.com/products/20000mah-power-bank-with-usb-c-lightning-input-pb-y14">Aukey PB-Y14</a></li><li><a href="https://www.theguardian.com/travel/2010/nov/06/my-travels-rolf-potts-without-luggage">Путешествия без багажа, Рольф Поттс</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-37-Chro-v-ryikzakah.mp3" length="35572463"/>
-      <guid>1e16c4ba-e04e-4f35-a243-994388713abc</guid>
-      <itunes:duration>0:36:58</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Thu, 04 Jul 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-37-Chro-v-ryikzakah.mp3" length="35572463"/>
+	    <guid>1e16c4ba-e04e-4f35-a243-994388713abc</guid>
+	    <itunes:duration>0:36:58</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Thu, 04 Jul 2019 00:05:00 EST</pubDate>
     </item>
 
     <!-- разделитель эпизодов -->
 	
-    <item>
-      <title>#36: Шрифты в нашей жизни</title>
-      <itunes:subtitle>Шрифты это то, как форма букв влияет на смысл слов</itunes:subtitle>
-      <description>
+	  <item>
+	    <title>#36: Шрифты в нашей жизни</title>
+	    <itunes:subtitle>Шрифты это то, как форма букв влияет на смысл слов</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Ссылки к эпизоду:</b></p><ul class="bulleted"><li><a href="http://2ttf.com/">iFontMaker</a></li><li>Димин опыт с созданием шрифтов и его <a href="https://dimka.com/fonts">гарнитуры Зарровв и Слимамиф</a></li><li><a href="https://localfonts.eu/typography-basics/fonts-the-importance-of-localisation/">Ньюансы локализации кириллических шрифтов</a></li><li><a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/">SF Symbols</a></li><li><a href="https://www.hustwit.com/helvetica">Хелветика</a></li><li><a href="https://www.monotype.com/fonts/helvetica-now/">Helvetica Now</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-36-Fonts.mp3" length="32948296"/>
-      <guid>2f6a46d0-82e3-4ab0-9f97-e626b2741768</guid>
-      <itunes:duration>0:34:14</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Wed, 26 Jun 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-36-Fonts.mp3" length="32948296"/>
+	    <guid>2f6a46d0-82e3-4ab0-9f97-e626b2741768</guid>
+	    <itunes:duration>0:34:14</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Wed, 26 Jun 2019 00:05:00 EST</pubDate>
     </item>
 	
-    <!-- разделитель эпизодов -->
+	  <!-- разделитель эпизодов -->
 	
-    <item>
-      <title>#35: Apple слышит</title>
-      <itunes:subtitle>Прошла конференция разработчиков Apple и теперь вроде как компания нас слышит</itunes:subtitle>
-      <description>
+	  <item>
+	    <title>#35: Apple слышит</title>
+	    <itunes:subtitle>Прошла конференция разработчиков Apple и теперь вроде как компания нас слышит</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Заметки к эпизоду:</b></p><ul class="bulleted"><li><a href="https://marco.org/2019/06/09/apple-is-listening">Марко Армент: Apple слышит</a></li><li>Новый Мак Про, новый 6К монитор</li><li>Что мы хотим от МакБук Про</li><li><a href="https://amzn.to/2ERkDKa">MagSafe псевдо-замена</a></li><li><a href="https://developer.apple.com/xcode/swiftui/">SwiftUI и Catalist</a></li><li><a href="https://developer.apple.com/design/human-interface-guidelines/sf-symbols/overview/">SF Symbols</a></li><li><a href="https://anyfont.app/">Anyfont</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-35-Apple-slyshit.mp3" length="30320141"/>
-      <guid>34c62f8f-fde4-4f58-8f7b-e24ecdec8c7d</guid>
-      <itunes:duration>0:31:24</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Wed, 19 Jun 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-35-Apple-slyshit.mp3" length="30320141"/>
+	    <guid>34c62f8f-fde4-4f58-8f7b-e24ecdec8c7d</guid>
+	    <itunes:duration>0:31:24</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Wed, 19 Jun 2019 00:05:00 EST</pubDate>
     </item>
 
-  <!-- разделитель эпизодов -->
+	<!-- разделитель эпизодов -->
 	
-    <item>
-      <title>#34: Цифровая безопасность</title>
-      <itunes:subtitle>В наше время необходимо хоть немного защищаться, и для этого есть простые правила</itunes:subtitle>
-      <description>
+	  <item>
+	    <title>#34: Цифровая безопасность</title>
+	    <itunes:subtitle>В наше время необходимо хоть немного защищаться, и для этого есть простые правила</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Заметки к эпизоду:</b></p><ul class="bulleted"><li>Правило 1: пароли должны быть непростыми, а также надо иметь их несколько</li><li>Правило 2: Резервные копии</li><li>Привило 3: Не делать очевидных, наивных глупостей. Быть на чеку</li><li>Программы для хранения паролей <a href="https://1password.com/">1Password</a>, <a href="https://www.lastpass.com/">LassPass</a>, <a href="https://www.keepassx.org/">Keepass</a></li><li>Другие шаги для безопасности: шифровка диска, не отправлять пароли в открытом виде, не давать доступ к почте</li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-34-Cifrovaya-bezopasnost.mp3" length="26293530"/>
-      <guid>ee1277a3-07ae-45cf-a6e6-2079cf044df2</guid>
-      <itunes:duration>0:27:12</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Fri, 17 May 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-34-Cifrovaya-bezopasnost.mp3" length="26293530"/>
+	    <guid>ee1277a3-07ae-45cf-a6e6-2079cf044df2</guid>
+	    <itunes:duration>0:27:12</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Fri, 17 May 2019 00:05:00 EST</pubDate>
     </item>
 	
     <!-- разделитель эпизодов -->
 	   
     <item>
-      <title>#33: Новая жизнь из-за технологий</title>
-      <itunes:subtitle>К чему привели нас быстро развивающиеся технологии? Стали ли мы лучше или хуже, как люди?</itunes:subtitle>
-      <description>
+	    <title>#33: Новая жизнь из-за технологий</title>
+	    <itunes:subtitle>К чему привели нас быстро развивающиеся технологии? Стали ли мы лучше или хуже, как люди?</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Заметки к эпизоду:</b></p><ul class="bulleted"><li>Дима был вынужден провести день без гаджетов, как “аналоговый” или “ламповый” человек</li><li>Нужно ли отказываться от устройств умышлено, хранить ли телефон вне спальни</li><li>Если до тебя нельзя никак достучатся потому что ты периодически отключаешь телефон</li><li>Как разобраться с вредными привычками</li><li>Вася делится светскими казусами связанными с его реакцией на оповещения приходящие на Apple Watch</li><li>мы продолжаем говорить “айпэд”, так уж привыкли</li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-33-Novaya-zhizn-izza-tehnologij.mp3" length="32181235"/>
-      <guid>5a8e7dc7-5fe1-45f1-ae9b-99ce63c5ed66</guid>
-      <itunes:duration>0:33:26</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Thu, 25 Apr 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-33-Novaya-zhizn-izza-tehnologij.mp3" length="32181235"/>
+	    <guid>5a8e7dc7-5fe1-45f1-ae9b-99ce63c5ed66</guid>
+	    <itunes:duration>0:33:26</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Thu, 25 Apr 2019 00:05:00 EST</pubDate>
     </item>
 	
     <!-- разделитель эпизодов -->	   
 	
     <item>
-      <title>#32: Имейлы</title>
-      <itunes:subtitle>Кто читает наши имейлы, мы или алгоритмы и почему</itunes:subtitle>
-      <description>
+	    <title>#32: Имейлы</title>
+	    <itunes:subtitle>Кто читает наши имейлы, мы или алгоритмы и почему</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Заметки к эпизоду:</b></p><ul class="bulleted"><li><a href="http://expert.ru/russian_reporter/2013/11/nikakih-tajn-ot-gmail/">скандал с Gmail в 2013-м году</a></li><li>почему так много людей перешли на Gmail в свое время</li><li>почему мы думаем уйти от всех служб Google</li><li>что делать с Андроидом без сервисов Гугла?</li><li>альтернативные почтовые сервисы и роль имейлов падает? и что это может заметить?</li><li>“если ты не платишь за продукт, то ты и есть продукт”</li><li><a href="http://www.zuckedbook.com/">Книга “Zucked: Waking Up to the Facebook Catastrophe”</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a><br> и <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-32-Imeyly.mp3" length="92407936"/>
-      <guid>5456e119-b512-4cbe-bdba-0fb69abd0f9c</guid>
-      <itunes:duration>0:38:30</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Fri, 05 Apr 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-32-Imeyly.mp3" length="92407936"/>
+	    <guid>5456e119-b512-4cbe-bdba-0fb69abd0f9c</guid>
+	    <itunes:duration>0:38:30</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Fri, 05 Apr 2019 00:05:00 EST</pubDate>
     </item>
 
     <!-- разделитель эпизодов -->
     
     <item>
-      <title>#31: Гнутые телефоны и космос</title>
-      <itunes:subtitle>Чем новым нас обрадовали лидеры гаджетостроения и частной космонавтики</itunes:subtitle>
-      <description>
+	    <title>#31: Гнутые телефоны и космос</title>
+	    <itunes:subtitle>Чем новым нас обрадовали лидеры гаджетостроения и частной космонавтики</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Ссылки к эпизоду:</b></p><ul class="bulleted"><li><a href="https://www.apple.com/ru/shop/product/MRXJ2RU/A/наушники-airpods-в-футляре-с-возможностью-беспроводной-зарядки">Новые Apple AirPods с чипом H1, поддержкой "эй Сири" и беспроводной зарядкой</a></li><li><a href="https://www.apple.com/ru/ipad-mini/">Обновлённый Apple iPad Mini 5</a> и <a href="https://www.apple.com/ru/imac/">Обновлённый iMac</a></li><li><a href="https://www.iphones.ru/iNotes/predstavlen-novyy-standart-usb-4-s-harakteristikami--03-04-2019">Стандарт USB4 подаёт надежды</a></li><li><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep31-spacexdragon.jpg" width="400" height="200"><br><a href="https://vc.ru/future/60046-spacex-vpervye-zapustila-k-mks-pilotiruemyy-korabl-crew-dragon">Удачный полёт нового пилотироемого корабля Space X</a></li><li><a href="https://www.tesla.com/modely">Tesla Model Y</a> (Eng)</li><li><a href="https://amzn.to/2UdbkwM">Амазон Киндл теперь с подсветкой</a> (Eng)</li><li><a href="https://mobiltelefon.ru/post_1551201895.html">Новые дорогущие телефоны со складными экранами</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a><br> и <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-31-Gnutye-telefony-i-kosmos.mp3" length="28202024" />
-      <guid>9bd7bb15-29e0-483b-9c40-f9b36412574f</guid>
-      <itunes:duration>0:29:12</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Mon, 25 Mar 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-31-Gnutye-telefony-i-kosmos.mp3" length="28202024" />
+	    <guid>9bd7bb15-29e0-483b-9c40-f9b36412574f</guid>
+	    <itunes:duration>0:29:12</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Mon, 25 Mar 2019 00:05:00 EST</pubDate>
     </item>
 
     <!-- разделитель эпизодов -->
 
     <item>
-      <title>#30: Свобода и капитализм</title>
-      <itunes:subtitle>Стоит ли регулировать крупные тех. компании, или свобода всё же полезней. По мотивам Атланта расправившего плечи.</itunes:subtitle>
-      <description>
+	    <title>#30: Свобода и капитализм</title>
+	    <itunes:subtitle>Стоит ли регулировать крупные тех. компании, или свобода всё же полезней. По мотивам Атланта расправившего плечи.</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Ссылки к эпизоду:</b></p><ul class="bulleted"><li><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep30-ayn-rand-atlas-shrugged.jpg" width="200" height="289"><br>Айн Рэнд - Атлант расправил плечи</li><li><a href="https://ru.wikipedia.org/wiki/Либертарианство">Либертарианство</a></li><li><a href="https://ru.wikipedia.org/wiki/Объективизм_по_Айн_Рэнд">Объективизм по Айн Рэнд</a></li><li><a href="https://news.yandex.ru/story/Kandidat_v_prezidenty_SSHA_khochet_razdelit_Google_Amazon_i_Facebook--618429c47d4bfa1e77de98a6cbafd254">Сенатор Уоррен предлагает раздробить Amazon, Facebook, Google и Apple</a></li><li><a href="https://www.rbc.ru/business/07/03/2019/5c8090489a7947038beb4d15">Марк Цукерберг видит будущее соцсетей в большей приватности</a></li><li><a href="https://stratechery.com/2019/facebooks-privacy-cake/">Бен Томпсон пишет про будущее фейсбука и приватность</a> (Eng) и <a href="https://exponent.fm/episode-165-mark-zuckerbergs-projected-self/">рассказывает</a> (Eng)</li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a><br>и <a href="https://overcast.fm/itunes1013700516">в Оверкасте</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-30-Freedom-and-capitalism.mp3" length="38497244" />
-      <guid>35a1ffd6-ede6-485d-8f4d-51c3a13e21ca</guid>
-      <itunes:duration>0:39:50</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Wed, 13 Mar 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-30-Freedom-and-capitalism.mp3" length="38497244" />
+	    <guid>35a1ffd6-ede6-485d-8f4d-51c3a13e21ca</guid>
+	    <itunes:duration>0:39:50</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Wed, 13 Mar 2019 00:05:00 EST</pubDate>
     </item>
 
     <!-- разделитель эпизодов -->
 
     <item>
-      <title>#29: Парная работа</title>
-      <itunes:subtitle>О том как мы работали в паре удалённо над новым дизайном сайта данного подкаста</itunes:subtitle>
-      <description>
+	    <title>#29: Парная работа</title>
+	    <itunes:subtitle>О том как мы работали в паре удалённо над новым дизайном сайта данного подкаста</itunes:subtitle>
+	    <description>
         <![CDATA[<p><b>Ссылки к эпизоду:</b></p><ul class="bulleted"><li><a href="https://figma.com">figma.com</a></li><li><a href="https://dropbox.com/paper">dropbox paper</a></li><li><a href="https://splice.com">splice.com</a></li><li><a href="https://ru.wikipedia.org/wiki/Парное_программирование">Парное программирование</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a><br>и <a href="https://overcast.fm/itunes1013700516">в Оверкасте</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-29-Parnaya-rabota.mp3" length="42604601"/>
-      <guid>3ba97e6e-47a9-48aa-9c3b-f1ab23bfafa7</guid>
-      <itunes:duration>0:29:24</itunes:duration>
-      <itunes:explicit>clean</itunes:explicit>
-      <pubDate>Thu, 28 Feb 2019 00:05:00 EST</pubDate>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-29-Parnaya-rabota.mp3" length="42604601"/>
+	    <guid>3ba97e6e-47a9-48aa-9c3b-f1ab23bfafa7</guid>
+	    <itunes:duration>0:29:24</itunes:duration>
+	    <itunes:explicit>clean</itunes:explicit>
+	    <pubDate>Thu, 28 Feb 2019 00:05:00 EST</pubDate>
     </item>
 
     <!-- разделитель эпизодов -->
