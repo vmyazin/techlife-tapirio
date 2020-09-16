@@ -18,6 +18,8 @@ html
     link(rel='stylesheet', href='/stylesheets/styles.css')
     link(rel="icon" href="/images/favicon.png" type="images/x-icon")
 
+    include partials/_analytics
+
     //- check if projectInfo object is present, a lot depends on it
     if projectInfo
       if isEpisodePage
@@ -64,4 +66,4 @@ html
             img(src='/images/tehnologii-head.svg' alt='Технологии и жизнь')
 
       block content
-    
+  
