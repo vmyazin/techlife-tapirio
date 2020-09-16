@@ -189,6 +189,15 @@ pre {
     margin: -5px 0 0;
   }
 
+  &:hover:not(.active) {
+    svg {
+
+      path {
+        fill: #ffffff;
+      }
+    }
+  }
+
   &.active {
     color: $highlight;
 
