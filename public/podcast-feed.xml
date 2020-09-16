@@ -25,8 +25,22 @@
     <itunes:keywords>technology, podcast, russian, apple, google, travel</itunes:keywords>
     <itunes:explicit>no</itunes:explicit>
     
-
     <!-- начало эпизодов -->
+				
+    <item>
+      <title>#53: Эппл часы и айПады 2020</title>
+      <itunes:subtitle>О сентябрьской презентации новых продуктов Эппл</itunes:subtitle>
+      <description>
+        <![CDATA[<p>Apple провели очередное событие, на котором они представили новые часы и айпады. Мы обсудили преимущества новых моделей, а также наши продолжающиеся проблемы с продуктами Apple. В добавок немного о том, как мы «трэкаем» сон.</p><p><b>Заметки к эпизоду:</b></p><p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep53-apple.jpg" width="600" height="400" alt="apple event"></p><ul class="bulleted"><li>Видео презентация Эппл 15 сентября 2020г. <a href="https://www.apple.com/apple-events/september-2020/">полная</a> и <a href="https://youtu.be/LMk1PYowq8M">сжатая в 12 минут</a> версии.</li><li><a href="https://astropad.com">Astropad</a></li><li>Новый микрофон у Димы <a href="https://thronmax.com/?product=thronmax-mdrill-one-pro">Thronmax MDrill One Pro</a></li><li><a href="https://apps.apple.com/app/sleep/id1038440371">Sleep++</a> и <a href="https://www.sleepwatchapp.com">SleepWatch</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
+      </description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/893969827-techlifepodcast-episode-53-apple-air-watch.mp3" length="21492949"/>
+      <guid>fb1c6e07-cbb5-4d20-ae22-25f0e3bab5cd</guid>
+      <itunes:duration>0:22:23</itunes:duration>
+      <itunes:explicit>clean</itunes:explicit>
+      <pubDate>Tue, 15 Sep 2020 00:20:00 EST</pubDate>
+    </item>
+
+    <!-- разделитель эпизодов -->
 				
     <item>
       <title>#52: Глобальный Анти-глобализм</title>
