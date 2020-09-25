@@ -28,6 +28,21 @@
     <!-- начало эпизодов -->
 				
     <item>
+      <title>#54: Четыре выхода из телепорта</title>
+      <itunes:subtitle>Раздумья про лучшие места чтобы быстро попасть</itunes:subtitle>
+      <description>
+        <![CDATA[<p>Предположим есть магический телепорт, дверь из квартиры которую можно открыть в любые 4 места в мире, но выбрать нужно сейчас. Куда их открыть? Послушайте и узнайте, что выбрали Дима и Вася.</p><p><b>Заметки к эпизоду:</b></p><p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep54-teleportexits.jpg" width="600" height="400" alt="exiting teleports"></p><ul class="bulleted"><li>Аниме-фильм Хаяо Миядзаки "<a href="https://www.kinopoisk.ru/film/49684/">Ходячий замок Хаула</a>"</li><li>Серия книг Денниса Тейлора "<a href="https://thedimka.livejournal.com/542337.html">Бобивёрс</a>"</li><li><a href="https://www.goodreads.com/list/show/47731.Best_HARD_SCIENCE_FICTION_of_the_21st_Century">Самые популярные научно-фантастические книги 21го века на Goodreads</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
+      </description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/899502505-techlifepodcast-episode-54-chetyre-vykhoda-iz-teleporta.mp3" length="23747608"/>
+      <guid>648c55e3-6b1b-4e6b-9361-e76833b0b178</guid>
+      <itunes:duration>0:24:40</itunes:duration>
+      <itunes:explicit>clean</itunes:explicit>
+      <pubDate>Fri, 25 Sep 2020 00:12:00 EST</pubDate>
+    </item>
+
+    <!-- разделитель эпизодов -->
+				
+    <item>
       <title>#53: Эппл часы и айПады 2020</title>
       <itunes:subtitle>О сентябрьской презентации новых продуктов Эппл</itunes:subtitle>
       <description>
@@ -146,6 +161,7 @@
     </item>
 
     <!-- разделитель эпизодов -->
+    <!-- далее список архивных эпизодов -->
 				
 	  <item>
 	    <title>#45: Виртуальности</title>
@@ -153,14 +169,13 @@
 	    <description>
         <![CDATA[<p><b>Ссылки к эпизоду:</b></p><ul class="bulleted"><li><a href="https://shirt-pocket.com/SuperDuper/SuperDuperDescription.html">SuperDuper</a></li><li><a href="https://jumpdesktop.com/">Jump Desktop</a></li><li><a href="https://www.remotemouse.net/">emoteMousePro</a></li><li><a href="https://www.kinopoisk.ru/film/1143242/">Фильм “Джентельмены” (2019)</a></li><li><a href="https://www.kinopoisk.ru/series/574688/">Телесериал Homeland (“Родина”) (2011 – 2020)</a></li><li><a href="https://www.youtube.com/watch?v=1tyrxFfQT5k">Русские Грузины Парфенова</a></li><li><a href="https://www.patternbrands.com/">Cтудия patternbrands.com</a></li><li><a href="https://www.kinopoisk.ru/film/1190387/">Фильм “Extraction” (2020)</a></li><li><a href="https://www.kinopoisk.ru/film/1162604/">Фильм “Спутник” (2020)</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-	    <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/815961712-techlifepodcast-techlife-45-virtualnosti.mp3" length="31954446"/>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-45-Virtualnosti.mp3" length="31954446"/>
 	    <guid>8f067fac-ed0b-4f3a-bd42-68c998726375</guid>
 	    <itunes:duration>0:33:16</itunes:duration>
 	    <itunes:explicit>clean</itunes:explicit>
 	    <pubDate>Fri, 08 May 2020 00:05:00 EST</pubDate>
     </item>
 
-    <!-- далее список архивных эпизодов -->
     <!-- разделитель эпизодов -->
 				
 	  <item>
