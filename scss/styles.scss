@@ -239,6 +239,18 @@ pre {
       .num-and-title {
         display: none;
       }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 22px;
+        left: -70px;
+        width: 60px;
+        height: 38px;
+        background-image: url(/images/icon-pointer.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
     }
   }  
 
