@@ -50,7 +50,8 @@ router.get('/about', (req, res) => {
   res.render('about', {
     projectInfo,
     path: req.path,
-    pageTitle: 'О нас'
+    pageTitle: 'О нас',
+    pageDescription: 'Авторы Дмитрий Здоров и Василий Мязин давние друзья и записывают подкаст о технологиях часто находясь в разных странах'
  });
 });
 
@@ -58,7 +59,8 @@ router.get('/resources', (req, res) => {
   res.render('resources', {
     projectInfo,
     path: req.path,
-    pageTitle: 'Ресурсы'
+    pageTitle: 'Ресурсы',
+    pageDescription: 'Дополнительные материалы в качестве приложения к подкасту; статьи, картинки, ссылки и т. п.'
   });
 });
 
@@ -95,7 +97,7 @@ router.get('/episodes/:id', async (req, res) => {
       return;
     }
    }
-   res.render('error beach');
+   res.render('error rendering');
   });
   
 router.get('/tags', async (req, res) => {
