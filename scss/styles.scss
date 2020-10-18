@@ -406,6 +406,22 @@ pre {
   }
 }
 
+.btn {
+  border-radius: 3px;
+  font-weight: 600;
+  letter-spacing: 0.07rem;
+}
+
+.btn-primary {
+  background-color: $highlight;
+  color: white;
+  border-color: $highlight;
+}
+
+.btn-lg {
+  font-size: $font-s3;
+}
+
 .btn-play {
   display: inline-block;
   width: 66px;
@@ -632,4 +648,28 @@ pre {
 
 blockquote {
   font-style: oblique;
+}
+
+.banner {
+  background-color: $light-grey;
+
+  p {
+    font-size: $font-s4;
+    color: $dark-grey;
+  }
+}
+
+@media (max-width: $scr-width-sm) {
+  .banner {
+    p {
+      font-size: $font-s5;
+    }
+  }
+}
+
+.with-bg {
+  padding: .35rem .5rem;
+  background-color: $dark-grey;
+  color: white;
+  display: inline-block;
 }
