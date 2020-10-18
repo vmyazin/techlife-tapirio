@@ -550,6 +550,8 @@ pre {
   li {
     margin-bottom: 1.2rem;
     font-size: $font-s4;
+    display: inline-block;
+    width: 100%;
 
     a {
       border-bottom-width: 0;
