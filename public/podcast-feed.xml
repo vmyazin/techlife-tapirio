@@ -28,6 +28,21 @@
     <!-- начало эпизодов -->
 				
     <item>
+      <title>#55: Туристо-Футуристо</title>
+      <itunes:subtitle>Где жить футуристам</itunes:subtitle>
+      <description>
+        <![CDATA[<p>Где можно жить в новой эпохе? Новые коммуны, коливинги, реально ли обеспечение безопасности удаленным кибер-деревням.</p><p><b>Заметки к эпизоду:</b></p><p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep55-future-komunna.jpg" width="600" height="400" alt="turisto-futuristo"></p><ul class="bulleted"><li><a href="https://ru.wikipedia.org/wiki/Кибуц">Про кибуцы</a> в Википедии</li><li><a href="https://www.mightybuildings.com/">Готовые элегантные дома на заказ из Калифорнии</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
+      </description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/912955684-techlifepodcast-episode-55-turisto-futuristo.mp3" length="26637140"/>
+      <guid>7f903e72-756c-439c-8707-5b8b1571efda</guid>
+      <itunes:duration>0:27:34</itunes:duration>
+      <itunes:explicit>clean</itunes:explicit>
+      <pubDate>Sun, 18 Oct 2020 00:12:00 EST</pubDate>
+    </item>
+
+    <!-- разделитель эпизодов -->
+				
+    <item>
       <title>#54: Четыре выхода из телепорта</title>
       <itunes:subtitle>Раздумья про лучшие места чтобы быстро попасть</itunes:subtitle>
       <description>
@@ -146,6 +161,7 @@
     </item>
 
     <!-- разделитель эпизодов -->
+    <!-- далее список архивных эпизодов -->
 				
     <item>
       <title>#46: Вечностности</title>
@@ -153,14 +169,13 @@
       <description>
         <![CDATA[<p><b>Ссылки к эпизоду:</b></p><ul class="bulleted"><li>ЖЖ thedimka: <a href="https://thedimka.livejournal.com/538273.html">контрактная иллюзия</a></li><li><i>Жизнь лишается всякого смысла в то мгновение, когда вы теряете иллюзию своего бессмертия</i> — Жан Поль Сартр</li><li>Книга Brian Greene <a href="https://amzn.to/3bHWRh9">Until the End of Time</a></li><li>Нурсултан Назарбаев на момент выхода эпизода <b>жив</b>, просто он самовольно покинул пост президента Казахстана 19 марта 2019 года</li><li>Подкаст, где Sam Harris рассказывает <a href="https://samharris.org/podcasts/what-do-jihadists-really-want/">Чего действительно хотят джихадисты</a></li><li><a href="https://blush.design/">Blush design</a></li><li><a href="https://earthview.withgoogle.com">Earthview with Google</a></li><li>Подкаст <a href="https://dithering.fm/">Dithering</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/823463986-techlifepodcast-episode-46-vechnostnosti.mp3" length="38833057"/>
+      <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-46-Vechnostnosti.mp3" length="38833057"/>
       <guid>a6ab00aa-2a25-41da-a1c5-4a468b5a3b17</guid>
       <itunes:duration>0:40:26</itunes:duration>
       <itunes:explicit>clean</itunes:explicit>
       <pubDate>Mon, 18 May 2020 00:05:00 EST</pubDate>
     </item>
 
-    <!-- разделитель эпизодов -->
     <!-- далее список архивных эпизодов -->
 				
 	  <item>
