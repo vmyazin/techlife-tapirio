@@ -424,7 +424,7 @@
 	    <description>
         <![CDATA[<p><b>Ссылки к эпизоду:</b></p><ul class="bulleted"><li><a href="https://figma.com">figma.com</a></li><li><a href="https://dropbox.com/paper">dropbox paper</a></li><li><a href="https://splice.com">splice.com</a></li><li><a href="https://ru.wikipedia.org/wiki/Парное_программирование">Парное программирование</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a><br>и <a href="https://overcast.fm/itunes1013700516">в Оверкасте</a></p>]]>
       </description>
-	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-29-Parnaya-rabota.mp3" length="42604601"/>
+	    <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-29-parnaya-rabota.mp3" length="42604601"/>
 	    <guid>3ba97e6e-47a9-48aa-9c3b-f1ab23bfafa7</guid>
 	    <itunes:duration>0:29:24</itunes:duration>
 	    <itunes:explicit>clean</itunes:explicit>
