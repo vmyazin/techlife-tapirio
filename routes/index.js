@@ -69,7 +69,8 @@ router.get('/guests', (req, res) => {
     projectInfo,
     path: req.path,
     pageTitle: 'Инструкции для гостей подкаста',
-    pageDescription: 'Если вас пригласили на подкаст в гости, вам надо подготовится. Мы объясняем как это сделать.'
+    pageDescription: 'Если вас пригласили на подкаст в гости, вам надо подготовится. Мы объясняем как это сделать.',
+    pageShareImg: '/images/og-techlife-guests-1200.jpg'
   });
 });
 

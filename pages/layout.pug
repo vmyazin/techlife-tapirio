@@ -59,6 +59,8 @@ html
           meta(property='og:image' content='/images/og-techlife-artwork-1200.jpg')
       else if isBlogPost && postMetaData.image !== undefined
         meta(property='og:image' content=postMetaData.image)
+      else if pageShareImg !== undefined
+        meta(property='og:image' content=pageShareImg)
       else
         meta(property='og:image' content='/images/og-techlife-artwork-1200.jpg')
 
