@@ -6,7 +6,7 @@
 @import '_mixins.scss';
 
 body {
-  background-color: #111;
+  background-color: $black;
   background-image: url("/images/bg-photo-02.jpg");
   background-position: center top;
   background-size: 100%;
@@ -18,6 +18,10 @@ body {
   &[class*="about"],
   &[class*="resources"] {
     background-image: url("/images/bg-lightning.jpg");
+  }
+
+  &[class*="guests"] {
+    background: linear-gradient(180deg, #111111 0%, #031B28 73.4%, #111111 97.88%);
   }
 }
 
@@ -39,7 +43,11 @@ body {
 p, li {
   font-size: $font-s3;
   color: #F2F2F2;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+p {
+  margin-bottom: 1.5rem;
 }
 
 p.small {
@@ -64,7 +72,7 @@ a,
 }
 
 a.link-ext {
-  color: #111;
+  color: $black;
   background: #fff;
   border: none;
 }
@@ -86,7 +94,7 @@ h2 {
   font-weight: 600;
   line-height: 1;
   font-size: $font-s1;
-  color: $highlight;
+  color: $accent;
   margin-top: 2vw;
 }
 
@@ -199,10 +207,10 @@ pre {
   }
 
   &.active {
-    color: $highlight;
+    color: $accent;
 
     path {
-      fill: $highlight;
+      fill: $accent;
     }
   }
 }
@@ -413,9 +421,9 @@ pre {
 }
 
 .btn-primary {
-  background-color: $highlight;
+  background-color: $accent;
   color: white;
-  border-color: $highlight;
+  border-color: $accent;
 }
 
 .btn-lg {
@@ -448,7 +456,7 @@ pre {
       right: 1px;
       top: 1px;
       bottom: 1px;
-      border: 3px dotted #111;
+      border: 3px dotted $black;
       border-radius: 50%;
       animation: rotating 20s linear infinite;
     }
@@ -512,7 +520,7 @@ pre {
   }
 
   .num {
-    color: $highlight;
+    color: $accent;
   }
 
   @media (max-width: $scr-width-sm) {
@@ -632,7 +640,7 @@ pre {
     top: 0;
     bottom: 0;
     width: 0;
-    background-color: $highlight;
+    background-color: $accent;
     border-radius: 50px 0 0 50px;
   }
 }
@@ -674,4 +682,35 @@ blockquote {
   background-color: $dark-grey;
   color: white;
   display: inline-block;
+}
+
+.callout {
+  padding: 2rem;
+  margin: auto -2rem;
+  border: 1px solid $light-grey;
+
+  p {
+    color: white;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li {
+    margin-bottom: .5rem;
+  }
+
+  &.accented {
+    background-color: $accent;
+    border: 0;
+
+    p, li {
+      color: $black;
+    }
+  }
+
+  @media (max-width: $scr-width-sm) {
+    margin: auto -0.9rem;
+  }
 }
