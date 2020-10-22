@@ -11,7 +11,6 @@ class Project {
     this.compiler_ =  new Compiler(path);
     this.compiler_.compileAll();
     this.getPosts();
-    this.setPageParallax();
 
     if (params) {
       if (params.podcastFeedXml) {
