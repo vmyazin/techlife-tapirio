@@ -14,7 +14,11 @@ require('moment/locale/ru');
 let projectInfo = project.info;
 let podcast = {},
     episodes = {}
-projectInfo.currentYear = moment().year()
+
+let dateObj = new Date();
+let current = {};
+current.year = dateObj.getFullYear();
+projectInfo['currentYear'] = current.year;
 
 project.init().then(() => {
   project.sortBy({ property: "date", asc: false })
