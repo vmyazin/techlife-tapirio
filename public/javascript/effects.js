@@ -17,7 +17,7 @@
         console.log(this.parallaxClass)
       
         const limit = hero.offsetTop + hero.offsetHeight * 2;
-        if( scrolledHeight > hero.offsetTop && scrolledHeight <= limit ) {
+        if( scrolledHeight > hero.offsetTop ) {
           hero.style.transform = "translateY(" + ( scrolledHeight - hero.offsetTop ) / 2 + "px)";
         } else if (scrolledHeight <= hero.offsetTop) {
           hero.style.transform = "translateY(0)";
