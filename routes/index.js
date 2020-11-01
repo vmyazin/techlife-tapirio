@@ -11,6 +11,9 @@ const { parse } = require('node-html-parser');
 const moment = require('moment');
 require('moment/locale/ru');
 
+// default hero image
+const defaultImage = "/images/bg-photo-02.jpg";
+
 let projectInfo = project.info;
 let podcast = {},
     episodes = {}
@@ -43,7 +46,7 @@ project.init().then(() => {
 
 router.get('/', (req, res) => {
   const articles = project.posts;
-  res.render('index', { podcast, articles, projectInfo, path: "home" });
+  res.render('index', { podcast, articles, projectInfo, isHeroParallax: true, heroImg: defaultImage, path: "home" });
 });
 
 router.get('/about', (req, res) => {
@@ -51,6 +54,8 @@ router.get('/about', (req, res) => {
     projectInfo,
     path: req.path,
     pageTitle: 'О нас',
+    isHeroParallax: true,
+    heroImg: '/images/bg-lightning.jpg',
     pageDescription: 'Авторы Дмитрий Здоров и Василий Мязин давние друзья и записывают подкаст о технологиях часто находясь в разных странах'
  });
 });
@@ -59,7 +64,9 @@ router.get('/resources', (req, res) => {
   res.render('resources', {
     projectInfo,
     path: req.path,
+    isHeroParallax: true,
     pageTitle: 'Ресурсы',
+    heroImg: '/images/bg-lightning.jpg',
     pageDescription: 'Дополнительные материалы в качестве приложения к подкасту; статьи, картинки, ссылки и т. п.'
   });
 });
@@ -68,8 +75,10 @@ router.get('/guests', (req, res) => {
   res.render('guests', {
     projectInfo,
     path: req.path,
+    isHeroParallax: true,
     pageTitle: 'Инструкции для гостей подкаста',
     pageDescription: 'Если вас пригласили на подкаст в гости, вам надо подготовится. Мы объясняем как это сделать.',
+    heroImg: '',
     pageShareImg: '/images/og-techlife-guests-1200.jpg'
   });
 });
@@ -101,6 +110,8 @@ router.get('/episodes/:id', async (req, res) => {
           episode, nextEpisode, prevEpisode,
           path: req.path,
           isEpisodePage: true,
+          isHeroParallax: true,
+          heroImg: defaultImage,
           layout: 'episode'
         }
       )) 
@@ -112,19 +123,19 @@ router.get('/episodes/:id', async (req, res) => {
   
 router.get('/tags', async (req, res) => {
   const tags = project.tags;
-  res.render('tags', { tags, projectInfo, path: req.path });
+  res.render('tags', { tags, isHeroParallax: true, heroImg: defaultImage, projectInfo, path: req.path });
 });
 
 router.get('/tags/:tag', async (req, res) => {
   const tag = req.params.tag;
   const tags = project.tags;
   const articles = await project.getPostsByTag(tag);
-  res.render('tag', { tag, tags, articles, projectInfo, path: req.path });
+  res.render('tag', { tag, tags, isHeroParallax: true, heroImg: defaultImage, articles, projectInfo, path: req.path });
 });
 
 router.get('/blog', async (req, res) => {
   const articles = project.posts;
-  res.render('blog', { articles, projectInfo, path: req.path });
+  res.render('blog', { articles, projectInfo, isHeroParallax: true, heroImg: defaultImage, path: req.path });
 });
 
 router.route('/api/search').get(cors(), async (req, res) => {
@@ -156,6 +167,8 @@ router.get('/blog/:filename', async (req, res) => {
       content: await project.renderMarkdown(slug),
       path: req.path,
       layout: 'blog',
+      isHeroParallax: true,
+      heroImg: defaultImage,
       isBlog: true,
       isBlogPost: true
     }
