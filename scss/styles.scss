@@ -7,7 +7,7 @@
 
 body {
   background-color: $black;
-  background-image: url("/images/bg-photo-02.jpg");
+  // background-image: url("/images/bg-photo-02.jpg");
   background-position: center top;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -17,7 +17,7 @@ body {
 
   &[class*="about"],
   &[class*="resources"] {
-    background-image: url("/images/bg-lightning.jpg");
+    // background-image: url("/images/bg-lightning.jpg");
   }
 
   &[class*="guests"] {
@@ -713,4 +713,10 @@ blockquote {
   @media (max-width: $scr-width-sm) {
     margin: auto -0.9rem;
   }
+}
+
+img.hero-image {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
 }
