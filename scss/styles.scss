@@ -238,6 +238,7 @@ pre {
   
     &.selected {
       border: 2px solid $mid-grey;
+      background-color: rgba(0,0,0,0.5);
       box-sizing: border-box;
       padding: 25px 25px 25px 110px;
       margin-left: -25px;
