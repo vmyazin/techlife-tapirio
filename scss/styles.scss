@@ -331,15 +331,33 @@ pre {
 
   p {
     line-height: 1.35;
-    color: $mid-grey;
+    color: $light-grey;
 
     &:last-of-type {
       margin-bottom: 0;
     }
-  }  
+  } 
 
-  ul {
-    margin-bottom: 15px;
+  ul,
+  ol {
+    margin: 0 0 2rem;
+    padding: 0;
+
+    li {
+      padding-left: 0;
+      margin-left: 20px;
+      margin-bottom: 10px;
+      color: $light-grey;
+      line-height: 1.55;
+  
+      a {
+        color: $light-grey;
+  
+        b {
+          color: white;
+        }
+      }
+    }
   }
 
   img {
@@ -383,23 +401,6 @@ pre {
   list-style: none;
   list-style-type: disc;
   list-style-position: outside;
-  margin: 0;
-  padding: 0;
-
-  li {
-    padding-left: 0;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    line-height: 1.6;
-
-    a {
-      color: $light-grey;
-
-      b {
-        color: white;
-      }
-    }
-  }
 }
 
 .footer .row {
