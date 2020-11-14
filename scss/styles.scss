@@ -7,7 +7,6 @@
 
 body {
   background-color: $black;
-  // background-image: url("/images/bg-photo-02.jpg");
   background-position: center top;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -15,10 +14,8 @@ body {
   font-weight: 400;
   color: #fff;
 
-  &[class*="about"],
-  &[class*="resources"] {
-    // background-image: url("/images/bg-lightning.jpg");
-  }
+  // &[class*="resources"] {
+  // }
 
   &[class*="guests"] {
     background: linear-gradient(180deg, #111111 0%, #031B28 73.4%, #111111 97.88%);
@@ -351,8 +348,6 @@ pre {
       line-height: 1.55;
   
       a {
-        color: $light-grey;
-  
         b {
           color: white;
         }
@@ -366,6 +361,13 @@ pre {
   }
 }
 
+@media (max-width: $scr-width-sm) {
+  .episode-desc {
+    > p {
+      width: auto;
+    }
+  }
+}
 
 @media (min-width: $min-scr-width) and (max-width: $scr-width-sm) {
   .episode-desc {
