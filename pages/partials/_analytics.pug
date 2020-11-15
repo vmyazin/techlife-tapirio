@@ -1,10 +1,10 @@
-//  Global site tag (gtag.js) - Google Analytics 
-script(async src='https://www.googletagmanager.com/gtag/js?id=UA-2420101-40')
+//-  Global site tag (gtag.js) - Google Analytics 
+script(async src='https://www.googletagmanager.com/gtag/js?id=' + projectInfo.appIds.googleAnalytics)
 script.
   
   window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
   
-    gtag('config', 'UA-2420101-40');
+    gtag('config', '#{projectInfo.appIds.googleAnalytics}');
   

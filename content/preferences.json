@@ -2,11 +2,11 @@
   "project": {
     "title": "Технологии и жизнь: подкаст",
     "author": "Vasily Myazin",
-    "description": "Интернет радио-программа про современные технологии, их влияние на нашу жизнь, и прочие мысли.",
+    "description": "Подкаст о современной жизни, философии, и путешествиях с технологической, космополитической, и контркультурной точки зрения.",
     "URL": "https://www.techlifepodcast.com"
   },
   "appIds": {
-    "googleAnalytics": "AABBCC",
+    "googleAnalytics": "UA-2420101-40",
     "facebookApp": "BBCCDD"
   },
   "social": {
