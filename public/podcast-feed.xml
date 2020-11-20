@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:itunesu="http://www.itunesu.com/feed">
   <channel>
     <title>Технологии и жизнь - подкаст</title>
-    <description>Интернет радио-программа про современные технологии, их влияние на нашу жизнь, и прочие мысли. Ведущие: Дмитрий Здоров и Василий Мязин.</description>
+    <description>Подкаст о современной жизни, философии, и путешествиях с технологической, космополитической, и контркультурной точки зрения. Ведущие: Дмитрий Здоров и Василий Мязин.</description>
     <itunes:image href="https://www.techlifepodcast.com/images/techlife-artwork-1400-2019.jpg"/>
     <language>ru</language>
     <copyright>&#x2117; &amp; &#xA9; 2020 Techlife Syndicate</copyright>
@@ -12,7 +12,7 @@
       <title>Технологии и жизнь - подкаст</title>
       <link>https://www.techlifepodcast.com</link>
     </image>
-    <itunes:summary>Интернет радио-программа про современные технологии, их влияние на нашу жизнь, и прочие мысли.</itunes:summary>
+    <itunes:summary>Подкаст о современной жизни, философии, и путешествиях с технологической, космополитической, и контркультурной точки зрения.</itunes:summary>
     <itunes:subtitle>Ведущие: Дмитрий Здоров и Василий Мязин.</itunes:subtitle>
     <itunes:owner>
       <itunes:name>Vasily Myazin and Dmitri Zdorov</itunes:name>
@@ -22,10 +22,25 @@
     <itunes:category text="Technology">
     <itunes:category text="Gadgets"/>
     </itunes:category>
-    <itunes:keywords>technology, podcast, russian, apple, google, travel</itunes:keywords>
+    <itunes:keywords>technology, podcast, russian, apple, google, travel, подкаст</itunes:keywords>
     <itunes:explicit>no</itunes:explicit>
     
     <!-- начало эпизодов -->
+				
+    <item>
+      <title>#60: Колоть ли компании?</title>
+      <itunes:subtitle>Роль и влияние цифровых компаний растет не по годам, а по месяцам в 2020-м роковом году. Является ли это проблемой для населения планеты?</itunes:subtitle>
+      <description>
+        <![CDATA[<p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep60-kolot-li.jpg" width="600" height="400" alt="колоть ли"></p><p><b>Заметки к эпизоду:</b></p><ul class="bulleted"><li>В Китае <a href="https://www.interfax.ru/world/736465">представили</a> проект антимонопольных норм для интернет-платформ</li><li><a href="https://vc.ru/story/164893-demokraty-iz-kongressa-ssha-nazvali-apple-facebook-google-i-amazon-monopolistami-i-predlozhili-ih-razdelit">Конгресс США назвал Apple, Facebook, Google и Amazon монополистами</a></li><li>Книга «<a href="https://www.amazon.com/Information-Rules-Strategic-Network-Economy/dp/087584863X">Information Rules</a>» (1998)</li><li><a href="https://stratechery.com/">Бен Томпсон</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
+      </description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/932626441-techlifepodcast-episode-60-kolot-li.mp3" length="30419368"/>
+      <guid>51068c5a-52f6-49ee-915e-c3f5a0c7c49b</guid>
+      <itunes:duration>0:31:35</itunes:duration>
+      <itunes:explicit>clean</itunes:explicit>
+      <pubDate>Thu, 19 Nov 2020 00:12:00 EST</pubDate>
+    </item>
+
+    <!-- разделитель эпизодов -->
 				
     <item>
       <title>#59: Четыре концепции времени</title>
