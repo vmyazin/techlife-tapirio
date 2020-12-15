@@ -28,6 +28,21 @@
     <!-- начало эпизодов -->
  				
     <item>
+      <title>#63: Используем на смартфонах - 2021</title>
+      <itunes:subtitle>Какие Apps установлены и почему</itunes:subtitle>
+      <description>
+        <![CDATA[<p>Выбор для каких задач используется то или иное приложение очень осознанный. Мы расскажем о данном наборе с которым входим в 2021 год.</p><p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep63-apps-21.jpg" width="600" height="400" alt="iphone homescreens"></p><p><b>Приложения</b></p><ul class="bulleted"><li>Фото и видео: <a href="https://halide.cam">Halide</a>, <a href="https://darkroom.co">Darkroom</a></li><li>Соц сети, новости и медиа: Twitter, instagram, youtube, plurk</li><li><- Коммуникации, мессенджеры, почта (Gmail, Skype, Telegram, Yandex Mail, Zoho Click </li></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
+      </description>
+      <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/942600637-techlifepodcast-episode-62-klimat.mp3" length="27800885"/>
+      <guid>ddeece80-5d02-4ee5-be14-a579121d4975</guid>
+      <itunes:duration>0:38:22</itunes:duration>
+      <itunes:explicit>clean</itunes:explicit>
+      <pubDate>Sun, 13 Dec 2020 00:12:00 EST</pubDate>
+    </item>
+
+    <!-- разделитель эпизодов -->
+ 				
+    <item>
       <title>#62: Как климат влияет на прогресс (?)</title>
       <itunes:subtitle>Что важнее погоды для выбора места жительства в мире</itunes:subtitle>
       <description>
