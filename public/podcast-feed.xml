@@ -28,6 +28,42 @@
      <!-- начало эпизодов -->
  				
     <item>
+      <title>#66: Музыка нас связала</title>
+      <itunes:subtitle>Музыка всегда была неотъемлемой частью дружбы между Васей и Димой. В этом эпизоде мы детально разобрали сферу музыкальных технологий.</itunes:subtitle>
+      <description>
+        <![CDATA[<p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep66-muzyka.jpg" width="600" height="600" alt="музыка нас связала"></p><p>Ведущие познакомились на музыкальном фестивале в США в середине двухтысячных. Именно музыка стала для них связующим фактором. Поскольку Вася, некогда активный музыкант и диджей, имеет много опыта с музыкальной кухней, Дима задал ему семь вопросов, которые ему давно хотелось обсудить. Ребята покрыли обширное поле концентрируясь на электронной музыке и в итоге добрались до вопроса о роли искусственного интеллекта в создании музыки.</p><p><b>Из истории музыкальной заставки для подкаста</b></p><ul class="bulleted"><li>📺 <a href="https://www.youtube.com/watch?v=XSQiFKj-AvA">Hall &amp; Oates - Alone Too Long</a></li><li>Композиция Васиного проекта Moodita, назывется <a href="https://soundcloud.com/techlifepodcast/moodita-la-calma-que-precede-a-la-tormenta">La Calma Que Precede A La Tormenta</a></li><li><a href="https://soundcloud.com/synter">synter</a></li><li><a href="https://soundcloud.com/konflux">konflux</a></li><li>📺 <a href="https://www.youtube.com/watch?v=Qww40o8XKmI">Hello Ladies Trailer</a></li></ul><p><b>Ссылки ресурсы и приложения:</b></p><ul class="bulleted"><li>
+        Splice https://www.splice.com 
+        Bloom https://generativemusic.com/bloom.html
+
+        iPhone, iPad
+        * Garage Band https://apps.apple.com/app/garageband/id408709785
+        * Auxy Pro https://apps.apple.com/app/auxy-pro-music-beat-maker/id1034348186
+        * BeatMaker 3 https://apps.apple.com/app/beatmaker-3/id1060317024
+        * Launchpad https://apps.apple.com/app/launchpad/id584362474
+        * Reason Compact https://apps.apple.com/app/reason-compact-make-music/id1253419004
+
+        Mac (+ Windows)
+        * Ableton Live https://www.ableton.com/live/
+        * Apple Logic Pro https://www.apple.com/logic-pro/
+        * Steinberg Cubase https://new.steinberg.net/cubase/
+        * Presonus Studio 1 https://www.presonus.com/products/studio-one/
+        * Bitwig Studio https://www.bitwig.com
+        * FL Studio https://www.image-line.com/fl-studio/
+        * Reason https://www.reasonstudios.com/reason
+        * Avid Pro Tools https://www.avid.com/pro-tools
+        * Reaper https://www.reaper.fm
+        </li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
+      </description>
+      <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/965871790-techlifepodcast-episode-66-muzyka.mp3" length="33127104"/>
+      <guid>36283964-20b0-49f3-9fd2-2823cb900bdc</guid>
+      <itunes:duration>0:50:20</itunes:duration>
+      <itunes:explicit>clean</itunes:explicit>
+      <pubDate>Sun, 24 Jan 2021 00:12:00 EST</pubDate>
+    </item>
+
+    <!-- разделитель эпизодов -->
+ 				
+    <item>
       <title>#65: Свобода слова</title>
       <itunes:subtitle>Первым громким событием года шокировавшим мир стал штурм Капитолия в Вашингтоне. В связи с этим ребята обсудили тему свободы слова.</itunes:subtitle>
       <description>
