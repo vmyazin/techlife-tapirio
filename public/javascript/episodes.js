@@ -8,7 +8,7 @@
     }
 
     async init() {
-      if (location.pathname == '/') {
+      if (location.pathname == '/' || location.pathname.includes('home')) {
         await this.initHomePage()
       } else if (location.pathname.includes('episode')) {
         await this.initPlayer()
