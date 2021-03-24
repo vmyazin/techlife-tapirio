@@ -28,6 +28,21 @@
      <!-- начало эпизодов -->
  				
     <item>
+      <title>#68: Даб Клаус</title>
+      <itunes:subtitle>Приложение для айфона Clubhouse оказалось очень популярным во время пандемии.</itunes:subtitle>
+      <description>
+        <![CDATA[<p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep67-v-rossii-horosho.jpg" width="600" height="600" alt="в россии хорошо"></p><p>Когда на улицу не выйти – холодно, а то вообще запрещено, то общение по интернету это единственный выход из состояния изоляции. Ведущие обсудили бум популярности аудио-чат приложения Clubhouse и его психологические компоненты. Чем эта социальная сеть отличается от остальных и как она родственна подкастам.</p><p><b>Ссылки к эпизоду</b></p><ul class="bulleted"><li><a href="https://apps.apple.com/app/id1503133294">Clubhouse</a> в Аппсторе</li><li><a href="https://www.joinclubhouse.com/">joinclubhouse.com</a> - официальный вебсайт</li><li><a href="https://perchance.org/owh9gelu4t">Генератора биографий для клабхауса</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
+      </description>
+      <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1015756189-techlifepodcast-episode-68-dub-clause.mp3" length="16380885"/>
+      <guid>f2866018-d287-44d2-a9f4-ea9ccbc878bf</guid>
+      <itunes:duration>0:16:57</itunes:duration>
+      <itunes:explicit>clean</itunes:explicit>
+      <pubDate>Thu, 25 Mar 2021 00:12:00 EST</pubDate>
+    </item>
+
+    <!-- разделитель эпизодов -->
+ 				
+    <item>
       <title>#67: Отчего на Руси жить хорошо</title>
       <itunes:subtitle>Россия, часто обсуждается в негативном контексте, но ведущие с гостем Дмитрием Ежовым осветили именно позитивные аспекты.</itunes:subtitle>
       <description>
