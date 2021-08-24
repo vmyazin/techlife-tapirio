@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(sassMiddleware({
-  src: __dirname + '/scss', //where the sass files are 
+  src: __dirname + '/scss', //where the sass files are
   dest: __dirname + '/public/stylesheets', //where css should go
   debug: true,
   indentedSyntax: false,
@@ -48,4 +48,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+//module.exports = app;
+app.listen(3000, () => {
+  console.log(`Example app listening at http://localhost:3000`)
+});
