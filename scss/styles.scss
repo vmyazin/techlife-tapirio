@@ -1,16 +1,16 @@
-@import url('https://unpkg.com/css.gg/icons/all.css');
-@import 'bootstrap/_functions.scss';
-@import 'bootstrap/_variables.scss';
-@import 'bootstrap/_breakpoints.scss';
-@import '_variables.scss';
-@import '_mixins.scss';
+@import url("https://unpkg.com/css.gg/icons/all.css");
+@import "bootstrap/_functions.scss";
+@import "bootstrap/_variables.scss";
+@import "bootstrap/_breakpoints.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
 
 body {
   background-color: $black;
   background-position: center top;
   background-size: 100%;
   background-repeat: no-repeat;
-  font-family: 'Fira Sans', 'Helvetica Nueu', Arial, sans-serif;
+  font-family: "Fira Sans", "Helvetica Nueu", Arial, sans-serif;
   font-weight: 400;
   color: #fff;
 
@@ -18,7 +18,12 @@ body {
   // }
 
   &[class*="guests"] {
-    background: linear-gradient(180deg, #111111 0%, #031B28 73.4%, #111111 97.88%);
+    background: linear-gradient(
+      180deg,
+      #111111 0%,
+      #031b28 73.4%,
+      #111111 97.88%
+    );
   }
 }
 
@@ -37,9 +42,10 @@ body {
   white-space: nowrap;
 }
 
-p, li {
+p,
+li {
   font-size: $font-s3;
-  color: #F2F2F2;
+  color: #f2f2f2;
   line-height: 1.6;
 }
 
@@ -92,6 +98,7 @@ h2 {
   line-height: 1;
   font-size: $font-s1;
   color: $accent;
+  text-shadow: #000000ee 1px 1px 0;
   margin-top: 2vw;
 }
 
@@ -111,11 +118,13 @@ h3 {
 }
 
 h4 {
-  font-size: $font-s3;  
+  font-size: $font-s3;
   font-weight: 600;
 }
 
-h3, h4, h5 {
+h3,
+h4,
+h5 {
   color: #aaa;
 }
 
@@ -132,7 +141,8 @@ h3 + h2 {
 }
 
 @media (min-width: $min-scr-width) and (max-width: $scr-width-sm) {
-  p, li {
+  p,
+  li {
     font-size: $font-s4;
   }
 
@@ -153,7 +163,7 @@ h3 + h2 {
   }
 
   h4 {
-    font-size: $font-s4;  
+    font-size: $font-s4;
     font-weight: 600;
   }
 }
@@ -196,7 +206,6 @@ pre {
 
   &:hover:not(.active) {
     svg {
-
       path {
         fill: #ffffff;
       }
@@ -217,7 +226,7 @@ pre {
     svg {
       height: 22px;
     }
-  }  
+  }
 }
 
 .episode-list {
@@ -232,10 +241,8 @@ pre {
     padding-left: 85px;
     margin-bottom: 10px;
     line-height: 1.3;
-  
+
     &.selected {
-      border: 2px solid $mid-grey;
-      background-color: rgba(0,0,0,0.5);
       box-sizing: border-box;
       padding: 25px 25px 25px 110px;
       margin-left: -25px;
@@ -247,7 +254,7 @@ pre {
       }
 
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         top: 22px;
         left: -70px;
@@ -258,13 +265,19 @@ pre {
         background-repeat: no-repeat;
       }
     }
-  }  
+  }
 
   .episode-num {
     position: absolute;
     left: 0;
     top: 0;
   }
+}
+
+.dark-box,
+.episode-list li.selected {
+  border: 2px solid $mid-grey;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .date {
@@ -304,8 +317,9 @@ pre {
   .episode-num {
     left: -87px;
   }
-  
-  div > h3, h4 {
+
+  div > h3,
+  h4 {
     padding-right: 75px;
     margin-bottom: 1.5rem;
   }
@@ -318,7 +332,7 @@ pre {
 }
 
 .episode-desc {
-  position: relative;    
+  position: relative;
   font-size: $font-s3;
   color: $mid-grey;
 
@@ -333,7 +347,7 @@ pre {
     &:last-of-type {
       margin-bottom: 0;
     }
-  } 
+  }
 
   ul,
   ol {
@@ -346,7 +360,7 @@ pre {
       margin-bottom: 10px;
       color: $light-grey;
       line-height: 1.55;
-  
+
       a {
         b {
           color: white;
@@ -411,7 +425,7 @@ pre {
   p {
     font-size: $font-s4;
     color: $mid-grey;
-    
+
     @media screen and (max-width: $scr-width-sm) {
       font-size: $font-s5;
     }
@@ -428,6 +442,16 @@ pre {
   background-color: $accent;
   color: white;
   border-color: $accent;
+}
+
+.btn-secondary {
+  background-color: darken($accent, 20%);
+  color: white;
+  border-color: darken($accent, 20%);
+
+  &:hover {
+    background-color: darken($accent, 40%);
+  }
 }
 
 .btn-lg {
@@ -454,7 +478,7 @@ pre {
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 1px;
       right: 1px;
@@ -486,9 +510,10 @@ pre {
   h3 {
     color: #f2f2f2;
   }
-  
+
   p {
-    color: $mid-grey;
+    color: #ffffffcc;
+    text-shadow: #000000ee 1px 1px 0;
   }
 }
 
@@ -519,7 +544,7 @@ pre {
     }
 
     &:hover {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 
@@ -614,7 +639,7 @@ pre {
   display: flex;
   align-items: center;
   transform: translateY(100%);
-  transition: transform .5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 
   &.active {
     transform: translateY(0%);
@@ -638,7 +663,7 @@ pre {
   }
 
   .so-far {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -682,7 +707,7 @@ blockquote {
 }
 
 .with-bg {
-  padding: .35rem .5rem;
+  padding: 0.35rem 0.5rem;
   background-color: $dark-grey;
   color: white;
   display: inline-block;
@@ -702,14 +727,15 @@ blockquote {
   }
 
   li {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   &.accented {
     background-color: $accent;
     border: 0;
 
-    p, li {
+    p,
+    li {
       color: $black;
     }
   }
