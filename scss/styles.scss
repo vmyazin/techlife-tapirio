@@ -186,6 +186,7 @@ pre {
 
 .top-nav {
   margin-bottom: -1rem;
+  padding: 0 2rem;
 }
 
 .nav-pill {
@@ -417,6 +418,12 @@ pre {
   list-style: none;
   list-style-type: disc;
   list-style-position: outside;
+}
+
+@media (min-width: $scr-width-sm) {
+  .nav-back {
+    margin-left: -1.9rem;
+  }
 }
 
 .footer .row {
