@@ -208,7 +208,7 @@ pre {
   &:hover:not(.active) {
     svg {
       path {
-        fill: #ffffff;
+        fill: #fff;
       }
     }
   }
@@ -223,6 +223,10 @@ pre {
 }
 
 @media screen and (max-width: $scr-width-sm) {
+  .top-nav {
+    padding: 0;
+  }
+
   .nav-pill {
     svg {
       height: 22px;
