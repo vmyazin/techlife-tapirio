@@ -20,7 +20,7 @@
     </itunes:owner>
     <itunes:author>Vasily Myazin and Dmitri Zdorov</itunes:author>
     <itunes:category text="Technology">
-    <itunes:category text="Gadgets"/>
+      <itunes:category text="Gadgets"/>
     </itunes:category>
     <itunes:keywords>technology, podcast, russian, apple, google, travel, подкаст</itunes:keywords>
     <itunes:explicit>no</itunes:explicit>
