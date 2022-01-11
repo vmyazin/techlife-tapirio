@@ -28,6 +28,21 @@
     <!-- начало эпизодов -->
 
     <item>
+      <title>#81: Творчество</title>
+      <itunes:subtitle>Всем ли дано заниматься творчеством? Как развивать в себе творческие навыки?</itunes:subtitle>
+      <description>
+        <![CDATA[<p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep81-tvorechestvo.jpg" width="600" height="600" alt="creativity"></p><p>Поговорили о том, всем ли дано быть творческими личностями. Ведь некоторые люди действительно считают, что им не дан креатив «от бога». В течение беседы ведущие почти во всем согласились, но ближе к концу появилось разногласие. А как вы считаете, можно ли всем и во всём проявлять творчество? Напишите нам в телеграме: <a href="https://t.me/techlifepodcast">t.me/techlifepodcast</a></p><p>Книга «<a href="https://www.ozon.ru/product/voyna-za-kreativ-kak-preodolet-vnutrennie-barery-i-nachat-tvorit-7220125/?sh=lEKd8KiV">Война за креатив</a>», автор Стивен Прессфилд</p><p>Димин телеграм канал с картинками для вдохновения: <a href="https://t.me/s/DimkaIMG">t.me/DimkaIMG</a></p><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
+      </description>
+      <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1194373111-techlifepodcast-episode-81-tvorchestvo.mp3" length="26069926"/>
+      <guid>16be12e0-a445-4b5f-b9df-d6ab7c2e539a</guid>
+      <itunes:duration>0:27:04</itunes:duration>
+      <itunes:explicit>clean</itunes:explicit>
+      <pubDate>Tue, 11 Jan 2022 00:12:00 EST</pubDate>
+    </item>
+
+    <!-- разделитель эпизодов -->	
+
+    <item>
       <title>#80: Итоги 2021-го года</title>
       <itunes:subtitle>В последнем выпуске уходящего 2021-го года Дима и Вася обсудили каким им запомнился этот период.</itunes:subtitle>
       <description>
@@ -40,16 +55,17 @@
       <pubDate>Fri, 31 Dec 2021 00:12:00 EST</pubDate>
     </item>
 
-    <!-- разделитель эпизодов -->		
+    <!-- разделитель эпизодов -->	
+
     <item>
       <title>#79: Используем на смартфонах 2022</title>
       <itunes:subtitle>Какими приложениями для Айфона Дима и Вася пользовались в 2021-ом году, по категориям.</itunes:subtitle>
       <description>
         <![CDATA[<p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep79-apps-21.jpg" width="600" height="600" alt="apps for 2022"></p><p>Выбор для каких задач используется то или иное мобильное приложение у нас (почти) всегда осознанный. Мы расскажем о наших коллекциях, в двенадцати категориях, которые показали себя полезными, с которыми мы входим в 2022 год.</p><p><a href="https://www.techlifepodcast.com/episodes/63">Наш выпуск №63, год назад</a></p><p><b>Приложения</b><br></p><ul class="bulleted"><li>Фото и видео: <a href="https://halide.cam">Halide</a>, <a href="https://darkroom.co">Darkroom</a>, <a href="https://poly.cam/">PolyCam</a>, <a href="https://reincubate.com/camo/">Camo</a>, <a href="https://spectre.cam/">Spectre</a>, <a href="https://apps.apple.com/app/hyperlapse-from-instagram/id740146917">Hyperlapse</a></li><li>Соц сети, новости и медиа: Twitter, Swarm, Youtube, <a href="https://plurk.com">Plurk</a></li><li>Коммуникации, мессенджеры, почта: Gmail, Telegram, Yandex Mail, Whatsapp (и <a href="https://wa.me/">wa.me/номер</a> чтобы писать без добавления в контакты), Google Voice, Google Fi</li><li>Путешествия и навигация: <a href="https://skiplagged.com/">Skiplagged</a>, <a href="https://www.rome2rio.com/about/rome2rio-app/">Rome2Rio</a>, Google Maps,  Yandex Maps</li><li>Заметки, записи и текст: <a href="https://www.notion.so">Notion</a>, <a href="https://simplenote.com">Simplenote</a>, <a href="https://paper.dropbox.com">Paper</a>, Apple Notes</li><li>Продуктивность, календари, напоминалки: <a href="https://flexibits.com/fantastical">Fantastical</a></li><li>Браузеры: <a href="https://www.mozilla.org/firefox/mobile/get-app/">Firefox</a>, MS <a href="https://www.microsoft.com/edge">Edge</a>, <a href="https://browser.yandex.ru">Yandex.Browser</a>, <a href="https://brave.com">Brave</a></li><li>Музыка, подкасты, аудиокниги: <a href="https://apps.apple.com/app/cs-classic-music-player/id924491991">Cs Music</a>, <a href="https://apps.apple.com/app/bookplayer/id1138219998">BookPlayer</a>, <a href="https://overcast.fm">Overcast</a>, Shazam, Soundhound, <a href="https://music.youtube.com">Youtube Music</a>, Audible</li><li>Утилиты и инструменты, файлы, рабочее, инфа, референс, словари: <a href="https://www.linguee.com">Linguee</a>, <a href="https://windscribe.com/?friend=xi3v7lf0">Windscribe VPN</a>, <a href="https://www.deepl.com/en/app/">Deepl</a>, Yandex Translate, Dropbox, Google Drive, <a href="https://mega.nz/aff=yE2vxBL72EM">Mega</a>, <a href="https://1Password.com">1Password</a>, <a href="https://www.lastpass.com">LastPass</a>, <a href="https://www.enpass.io/downloads/#mobiles">enPass</a></li><li>Финансы: Крипто-кошелек <a href="https://eidoo.io">Eidoo</a>, Криптобиржа <a href="https://www.coinex.com/register?refer_code=dr4s2">CoinEx</a>, <a href="https://robinhood.com/">Robinhood</a></li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]>
       </description>
-      <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1177975252-techlifepodcast-episode-79-apps-2022.mp3" length="29933032"/>
+      <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1194372277-techlifepodcast-techlifepodcast-episode-79-apps-for-2022.mp3" length="36001096"/>
       <guid>e72817f7-fd4f-4e26-b401-4081d5564c15</guid>
-      <itunes:duration>0:31:07</itunes:duration>
+      <itunes:duration>0:37:26</itunes:duration>
       <itunes:explicit>clean</itunes:explicit>
       <pubDate>Tue, 14 Dec 2021 00:18:00 EST</pubDate>
     </item>
