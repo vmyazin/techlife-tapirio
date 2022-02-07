@@ -28,6 +28,17 @@
             <itunes:explicit>false</itunes:explicit>
 
             <item>
+                <title>#83: Теории заговоров</title>
+                <itunes:subtitle>Откуда берётся пища для конспирологии?</itunes:subtitle>
+                <description><![CDATA[<p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep83-teorii-zagovorov.jpg" width="600" height="600" alt="conspiracy"></p><p>В этом выпуске мы обсудили как теории заговора влияли на жизни и умы людей до интернета и с его появлением. Их несметное количество и особенно яркими являются 11-е сентября 2001-го, полёт на Луну, плоская земля и инфекция 2019-го года. Откуда у людей такой повышенный интерес к заговорам? Как понять что правда, а что домыслы? Попробуем разобраться.</p><p>Ссылки к выпуску:</p><ul><li><a href="https://ru.wikipedia.org/wiki/Теория_заговора">Теория заговора, определение на Википедии</a></li><li>Стандарт Сагана - это поговорка о том, что «<a href="https://ru.rationalwiki.org/wiki/Экстраординарные_утверждения_требуют_экстраординарных_доказательств">экстраординарные заявления требуют экстраординарных доказательств</a>»</li></ul><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]></description>
+                
+                <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1211414203-techlifepodcast-episode-83-teorii-zagovorov.mp3" length="31804666"/>
+                <guid>5c9fa26b-7483-47eb-be5e-a22d9e55d647</guid>
+                <itunes:duration>33:00</itunes:duration>
+                <itunes:explicit>false</itunes:explicit>
+                <pubDate>Mon, 7 Feb 2022 14:57 UTC</pubDate>
+            </item>
+            <item>
                 <title>#82: Монолингва</title>
                 <itunes:subtitle>Что было бы лучше: если бы разные языки и культуры сохранялись или, напротив, их было бы меньше, но с возможностью более глубоких достижений.</itunes:subtitle>
                 <description><![CDATA[<p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep82-monolingva.jpg" width="600" height="600" alt="monolingua"></p><p>Изучение новых языков для многих является очень трудной задачей. Тем не менее, в мире есть несколько основных языков, на которых говорит большая часть населения. Однако, не во всех странах люди владеют одним из этих языков на высоком уровне. Мы обсудили плюсы и минусы использования малого количества общих языков как, например, английского, китайского, испанского, или даже русского по всей планете. Нужно ли так усердно удерживаться за исчезающие языки? Какова цена введения нового языка или даже просто алфавита в нацию? Есть ли языки программирования основанные не английском? Об этих и других вопросах мы вступили в дружескую дискуссию</p><p><b>Заметки к выпуску:</b></p><p> Wikipedia «<a href="https://en.wikipedia.org/wiki/Non-English-based_programming_languages">Неанглоязычные языки программирования</a>»</p><p>Наука сегодня: <a href="https://sciencetoday.ru/more/topic/25-yazykov-nakhodyashchikhsya-pod-ugrozoj-ischeznoveniya-kotorye-neobkhodimo-proslushat-prezhde-chem-oni-ischeznut">25 языков, находящихся под угрозой исчезновения</a></p><p><img src="https://www.techlifepodcast.com/images/techlifepodcast-ep82-portuguese.jpg" width="616" height="449"><br />Историческая заметка: “Запрещено говорить на следующих языках: немецком, итальянском и японском. В Бразилии мы говорим только на португальском. Нарушители будут наказаны по всей строгости закона.” (Сан-Лоренсу, Минас-Жерайс, Бразилия, 1942)</p><p><a href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br> <a href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]></description>
@@ -838,7 +849,7 @@
                 <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-09-Cena-Privatnosti.mp3" length="41988934"/>
                 <guid>http://techlifepodcast.com/Episodes/Techlife-2015-06-10.mp3</guid>
                 <itunes:duration>43:44</itunes:duration>
-                <itunes:explicit>undefined</itunes:explicit>
+                <itunes:explicit>false</itunes:explicit>
                 <pubDate>Sat, 27 Jun 2015 22:06 UTC</pubDate>
             </item>
             <item>
@@ -849,7 +860,7 @@
                 <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-08-AI-v-Kino.mp3" length="46820960"/>
                 <guid>http://techlifepodcast.com/Episodes/Techlife-2015-05-31.mp3</guid>
                 <itunes:duration>48:46</itunes:duration>
-                <itunes:explicit>undefined</itunes:explicit>
+                <itunes:explicit>false</itunes:explicit>
                 <pubDate>Sun, 31 May 2015 22:06 UTC</pubDate>
             </item>
             <item>
@@ -860,7 +871,7 @@
                 <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-07-Diktovka-v-telefon.mp3" length="51813065"/>
                 <guid>http://techlifepodcast.com/Episodes/Techlife-2015-05-25.mp3</guid>
                 <itunes:duration>53:58</itunes:duration>
-                <itunes:explicit>undefined</itunes:explicit>
+                <itunes:explicit>false</itunes:explicit>
                 <pubDate>Mon, 25 May 2015 22:06 UTC</pubDate>
             </item>
             <item>
@@ -871,7 +882,7 @@
                 <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-06-Novyj-MacBook.mp3" length="60245518"/>
                 <guid>http://techlifepodcast.com/Episodes/Techlife-2015-05-01.mp3</guid>
                 <itunes:duration>41:50</itunes:duration>
-                <itunes:explicit>undefined</itunes:explicit>
+                <itunes:explicit>false</itunes:explicit>
                 <pubDate>Fri, 1 May 2015 22:06 UTC</pubDate>
             </item>
             <item>
@@ -882,7 +893,7 @@
                 <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-05-Monopoliya-Google-v-Reklame.mp3" length="89429390"/>
                 <guid>http://techlifepodcast.com/Episodes/Techlife-2015-04-19.mp3</guid>
                 <itunes:duration>1:02:06</itunes:duration>
-                <itunes:explicit>undefined</itunes:explicit>
+                <itunes:explicit>false</itunes:explicit>
                 <pubDate>Sun, 19 Apr 2015 22:06 UTC</pubDate>
             </item>
             <item>
@@ -893,7 +904,7 @@
                 <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-04-Muzykalnyj-Striming.mp3" length="83957469"/>
                 <guid>http://techlifepodcast.com/Episodes/Techlife-2015-04-05.mp3</guid>
                 <itunes:duration>58:18</itunes:duration>
-                <itunes:explicit>undefined</itunes:explicit>
+                <itunes:explicit>false</itunes:explicit>
                 <pubDate>Sun, 5 Apr 2015 22:06 UTC</pubDate>
             </item>
             <item>
@@ -904,7 +915,7 @@
                 <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-03-Vstretilis-v-Kalifornii.mp3" length="70757900"/>
                 <guid>http://techlifepodcast.com/Episodes/Techlife-2015-03-29.mp3</guid>
                 <itunes:duration>49:08</itunes:duration>
-                <itunes:explicit>undefined</itunes:explicit>
+                <itunes:explicit>false</itunes:explicit>
                 <pubDate>Sun, 29 Mar 2015 22:06 UTC</pubDate>
             </item>
             <item>
@@ -915,7 +926,7 @@
                 <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-02-USB-C.mp3" length="88085861"/>
                 <guid>http://techlifepodcast.com/Episodes/Techlife-2015-03-22.mp3</guid>
                 <itunes:duration>1:01:10</itunes:duration>
-                <itunes:explicit>undefined</itunes:explicit>
+                <itunes:explicit>false</itunes:explicit>
                 <pubDate>Sun, 22 Mar 2015 22:06 UTC</pubDate>
             </item>
             <item>
@@ -926,7 +937,7 @@
                 <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-01-Padenie-Apple.mp3" length="95429821"/>
                 <guid>http://techlifepodcast.com/Episodes/Techlife-2015-03-15.mp3</guid>
                 <itunes:duration>1:06:16</itunes:duration>
-                <itunes:explicit>undefined</itunes:explicit>
+                <itunes:explicit>false</itunes:explicit>
                 <pubDate>Sun, 15 Mar 2015 22:06 UTC</pubDate>
             </item>
         </channel>
