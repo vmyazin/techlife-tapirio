@@ -25,7 +25,7 @@
     "fs-extra": "^9.0.0",
     "http-errors": "~1.7.3",
     "markdown-it": "^10.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "morgan": "~1.10.0",
     "node-html-parser": "^1.2.20",
     "node-sass": "^4.13.1",
