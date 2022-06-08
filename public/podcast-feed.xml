@@ -27,7 +27,19 @@
         </itunes:category>
         <itunes:keywords>technology, podcast, russian, apple, google, travel, подкаст</itunes:keywords>
         <itunes:explicit>false</itunes:explicit>
-
+        
+        <item>
+            <title>#90: Лучше, чем пароль?</title>
+            <itunes:subtitle>Скоро на смену паролям и кодам из СМС придёт универсальное биометрическое подтверждение личности.</itunes:subtitle>
+            
+            <description><![CDATA[<p><img src="https://techlifepodcast.com/images/techlifepodcast-ep90-fido.jpg" alt="fido" title="fido"></p><p>4-го мая был Всемирный День Паролей. В связи с этим Дима посвятил посвятил нас в ещё не повсеместно распространённый, но многообещающий метод избавиться от пароля (и от праздника, видимо, тоже))).</p><p>Такие функции, как мультифакторная аутентификация (MFA), являются отличным способом обеспечения безопасности доступа к вашим аккаунтам. Однако, пользователи часто разочаровываются, что помимо необходимости помнить свои пароли, от них требуют дополнительный уровень безопасности.</p><p>Беспарольные методы аутентификации, как, например, FIDO (Fast IDentity Online), более удобны, поскольку вместо пароля вы можете пользоваться биометрической информацией, личными данными (как отпечаток пальца), или фактами, которые только вы знаете.</p><p>И пароли больше не нужно будет запоминать или записывать!<br><br><strong>Ссылки к выпуску:</strong></p><ul><li><p>«<a target="_blank" rel="noopener noreferrer nofollow" href="https://www.onespan.com/ru/topics/fido-fast-identity-online">Что такое ФИДО?</a>» из блога компании OneSpan</p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://techcommunity.microsoft.com/t5/azure-active-directory-identity/expansion-of-fido-standard-and-new-updates-for-microsoft/ba-p/3290633">Expansion of FIDO standard and new updates for Microsoft passwordless solutions</a> (На английском)</p></li><li><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://fidoalliance.org/what-is-fido/">What is Fido</a> (На английском)</p></li></ul><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a target="_blank" rel="noopener noreferrer nofollow" href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a target="_blank" rel="noopener noreferrer nofollow" href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]></description>
+            <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1283525848-techlifepodcast-episode-90-fido.mp3" length="14601403"/>
+            <guid>9bb2e44e-9bc9-4f43-8c3c-effd4969c681</guid>
+            
+            <itunes:duration>15:10</itunes:duration>
+            <itunes:explicit>false</itunes:explicit>
+            <pubDate>Wed, 8 Jun 2022 06:04 UTC</pubDate>
+        </item>
         <item>
             <title>#89: Традиции или Прогресс</title>
             <itunes:subtitle>А правда ли что если в 20 лет ты не либерал, то у тебя нет сердца, а если в 40 не консерватор, то нет мозгов?</itunes:subtitle>
