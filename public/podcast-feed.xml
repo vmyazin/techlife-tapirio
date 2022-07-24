@@ -27,6 +27,18 @@
         </itunes:category>
         <itunes:keywords>technology, podcast, russian, apple, google, travel, подкаст</itunes:keywords>
         <itunes:explicit>false</itunes:explicit>
+        
+        <item>
+                <title>#92: Технологии облегчают путешествия</title>
+                <itunes:subtitle>Еще какие-то 15 лет назад путешествовать было не так удобно как сейчас. Что изменилось для путешественников с помощью интернета?</itunes:subtitle>
+                <description><![CDATA[<p><img src="https://techlifepodcast.com/images/techlifepodcast-ep92-tech-obleg-put.jpg" alt="travelease" title="travelease"></p><p>Современные технологии позволяют нам настолько просто спланировать поездки и пребывание вдали от привычных и родных мест, что мы зачастую не задумываемся насколько раньше всё было менее удобно.</p><p>Ведущие в беседе отправились в своё прошлое, чтобы вспомнить как 10-30 лет назад приходилось делать простые вещи сложными и неудобными методами.</p><p>Тогда мы об этом и не догадывались, а сегодня принимаем за данное быстрый интернет, звонки из любого места в любое время в любую точку мира, бронирование авиабилетов за минуты сидя на кухне, перевод текста любого языка в реальном времени и многое другое.</p><p>Чтобы оценить как мы технологически продвинулось, надо осознавать какой путь развития мы прошли.</p><ul><li><a href="https://www.upaway.app">Upaway</a> — поддержка путешественников в реальном времени и организация поездок (English)</li><li><a href="https://revolut.com">Revolut</a> — цифровой банк</li><li><a href="https://www.giffgaff.com">Giffgaff</a> —  сотовой оператор из Великобритании, автоматический роуминг по миру</li><li>Денежная единица Венгрии: Форинт</li><li>Чаты по 110+ странам в Телеграме <a href="https://t.me/tele_360chat">t.me/tele_360chat</a></li></ul><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://itunes.apple.com/podcast/tehnologii-i-zizn/id1013700516?mt=2">наш подкаст в директории подкастов Эппл</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a target="_blank" rel="noopener noreferrer nofollow" href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a target="_blank" rel="noopener noreferrer nofollow" href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]></description>
+                
+                <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1310756746-techlifepodcast-92-tekhnologii-oblegchayut-puteshestviya.mp3" length="27468004"/>
+                <guid>9218d5da-450d-4b2f-a59b-f1e2de011cc1</guid>
+                <itunes:duration>28:30</itunes:duration>
+                <itunes:explicit>false</itunes:explicit>
+                <pubDate>Sun, 24 Jul 2022 05:21 UTC</pubDate>
+        </item>
         <item>
             <title>#91: Миссия исчезнуть</title>
             <itunes:subtitle>Как скрыться от всех в современном мире? Обсудили шаги необходимые, чтобы исчезнуть из внимания знакомых и органов власти</itunes:subtitle>
