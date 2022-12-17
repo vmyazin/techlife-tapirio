@@ -51,7 +51,8 @@ html
           meta(name='description' content=pageDescription)
         else
           meta(name='description' content=projectInfo.project.description)
-
+      meta(name='twitter:card' content='summary_large_image')
+      
       //- OG:Image
       if isEpisodePage
         if episode.shareImg
@@ -64,7 +65,8 @@ html
         meta(property='og:image' content=pageShareImg)
       else
         meta(property='og:image' content='/images/og-techlife-artwork-1200.jpg')
-
+      meta(property='og:image:width' content='800')
+      
   body(class=path)
     if isHeroParallax
       img.hero-image(src=heroImg id="hero-image" class="parallax")
