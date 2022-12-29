@@ -243,13 +243,13 @@ pre {
 
   li {
     position: relative;
-    padding-left: 85px;
+    padding-left: 75px;
     margin-bottom: 10px;
     line-height: 1.3;
 
     &.selected {
       box-sizing: border-box;
-      padding: 25px 25px 25px 110px;
+      padding: 25px 25px 25px 120px;
       margin-left: -25px;
       margin-right: -25px;
       margin-bottom: $font-s2;
@@ -320,7 +320,7 @@ pre {
   position: relative;
 
   .episode-num {
-    left: -87px;
+    left: -97px;
   }
 
   div > h3,
