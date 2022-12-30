@@ -30,7 +30,7 @@
     "node-html-parser": "^1.2.20",
     "node-sass": "^8.0.0",
     "node-sass-middleware": "^1.0.1",
-    "pug": "2.0.4",
+    "pug": "3.0.1",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
