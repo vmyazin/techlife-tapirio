@@ -51,6 +51,13 @@ li {
 
 p {
   margin-bottom: 1.5rem;
+
+  &.lh-1 {
+    line-height: 1;
+  }
+  &.lh-1_2 {
+    line-height: 1.2;
+  }
 }
 
 p.small {
@@ -187,6 +194,16 @@ pre {
 .top-nav {
   margin-bottom: -1rem;
   padding: 0 2rem;
+}
+
+a.d-flex {
+  text-decoration: none; 
+  border: none;
+  &:hover {
+    p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
 }
 
 .nav-pill {
