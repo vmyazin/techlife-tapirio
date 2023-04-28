@@ -28,6 +28,20 @@
           <itunes:keywords>technology, podcast, russian, apple, google, travel, подкаст</itunes:keywords>
           <itunes:explicit>false</itunes:explicit>
           
+  
+          <item>
+              <title>#110: Синтетическое удовольствие: преимущества и риски</title>
+              <itunes:subtitle>Наркотики – что это вообще что? Зло ли это или добро, и как они влияют на нашу жизнь.</itunes:subtitle>
+              
+              <description><![CDATA[<p><img src="https://techlifepodcast.com/images/techlifepodcast-ep110-torch.jpg" alt="торч" title="Синтетическое удовольствие"></p><p>Мы встретились в эфире интернета, чтобы обсудить неоднозначную тему: наркотики. Мы исследовали различные взгляды на эту проблему и обсудили, как наркотики влияют на нашу жизнь, как материально, так и эмоционально. Мы также обсудили вопросы, связанные с законодательством, медициной и этикой, связанные с употреблением наркотиков. Мы подняли вопросы о причинах, по которым люди вынуждены к ним обращаться, и о том, как мы можем улучшить существование в нашей сложной цивилизации. Нажимайте "Play" и узнайте больше о этой важной и комплексной теме.</p><ul><li><a target="_blank" rel="noopener noreferrer nofollow" href="https://48power.bib.bz/">"48 законов власти" Роберта Грина</a></li></ul><p>📺 <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/@techlifepodcast">Наш канал на Youtube</a></p><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bing.com/new?form=MY028Z&amp;OCID=MY028Z">наш подкаст в директории подкастов Эппл</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a target="_blank" rel="noopener noreferrer nofollow" href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a target="_blank" rel="noopener noreferrer nofollow" href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]></description>
+              <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1502239021-techlifepodcast-110-torch.mp3" length="27249021"/>
+              <guid>4b2891f5-9c48-46c8-95bd-af73daa057f5</guid>
+              
+              <itunes:duration>22:30</itunes:duration>
+              <itunes:explicit>false</itunes:explicit>
+              
+              <pubDate>Fri, 28 Apr 2023 15:27 UTC</pubDate>
+          </item>
           <item>
               <title>#109: Опасный ИИ</title>
               <itunes:subtitle>Можно ли засунуть джина искусственного интеллекта обратно в бутылку хотя бы не надолго?</itunes:subtitle>
