@@ -27,7 +27,20 @@
           </itunes:category>
           <itunes:keywords>technology, podcast, russian, apple, google, travel, подкаст</itunes:keywords>
           <itunes:explicit>false</itunes:explicit>
-          
+
+         <item>
+              <title>#115: Гос. контроль</title>
+              <itunes:subtitle>Государство за нами наблюдает и контролирует наше поведение. Можно ли этого избежать?</itunes:subtitle>
+              
+              <description><![CDATA[<p><img src="https://techlifepodcast.com/images/techlifepodcast-ep115-kontrol.jpg" alt="контроль" title="контроль"></p><p>В этом выпуске мы рассматриваем тему государственного контроля за населением. Откроем глаза на реальность тотального наблюдения за нами "большим братом". Вместе мы провели анализ систем и механизмов, используемых государством для наблюдения и контроля за нашим поведением. Обсудили этические и юридические аспекты контроля и задали вопрос: возможно ли найти способы избежать или минимизировать его воздействие на нашу жизнь?</p><p>Присоединяйтесь к нашему дискурсу и расширьте свое понимание о государственном контроле в современном мире.</p><p><strong>Ссылки к выпуску:</strong></p><ul><li><p>Сериал «<a target="_blank" rel="noopener noreferrer nofollow" href="https://www.kinopoisk.ru/series/655800/">Черное зеркало</a>»</p></li><li><p>Роман Д. Оруэлла «<a target="_blank" rel="noopener noreferrer nofollow" href="https://boomdown.org/sites/default/files/1984_1948.pdf">1984</a>»</p></li><li><p>к/ф «<a target="_blank" rel="noopener noreferrer nofollow" href="https://www.kinopoisk.ru/film/496/?utm_referrer=techlifepodcast.com">Особое мнение</a>» (Minority Report)</p></li></ul><p>📺 <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/@techlifepodcast">Наш канал на Youtube</a></p><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bing.com/new?form=MY028Z&amp;OCID=MY028Z">наш подкаст в директории подкастов Эппл</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a target="_blank" rel="noopener noreferrer nofollow" href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a target="_blank" rel="noopener noreferrer nofollow" href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]></description>
+              <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1556628802-techlifepodcast-115-kontrol.mp3" length="34103854"/>
+              <guid>21d39672-b300-444b-8b18-256dd95b60a4</guid>
+              
+              <itunes:duration>23:29</itunes:duration>
+              <itunes:explicit>false</itunes:explicit>
+              
+              <pubDate>Tue, 4 Jul 2023 13:57 UTC</pubDate>
+         </item> 
          <item>
               <title>#114: Про-Видение</title>
               <itunes:subtitle>Apple объявили о выходе нового сенсационного продукта – Vision Pro</itunes:subtitle>
