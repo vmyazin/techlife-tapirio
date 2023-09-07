@@ -28,7 +28,20 @@
           <itunes:keywords>technology, podcast, russian, apple, google, travel, подкаст</itunes:keywords>
           <itunes:explicit>false</itunes:explicit>
         
-        <item>
+          <item>
+              <title>#121: Устройства и доверие</title>
+              <itunes:subtitle>Можно ли защититься в мире, где всё находится на облаке и в цифровых технологиях</itunes:subtitle>
+              
+              <description><![CDATA[<p><img src="https://techlifepodcast.com/images/techlifepodcast-ep121-ustroistva-i-doverie.jpg" alt="Устройства и доверие" title="Устройства и доверие"></p><p>В ходе нашего разговора мы обсудили то, какие меры можно предпринять в случае, если наши устройства перестают работать должным образом или у нас нет доступа к ним. Как перестраховаться, если смартфон заглючил или пропал доступ к аккаунтам на облаке.</p><p>Кроме того, мы затронули тему глобальной тенденцию перехода в цифровую эпоху и хранение данных в облаке. Мы обсудили, каким образом эта тенденция влияет на нашу повседневную жизнь, какие плюсы и минусы с этим связаны, и как каждый из нас может адаптироваться к этим переменам.</p><p><strong>Ссылки к выпуску:</strong></p><ul><li><p>Книга "<a target="_blank" rel="noopener noreferrer nofollow" href="https://readrate.com/rus/books/information-rules-a-strategic-guide-to-the-network-economy">Information Rules</a>"</p></li><li><p>к/ф <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.kinopoisk.ru/film/496">Особое мнение</a> (Minority Report)</p></li></ul><p>📺 <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/@techlifepodcast">Наш канал на Youtube</a></p><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bing.com/new?form=MY028Z&amp;OCID=MY028Z">наш подкаст в директории подкастов Эппл</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a target="_blank" rel="noopener noreferrer nofollow" href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a target="_blank" rel="noopener noreferrer nofollow" href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]></description>
+              <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1611096720-techlifepodcast-121-ustroystva-i-doverie.mp3" length="30104279"/>
+              <guid>6ae678cc-3925-49e2-abf1-b7d0abc0d715</guid>
+              
+              <itunes:duration>20:41</itunes:duration>
+              <itunes:explicit>false</itunes:explicit>
+              
+              <pubDate>Thu, 7 Sep 2023 23:38 UTC</pubDate>
+          </item>
+          <item>
               <title>#120: Работа в дороге</title>
               <itunes:subtitle>Для удалёнщиков, которые работают на ноутбуках, как можно перемещаться и не потерять продуктивность?</itunes:subtitle>
               
@@ -40,8 +53,8 @@
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Sun, 27 Aug 2023 21:46 UTC</pubDate>
-        </item>
-        <item>
+          </item>
+          <item>
               <title>#119: Квантовые компьютеры</title>
               <itunes:subtitle>Дима рассказал о своём понимании важности квантовых компьютеров и какие чудеса и трудности нас ждут</itunes:subtitle>
               
@@ -53,8 +66,8 @@
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Thu, 10 Aug 2023 15:59 UTC</pubDate>
-         </item>
-         <item>
+          </item>
+          <item>
               <title>#118: Как войти в мета-вселенную?</title>
               <itunes:subtitle>нтервью с Александром Филипчиком, специалистом по мета-вселенным</itunes:subtitle>
               
@@ -66,8 +79,8 @@
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Fri, 28 Jul 2023 16:33 UTC</pubDate>
-         </item>
-         <item>
+          </item>
+          <item>
               <title>#117: В сетях у соц. сетей – Часть 2</title>
               <itunes:subtitle>Продолжаем о том, что мы в онлайн социальных сетях уже очень давно и про то, что за эти годы произошло.</itunes:subtitle>
               
@@ -79,8 +92,8 @@
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Tue, 25 Jul 2023 14:55 UTC</pubDate>
-         </item>
-         <item>
+          </item>
+          <item>
               <title>#116: В сетях у соц. сетей - Часть 1</title>
               <itunes:subtitle>Мы в онлайн социальных сетях уже очень давно. Что же за все эти годы произошло?</itunes:subtitle>
               
@@ -92,8 +105,8 @@
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Tue, 18 Jul 2023 11:50 UTC</pubDate>
-         </item>
-         <item>
+          </item>
+          <item>
               <title>#115: Гос. контроль</title>
               <itunes:subtitle>Государство за нами наблюдает и контролирует наше поведение. Можно ли этого избежать?</itunes:subtitle>
               
@@ -105,8 +118,8 @@
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Tue, 4 Jul 2023 13:57 UTC</pubDate>
-         </item> 
-         <item>
+          </item>
+          <item>
               <title>#114: Про-Видение</title>
               <itunes:subtitle>Apple объявили о выходе нового сенсационного продукта – Vision Pro</itunes:subtitle>
               
