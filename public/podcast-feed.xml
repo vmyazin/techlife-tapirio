@@ -27,6 +27,20 @@
           </itunes:category>
           <itunes:keywords>technology, podcast, russian, apple, google, travel, подкаст</itunes:keywords>
           <itunes:explicit>false</itunes:explicit>
+
+          <item>
+              <title>#122: Путешествия и изменения</title>
+              <itunes:subtitle>Дима проехал Северную Америку вдоль и поперёк, Вася побывал в странах Евразии</itunes:subtitle>
+              
+              <description><![CDATA[<p><img src="https://techlifepodcast.com/images/techlifepodcast-ep122-puteshestviya.jpg" alt="Путешествия и изменения" title="Путешествия и изменения"></p><p>В этом выпуске мы сверили записки после наших путешествий. Дима исколесил Северную Америку, а Вася отправился на Азиатский континент.</p><p>Дима начал рассказ с Северной Мексики, продолжил пересечением США вдоль и поперёк, успев даже заскочить в канадский Квебек.</p><p>Вася побывал в Ереване и Дубаи и остался с неоднозначными впечатлениями. А после прибыл на Филиппины, первую в жизни страну в Ю-В Азии, которую он посетил.</p><p>Мы обменялись мыслями о том, как технологический прогресс изменил жизнь в этих местах.</p><p>Дима прояснил вопрос о защищенности переписок в Телеграме.</p>     <p><strong>Ссылки к выпуску:</strong></p>  <ul>  <li>    <p>Википедия об <a target="_blank" rel="noopener noreferrer nofollow" href="https://en.wikipedia.org/wiki/Clark_Air_Base">Американской базе Кларк</a> (на английском)</p>  </li>  <li>    <p>Очень подробно про <a target="_blank" rel="noopener noreferrer nofollow" href="https://core.telegram.org/api/end-to-end">секретные чаты в телеграме</a></p>  </li></ul><p>📺 <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.youtube.com/@techlifepodcast">Наш канал на Youtube</a></p><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.bing.com/new?form=MY028Z&amp;OCID=MY028Z">наш подкаст в директории подкастов Эппл</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://overcast.fm/itunes1013700516">в Оверкасте</a>,<br><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.google.com/podcasts?feed=aHR0cHM6Ly90ZWNobGlmZXBvZGNhc3QuY29tL3BvZGNhc3QtZmVlZC54bWw">Гугл подкастах</a>, <br><a target="_blank" rel="noopener noreferrer nofollow" href="https://open.spotify.com/show/03re4PmocsgPtLBtIxVK4m">Спотифае</a> и <a target="_blank" rel="noopener noreferrer nofollow" href="https://music.yandex.ru/album/7322142">на Яндекс Музыке</a></p>]]></description>
+              <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1641242238-techlifepodcast-122-puteshestviya-i-izmeneniya.mp3" length="39598039"/>
+              <guid>490de541-053d-4aa0-b818-50466f2946b5</guid>
+              
+              <itunes:duration>27:22</itunes:duration>
+              <itunes:explicit>false</itunes:explicit>
+              
+              <pubDate>Sun, 15 Oct 2023 15:27 UTC</pubDate>
+          </item>
         
           <item>
               <title>#121: Устройства и доверие</title>
