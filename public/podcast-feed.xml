@@ -27,7 +27,7 @@
           </itunes:category>
           <itunes:keywords>technology, podcast, russian, apple, google, travel, подкаст</itunes:keywords>
           <itunes:explicit>false</itunes:explicit>
-          
+
           <item>
               <title>#132: ИИ нарушает права</title>
               <itunes:subtitle>Воукизм в ИИ Гугла Gemini, музыканты требуют ограничить обучение ИИ и судят за нарушение авторских прав</itunes:subtitle>
@@ -41,7 +41,6 @@
               
               <pubDate>Fri, 26 Apr 2024 21:20 UTC</pubDate>
           </item>
-          <item>
           <item>
               <title>#131: Цифровой детокс</title>
               <itunes:subtitle>Мы иногда становимся зависимыми от наших устройств, может ли цифровая детоксикация в этом помочь?</itunes:subtitle>
