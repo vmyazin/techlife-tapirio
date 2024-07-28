@@ -1,5 +1,14 @@
 **/node_modules
 package-lock.json
-.DS_Store
 public/Episodes
 bin/
+
+# secret keys
+github_actions_deploy_key*
+
+# build output
+public/stylesheets/styles.css
+public/stylesheets/styles.css.map
+
+# macOS rubbish
+.DS_Store
