@@ -21,8 +21,10 @@ jobs:
       run: |
         ssh -p 2209 www-data@23.239.16.189 << EOF
           cd /var/www/techlifepodcast.com
-          git pull
-          npm install
-          npm run sass-build
-          touch tmp/restart.txt
+          git pull || exit 1
+          mkdir -p ~/.npm
+          npm config set cache ~/.npm --global
+          npm install || exit 1
+          npm run sass-build || exit 1
+          touch tmp/restart.txt || true
         EOF
