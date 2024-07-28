@@ -7,29 +7,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    
+
     - name: Install SSH Key
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SERVER_SSH_KEY }}
         known_hosts: unnecessary
-        
+
     - name: Adding Known Hosts
       run: ssh-keyscan -p 2209 -H 23.239.16.189 >> ~/.ssh/known_hosts
-    
+
     - name: Deploy to Linode
       run: |
         ssh -p 2209 www-data@23.239.16.189 << EOF
+          export HOME=/home/www-data
+          export NVM_DIR="\$HOME/.nvm"
+          [ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh"
+          nvm use 16
           cd /var/www/techlifepodcast.com
           git config user.email "deploy@example.com"
           git config user.name "Deploy Bot"
           git stash
           git pull origin master
           git stash pop
-          export HOME=/var/www
-          npm config set prefix /var/www/.npm-global
-          export PATH=/var/www/.npm-global/bin:$PATH
+          npm config set cache /var/www/.npm-cache --global
           npm install
           npm run sass-build
-          touch tmp/restart.txt
+          mkdir -p /var/www/techlifepodcast.com/tmp
+          touch /var/www/techlifepodcast.com/tmp/restart.txt
         EOF
