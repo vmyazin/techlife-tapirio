@@ -1,3 +1,4 @@
+// routes/index.js
 const cors = require("cors");
 const express = require("express");
 const router = express.Router();
@@ -33,10 +34,20 @@ project.init().then(() => {
     episode.episodeNum = episodeNumber.replace("#", "");
     // add clean episode title
     episode.title = episode.title.replace(episodeNumber + ": ", "");
-    // add neat episode date in Russian
-    episode.pubDateConverted = moment(episode.pubDate)
-      .locale("ru")
-      .format("LL");
+        
+    // add a neat episode date in Russian, parsing the date
+    try {
+      const parsedDate = moment(episode.pubDate, "ddd, D MMM YYYY HH:mm [UTC]", 'en');
+      if (parsedDate.isValid()) {
+        episode.pubDateConverted = parsedDate.locale('ru').format('D MMMM YYYY');
+      } else {
+        console.error(`Invalid date format: ${episode.pubDate}`);
+        episode.pubDateConverted = 'Дата не указана';
+      }
+    } catch (error) {
+      console.error(`Error parsing date: ${episode.pubDate}`, error);
+      episode.pubDateConverted = 'Дата не указана';
+    }
 
     // get first available image for sharing
     const root = parse(episode.description);
