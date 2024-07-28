@@ -22,8 +22,9 @@ jobs:
         ssh -p 2209 www-data@23.239.16.189 << EOF
           cd /var/www/techlifepodcast.com
           git pull || exit 1
-          mkdir -p ~/.npm
-          npm config set cache ~/.npm --global
+          export HOME=/var/www
+          npm config set prefix /var/www/.npm-global
+          export PATH=/var/www/.npm-global/bin:$PATH
           npm install || exit 1
           npm run sass-build || exit 1
           touch tmp/restart.txt || true
