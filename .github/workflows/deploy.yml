@@ -12,14 +12,14 @@ jobs:
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SERVER_SSH_KEY }}
-        known_hosts: ${{ secrets.KNOWN_HOSTS }}
+        known_hosts: unnecessary
         
-    - name: Check SSH key
-      run: ssh-keygen -l -f ~/.ssh/id_rsa
-      
+    - name: Adding Known Hosts
+      run: ssh-keyscan -p 2209 -H 23.239.16.189 >> ~/.ssh/known_hosts
+    
     - name: Deploy to Linode
       run: |
-        ssh -v -p 2209 -o StrictHostKeyChecking=no www-data@23.239.16.189 << EOF
+        ssh -p 2209 www-data@23.239.16.189 << EOF
           cd /var/www/techlifepodcast.com
           git pull
           npm install
