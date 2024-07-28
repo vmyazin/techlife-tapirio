@@ -36,18 +36,7 @@ project.init().then(() => {
     episode.title = episode.title.replace(episodeNumber + ": ", "");
         
     // add a neat episode date in Russian, parsing the date
-    try {
-      const parsedDate = moment(episode.pubDate, "ddd, D MMM YYYY HH:mm [UTC]", 'en');
-      if (parsedDate.isValid()) {
-        episode.pubDateConverted = parsedDate.locale('ru').format('D MMMM YYYY');
-      } else {
-        console.error(`Invalid date format: ${episode.pubDate}`);
-        episode.pubDateConverted = 'Дата не указана';
-      }
-    } catch (error) {
-      console.error(`Error parsing date: ${episode.pubDate}`, error);
-      episode.pubDateConverted = 'Дата не указана';
-    }
+    episode.pubDateConverted = parseFlexibleDate(episode.pubDate);
 
     // get first available image for sharing
     const root = parse(episode.description);
@@ -60,6 +49,32 @@ project.init().then(() => {
     return episode;
   });
 });
+
+function parseFlexibleDate(dateString) {
+  // First, try parsing with moment.js
+  let parsedDate = moment(dateString, [
+    "ddd, D MMM YYYY HH:mm:ss [UTC]",
+    "ddd, D MMM YYYY HH:mm [UTC]"
+  ], 'en', true);
+
+  // If moment.js fails, try manual parsing
+  if (!parsedDate.isValid()) {
+    const regex = /(\w{3}), (\d{1,2}) (\w{3}) (\d{4}) (\d{2}):(\d{2})(?::(\d{2}))? UTC/;
+    const match = dateString.match(regex);
+    if (match) {
+      const [, , day, monthStr, year, hours, minutes, seconds] = match;
+      const month = moment().month(monthStr).format('M') - 1; // Convert month name to 0-indexed month number
+      parsedDate = moment.utc([year, month, day, hours, minutes, seconds || 0]);
+    }
+  }
+
+  if (parsedDate.isValid()) {
+    return parsedDate.locale('ru').format('D MMMM YYYY');
+  } else {
+    console.error(`Invalid date format: ${dateString}`);
+    return 'Дата не указана';
+  }
+}
 
 router.get("/", (req, res) => {
   const articles = project.posts;
