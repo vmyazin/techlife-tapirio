@@ -1,22 +1,25 @@
 name: Deploy to Linode
-
 on:
   push:
     branches: [ master ]
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    
     - name: Install SSH Key
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SERVER_SSH_KEY }}
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
+        
+    - name: Check SSH key
+      run: ssh-keygen -l -f ~/.ssh/id_rsa
+      
     - name: Deploy to Linode
       run: |
-        ssh -p 2209 -o StrictHostKeyChecking=no www-data@23.239.16.189 << EOF
+        ssh -v -p 2209 -o StrictHostKeyChecking=no www-data@23.239.16.189 << EOF
           cd /var/www/techlifepodcast.com
           git pull
           npm install
