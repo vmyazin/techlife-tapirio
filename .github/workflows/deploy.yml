@@ -21,11 +21,15 @@ jobs:
       run: |
         ssh -p 2209 www-data@23.239.16.189 << EOF
           cd /var/www/techlifepodcast.com
-          git pull || exit 1
+          git config user.email "deploy@example.com"
+          git config user.name "Deploy Bot"
+          git stash
+          git pull origin master
+          git stash pop
           export HOME=/var/www
           npm config set prefix /var/www/.npm-global
           export PATH=/var/www/.npm-global/bin:$PATH
-          npm install || exit 1
-          npm run sass-build || exit 1
-          touch tmp/restart.txt || true
+          npm install
+          npm run sass-build
+          touch tmp/restart.txt
         EOF
