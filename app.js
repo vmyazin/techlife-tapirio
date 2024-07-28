@@ -51,4 +51,11 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`App listening at http://localhost:${PORT}`);
+});
+
+console.log('Application initialization complete.');
+
 module.exports = app;
