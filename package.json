@@ -7,6 +7,7 @@
     "admin": "node ./admin/bin/www-techlife",
     "test": "jest",
     "sass": "node-sass -w sass -o public/stylesheets",
+    "sass-build": "node-sass sass -o public/stylesheets",
     "devstart": "nodemon ./bin/www-techlife",
     "serverstart": "DEBUG=tapirio:* npm run devstart"
   },
