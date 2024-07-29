@@ -2,88 +2,72 @@
 const cors = require("cors");
 const express = require("express");
 const router = express.Router();
-router.blogPath = __dirname + "/../content/articles/";
+const path = require("path");
 const Project = require("../scripts/app.functions");
-const project = new Project(router.blogPath, {
-  podcastFeedXml: __dirname + "/../public/podcast-feed.xml",
-});
 const { parse } = require("node-html-parser");
-
 const moment = require("moment");
 require("moment/locale/ru");
 
-// default hero image
-const defaultImage = "/images/bg-photo-02.jpg";
+// Constants
+const BLOG_PATH = path.join(__dirname, "..", "content", "articles");
+const PODCAST_FEED_XML = path.join(__dirname, "..", "public", "podcast-feed.xml");
+const DEFAULT_IMAGE = "/images/bg-photo-02.jpg";
 
+// Initialize project
+const project = new Project(BLOG_PATH, { podcastFeedXml: PODCAST_FEED_XML });
 let projectInfo = project.info;
-let podcast = {},
-  episodes = {};
+let podcast = {};
+let episodes = [];
 
-let dateObj = new Date();
-let current = {};
-current.year = dateObj.getFullYear();
-projectInfo["currentYear"] = current.year;
-
-project.init().then(() => {
-  project.sortBy({ property: "date", asc: false });
-
-  podcast = project.podcastModule.json.rss;
-  episodes = podcast.channel.item.map((episode) => {
-    let episodeNumber = episode.title.split(":")[0];
-    // add clean episode number to object
-    episode.episodeNum = episodeNumber.replace("#", "");
-    // add clean episode title
-    episode.title = episode.title.replace(episodeNumber + ": ", "");
-        
-    // add a neat episode date in Russian, parsing the date
-    episode.pubDateConverted = parseFlexibleDate(episode.pubDate);
-
-    // get first available image for sharing
-    const root = parse(episode.description);
-    img = root.querySelector("img");
-    if (img !== null) {
-      const url = img.getAttribute("src");
-      episode.shareImg = url;
-    }
-
-    return episode;
-  });
-});
+// Update current year
+projectInfo.currentYear = new Date().getFullYear();
 
 function parseFlexibleDate(dateString) {
-  // First, try parsing with moment.js
-  let parsedDate = moment(dateString, [
-    "ddd, D MMM YYYY HH:mm:ss [UTC]",
-    "ddd, D MMM YYYY HH:mm [UTC]"
-  ], 'en', true);
+  const formats = ["ddd, D MMM YYYY HH:mm:ss [UTC]", "ddd, D MMM YYYY HH:mm [UTC]"];
+  let parsedDate = moment(dateString, formats, 'en', true);
 
-  // If moment.js fails, try manual parsing
   if (!parsedDate.isValid()) {
     const regex = /(\w{3}), (\d{1,2}) (\w{3}) (\d{4}) (\d{2}):(\d{2})(?::(\d{2}))? UTC/;
     const match = dateString.match(regex);
     if (match) {
       const [, , day, monthStr, year, hours, minutes, seconds] = match;
-      const month = moment().month(monthStr).format('M') - 1; // Convert month name to 0-indexed month number
+      const month = moment().month(monthStr).format('M') - 1;
       parsedDate = moment.utc([year, month, day, hours, minutes, seconds || 0]);
     }
   }
 
-  if (parsedDate.isValid()) {
-    return parsedDate.locale('ru').format('D MMMM YYYY');
-  } else {
-    console.error(`Invalid date format: ${dateString}`);
-    return 'Дата не указана';
-  }
+  return parsedDate.isValid() ? parsedDate.locale('ru').format('D MMMM YYYY') : 'Дата не указана';
 }
 
-router.get("/", (req, res) => {
-  const articles = project.posts;
+async function initializeProject() {
+  await project.init();
+  project.sortBy({ property: "date", asc: false });
+
+  podcast = project.podcastModule.json.rss;
+  episodes = podcast.channel.item.map((episode) => {
+    const [episodeNumber, ...titleParts] = episode.title.split(":");
+    episode.episodeNum = episodeNumber.replace("#", "");
+    episode.title = titleParts.join(":").trim();
+    episode.pubDateConverted = parseFlexibleDate(episode.pubDate);
+
+    const root = parse(episode.description);
+    const img = root.querySelector("img");
+    episode.shareImg = img ? img.getAttribute("src") : null;
+
+    return episode;
+  });
+}
+
+initializeProject();
+
+// Route handlers
+router.get("/", (_req, res) => {
   res.render("index", {
     podcast,
-    articles,
+    articles: project.posts,
     projectInfo,
     isHeroParallax: true,
-    heroImg: defaultImage,
+    heroImg: DEFAULT_IMAGE,
     path: "home",
   });
 });
@@ -106,8 +90,7 @@ router.get("/about", (req, res) => {
     pageTitle: "О нас",
     isHeroParallax: true,
     heroImg: "/images/bg-techlife-kamas.jpg",
-    pageDescription:
-      "Авторы Дмитрий Здоров и Василий Мязин давние друзья и записывают подкаст о технологиях часто находясь в разных странах",
+    pageDescription: "Авторы Дмитрий Здоров и Василий Мязин давние друзья и записывают подкаст о технологиях часто находясь в разных странах",
   });
 });
 
@@ -118,8 +101,7 @@ router.get("/resources", (req, res) => {
     isHeroParallax: true,
     pageTitle: "Ресурсы",
     heroImg: "/images/bg-lightning.jpg",
-    pageDescription:
-      "Дополнительные материалы в качестве приложения к подкасту; статьи, картинки, ссылки и т. п.",
+    pageDescription: "Дополнительные материалы в качестве приложения к подкасту; статьи, картинки, ссылки и т. п.",
   });
 });
 
@@ -129,134 +111,102 @@ router.get("/guests", (req, res) => {
     path: req.path,
     isHeroParallax: true,
     pageTitle: "Инструкции для гостей подкаста",
-    pageDescription:
-      "Если вас пригласили на подкаст в гости, вам надо подготовится. Мы объясняем как это сделать.",
+    pageDescription: "Если вас пригласили на подкаст в гости, вам надо подготовится. Мы объясняем как это сделать.",
     heroImg: "",
     pageShareImg: "/images/og-techlife-guests-1200.jpg",
   });
 });
 
-router.route("/api/episode/:id").get(cors(), async (req, res) => {
-  if (req.params.id) {
-    result = episodes.find((obj) => {
-      return obj.episodeNum === req.params.id;
+router.get("/api/episode/:id", cors(), (req, res) => {
+  const episode = episodes.find((obj) => obj.episodeNum === req.params.id) || null;
+  res.json(episode);
+});
+
+router.get("/episodes/:id", (req, res) => {
+  const slug = req.params.id;
+  const index = episodes.findIndex((obj) => obj.episodeNum === slug);
+
+  if (index !== -1) {
+    res.render("episode", {
+      projectInfo,
+      episode: episodes[index],
+      nextEpisode: episodes[index + 1] || null,
+      prevEpisode: episodes[index - 1] || null,
+      path: req.path,
+      isEpisodePage: true,
+      isHeroParallax: true,
+      heroImg: DEFAULT_IMAGE,
+      layout: "episode",
     });
   } else {
-    result = [];
+    res.status(404).render("error", { message: "Episode not found" });
   }
-  res.json(result);
 });
 
-router.get("/episodes/:id", async (req, res) => {
-  const slug = req.params.id;
-
-  if (slug) {
-    const i = episodes.findIndex((obj) => obj.episodeNum === slug);
-    const episode = episodes[i];
-    const nextEpisode = episodes[i + 1];
-    const prevEpisode = episodes[i - 1];
-
-    if (episode) {
-      res.render(
-        "episode",
-        Object.assign(
-          {},
-          { projectInfo },
-          {
-            episode,
-            nextEpisode,
-            prevEpisode,
-            path: req.path,
-            isEpisodePage: true,
-            isHeroParallax: true,
-            heroImg: defaultImage,
-            layout: "episode",
-          }
-        )
-      );
-      return;
-    }
-  }
-  res.render("error rendering");
-});
-
-router.get("/tags", async (req, res) => {
-  const tags = project.tags;
+router.get("/tags", (req, res) => {
   res.render("tags", {
-    tags,
+    tags: project.tags,
     isHeroParallax: true,
-    heroImg: defaultImage,
+    heroImg: DEFAULT_IMAGE,
     projectInfo,
     path: req.path,
   });
 });
 
 router.get("/tags/:tag", async (req, res) => {
-  const tag = req.params.tag;
-  const tags = project.tags;
+  const { tag } = req.params;
   const articles = await project.getPostsByTag(tag);
   res.render("tag", {
     tag,
-    tags,
+    tags: project.tags,
     isHeroParallax: true,
-    heroImg: defaultImage,
+    heroImg: DEFAULT_IMAGE,
     articles,
     projectInfo,
     path: req.path,
   });
 });
 
-router.get("/blog", async (req, res) => {
-  const articles = project.posts;
+router.get("/blog", (req, res) => {
   res.render("blog", {
-    articles,
+    articles: project.posts,
     projectInfo,
     isHeroParallax: true,
-    heroImg: defaultImage,
+    heroImg: DEFAULT_IMAGE,
     path: req.path,
   });
 });
 
-router.route("/api/search").get(cors(), async (req, res) => {
-  const articles = project.posts;
+router.get("/api/search", cors(), (req, res) => {
   const search = req.query.name.toLowerCase();
-
-  if (search) {
-    results = articles.filter((a) =>
+  const results = search
+    ? project.posts.filter((a) =>
       (a.title + a.description + a.author).toLowerCase().includes(search)
-    );
-  } else {
-    results = [];
-  }
+    )
+    : [];
   res.json(results);
 });
 
 router.get("/blog/:filename", async (req, res) => {
-  const slug = req.params.filename;
-  const postMetaData = project.getPostMetadata(slug);
+  const { filename } = req.params;
+  const postMetaData = project.getPostMetadata(filename);
 
   if (!postMetaData) {
-    res.render("blog-not-found", slug);
-    return;
+    return res.status(404).render("blog-not-found", { slug: filename });
   }
 
-  res.render(
-    "article",
-    Object.assign(
-      {},
-      { postMetaData },
-      { projectInfo },
-      {
-        content: await project.renderMarkdown(slug),
-        path: req.path,
-        layout: "blog",
-        isHeroParallax: true,
-        heroImg: defaultImage,
-        isBlog: true,
-        isBlogPost: true,
-      }
-    )
-  );
+  const content = await project.renderMarkdown(filename);
+  res.render("article", {
+    postMetaData,
+    projectInfo,
+    content,
+    path: req.path,
+    layout: "blog",
+    isHeroParallax: true,
+    heroImg: DEFAULT_IMAGE,
+    isBlog: true,
+    isBlogPost: true,
+  });
 });
 
 module.exports = router;
