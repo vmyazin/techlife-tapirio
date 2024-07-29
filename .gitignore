@@ -12,3 +12,4 @@ public/stylesheets/styles.css.map
 
 # macOS rubbish
 .DS_Store
+yarn.lock
