@@ -1,4 +1,3 @@
-# deploy.yml
 name: Deploy to Linode
 on:
   push:
@@ -8,19 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
     - name: Install SSH Key
       uses: shimataro/ssh-key-action@v2
       with:
         key: ${{ secrets.SERVER_SSH_KEY }}
         known_hosts: unnecessary
-
     - name: Adding Known Hosts
       run: ssh-keyscan -p 2209 -H 23.239.16.189 >> ~/.ssh/known_hosts
-
     - name: Deploy to Linode
       run: |
         ssh -p 2209 www-data@23.239.16.189 << EOF
+          set -e
           export HOME=/home/www-data
           export NVM_DIR="\$HOME/.nvm"
           [ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh"
@@ -28,12 +25,14 @@ jobs:
           cd /var/www/techlifepodcast.com
           git config user.email "deploy@example.com"
           git config user.name "Deploy Bot"
-          git pull origin master
+          git fetch origin
+          git reset --hard origin/master
+          git clean -fd
           npm config set cache /var/www/.npm-cache --global
-          npm install
+          npm ci
           npm run sass-build
           echo "SASS build completed"
-          ls -l /var/www/techlifepodcast.com/stylesheets/styles.css
+          ls -l /var/www/techlifepodcast.com/public/stylesheets/styles.css
           mkdir -p /var/www/techlifepodcast.com/tmp
           touch /var/www/techlifepodcast.com/tmp/restart.txt
         EOF
