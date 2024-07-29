@@ -122,10 +122,10 @@ router.get("/api/episode/:id", cors(), (req, res) => {
   res.json(episode);
 });
 
-router.get("/episodes/:id", (req, res) => {
+router.get("/episodes/:id", (req, res, next) => {
   const slug = req.params.id;
   const index = episodes.findIndex((obj) => obj.episodeNum === slug);
-
+  
   if (index !== -1) {
     res.render("episode", {
       projectInfo,
@@ -139,7 +139,8 @@ router.get("/episodes/:id", (req, res) => {
       layout: "episode",
     });
   } else {
-    res.status(404).render("error", { message: "Episode not found" });
+    // Pass to the 404 handler
+    next();
   }
 });
 

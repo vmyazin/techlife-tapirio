@@ -1,0 +1,19 @@
+//- pages/404.pug
+extends layout
+
+block content
+  main.error-page
+    .container
+      .row.mb-4
+        .col
+          h2 404
+          h3 #{message}
+
+          .mt-5
+            p Извините, страница <i>"#{path}"</i> не существует или была перемещена.
+          p.nav-back
+            | &#8592; 
+            a(href='/') на главную
+  
+  block scripts
+    script(src="/js/main.js")
