@@ -28,12 +28,12 @@ jobs:
           cd /var/www/techlifepodcast.com
           git config user.email "deploy@example.com"
           git config user.name "Deploy Bot"
-          git stash
           git pull origin master
-          git stash pop
           npm config set cache /var/www/.npm-cache --global
           npm install
           npm run sass-build
+          echo "SASS build completed"
+          ls -l /var/www/techlifepodcast.com/stylesheets/styles.css
           mkdir -p /var/www/techlifepodcast.com/tmp
           touch /var/www/techlifepodcast.com/tmp/restart.txt
         EOF
