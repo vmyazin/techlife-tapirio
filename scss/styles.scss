@@ -608,9 +608,9 @@ a.d-flex {
 // Subscribe Links
 
 .sub-list {
-  columns: 2;
-  -webkit-columns: 2;
   -moz-columns: 2;
+  -webkit-columns: 2;
+  columns: 2;
 
   li {
     margin-bottom: 1.2rem;
@@ -620,13 +620,26 @@ a.d-flex {
 
     a {
       border-bottom-width: 0;
-
+      display: block;
+      transition: all 0.1s ease-in-out;
+      
       img {
         margin-right: 8px;
+        transition: all 0.1s ease-in-out;
       }
-
+      
       span {
         border-bottom: 1px solid $light-grey;
+        transition: all 0.1s ease-in-out;
+      }
+      
+      &:hover {       
+        img {
+          margin-right: 10px;
+        }
+        span {
+          border-bottom-width: 0;
+        }
       }
     }
   }
