@@ -7,10 +7,12 @@
 
 Proceed to [http://localhost:3501](http://localhost:3501)
 
-## Обновить на сервере
+## Запуск на локальной машине
 
-```
-cd /var/www/techlifepodcast.com
-git pull 
-touch tmp/restart.txt
-```
+`npm run dev`
+
+## Контакты
+
+[Сайт "Технологии и жизнь"](https://www.techlifepodcast.com/about)
+
+[Телеграм](https://t.me/techlifepodcast)
