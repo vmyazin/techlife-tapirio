@@ -5,11 +5,9 @@ const router = express.Router();
 router.get('/', async (req, res) => {
   try {
     const { episodes, projectInfo } = req.app.locals;
+    console.log(`Request path: ${req.path}`);
 
     console.log(`Total number of episodes: ${episodes.length}`);
-
-    // Log the structure of the first episode
-    console.log('First episode structure:', JSON.stringify(episodes[0], null, 2));
 
     function parseDuration(duration) {
       if (typeof duration !== 'string') {
@@ -18,7 +16,6 @@ router.get('/', async (req, res) => {
       }
     
       const parts = duration.split(':').map(part => parseInt(part, 10));
-      console.log('Parsed duration parts:', parts);
 
       if (parts.length === 2) {
         // MM:SS format
@@ -35,9 +32,7 @@ router.get('/', async (req, res) => {
     const totalDuration = episodes.reduce((total, item, index) => {
       // Change this line to correctly access the itunes:duration field
       const duration = item['itunes:duration'] || item.duration;
-      console.log(`Episode ${index + 1} raw duration:`, duration);
       const parsedDuration = parseDuration(duration);
-      console.log(`Episode ${index + 1}: ${duration} (parsed: ${parsedDuration} seconds)`);
       return total + parsedDuration;
     }, 0);
 
@@ -64,8 +59,8 @@ router.get('/', async (req, res) => {
       countries: countriesCount,
       guests: guestsCount,
       episodesByYear,
-      path: req.path,
-      isHeroParallax: true,
+      path: `${req.baseUrl}${req.path}`, // Adjusted path
+      isHeroParallax: false,
       pageTitle: "Статистика подкаста",
       heroImg: "/images/bg-photo-02.jpg",
       pageDescription: "Визуализация статистики подкаста Технологии и жизнь",

@@ -4,6 +4,7 @@
 @import "bootstrap/_breakpoints.scss";
 @import "_variables.scss";
 @import "_mixins.scss";
+@import "stats.scss";
 
 body {
   background-color: $black;
@@ -18,6 +19,15 @@ body {
   // }
 
   &[class*="guests"] {
+    background: linear-gradient(
+      180deg,
+      #111111 0%,
+      #031b28 73.4%,
+      #111111 97.88%
+    );
+  }
+
+  &[class*="stats"] {
     background: linear-gradient(
       180deg,
       #111111 0%,
@@ -106,7 +116,7 @@ h2 {
   font-size: $font-s1;
   color: $accent;
   text-shadow: #000000ee 1px 1px 0;
-  margin-top: 2vw;
+  margin-top: 1.8vw;
 }
 
 h3 {
@@ -613,7 +623,7 @@ a.d-flex {
   columns: 2;
 
   li {
-    margin-bottom: 1.2rem;
+    margin-bottom: .8rem;
     font-size: $font-s4;
     display: inline-block;
     width: 100%;

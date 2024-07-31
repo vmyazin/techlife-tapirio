@@ -1,3 +1,4 @@
+//- pages/layout.pug
 doctype html
 html
   head
@@ -67,11 +68,10 @@ html
         meta(property='og:image' content='/images/og-techlife-artwork-1200.jpg')
       meta(property='og:image:width' content='800')
       
-  body(class=path)
+  body(class=(path === '/' ? 'home' : path.replace(/^\//, '').replace(/\//g, '')))
     if isHeroParallax
       img.hero-image(src=heroImg id="hero-image" class="parallax")
-    else 
-      img.hero-image(src=heroImg id="hero-image")
+
     .master-container
       .container-fluid
         include partials/_top-nav
