@@ -67,7 +67,6 @@ router.get('/', async (req, res) => {
         episodeNum: episodeNum,
         title: item.title,
         pubDate: new Date(item.pubDate), // Keep the publication date for sorting
-        // Add any other properties you need
       });
       return acc;
     }, {});

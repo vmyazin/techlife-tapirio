@@ -107,7 +107,10 @@ router.get("/resources", (req, res) => {
   });
 });
 
-router.use('/stats', statsRouter);
+router.use('/stats', (req, res, next) => {
+  res.locals.noIndex = true;
+  next();
+}, statsRouter);
 
 router.get("/guests", (req, res) => {
   res.render("guests", {
@@ -118,6 +121,7 @@ router.get("/guests", (req, res) => {
     pageDescription: "Если вас пригласили на подкаст в гости, вам надо подготовится. Мы объясняем как это сделать.",
     heroImg: "",
     pageShareImg: "/images/og-techlife-guests-1200.jpg",
+    noIndex: true,
   });
 });
 
