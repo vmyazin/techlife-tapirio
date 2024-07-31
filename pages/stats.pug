@@ -28,15 +28,16 @@ block content
                 .stat-number.display-4 #{guests}
                 .stat-label.text-center гостей
 
-        h3 По годам
+        h3.mb-4 По годам
 
         .episodes-by-year
           each episodes, year in episodesByYear
-            .year-row
-              .year-label #{year}
+            .year-row.d-flex.align-items-center
+              .year-label.mr-3 #{year}
               .episode-blocks
                 each episode in episodes
                   .episode-block(title=episode.title)
+
 
   include partials/footer
 
