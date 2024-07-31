@@ -1,6 +1,11 @@
 // routes/stats.js
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const xml2js = require('xml2js');
 const router = express.Router();
+
+const parser = new xml2js.Parser();
 
 router.get('/', async (req, res) => {
   try {
@@ -38,11 +43,15 @@ router.get('/', async (req, res) => {
 
     const totalHours = Math.round(totalDuration / 3600); // Convert seconds to hours and round
     console.log(`Total duration: ${totalDuration} seconds (${totalHours} hours)`);
+
+        // Load and parse the XML file
+        const xmlData = fs.readFileSync(path.join(__dirname, '../public/data/podcast-stats.xml'), 'utf8');
+        const parsedData = await parser.parseStringPromise(xmlData);
+    
       
-    // You might want to replace these with actual data
-    const listeners = 3433; 
-    const countriesCount = 17;
-    const guestsCount = 8;
+    const listeners = parseInt(parsedData['podcast-stats'].listeners[0], 10);
+    const countriesCount = parsedData['podcast-stats'].countries[0].country.length;
+    const guestsCount = parsedData['podcast-stats'].guests[0].guest.length;
 
     // Group by year
     const episodesByYear = episodes.reduce((acc, item) => {

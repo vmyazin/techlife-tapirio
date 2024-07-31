@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <podcast-stats>
-  <listeners>3433</listeners>
+  <listeners>3234</listeners>
   <countries>
     <country>Russia</country>
     <country>USA</country>
@@ -19,8 +19,13 @@
     <country>Armenia</country>
     <country>Georgia</country>
     <country>Turkey</country>
+    <country>Uzbekistan</country>
   </countries>
   <guests>
+    <guest>
+      <name>Гордеей Завьялов</name>
+      <episode>135</episode>
+    </guest>
     <guest>
       <name>Александр Филипчик</name>
       <episode>118</episode>
