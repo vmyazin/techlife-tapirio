@@ -36,7 +36,7 @@ block content
             .year-row.d-flex.align-items-center
               .year-label.mr-3 #{year}
               .episode-blocks
-                each episode in episodes
+                each episode in episodesByYear[year]
                   a.episode-block(href=`/episodes/${episode.episodeNum}` title=episode.title)
 
   include partials/footer

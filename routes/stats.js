@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
         console.log('Duration is not a string:', duration);
         return 0;
       }
-    
+
       const parts = duration.split(':').map(part => parseInt(part, 10));
 
       if (parts.length === 2) {
@@ -33,9 +33,8 @@ router.get('/', async (req, res) => {
         return 0;
       }
     }
-    
+
     const totalDuration = episodes.reduce((total, item, index) => {
-      // Change this line to correctly access the itunes:duration field
       const duration = item['itunes:duration'] || item.duration;
       const parsedDuration = parseDuration(duration);
       return total + parsedDuration;
@@ -47,34 +46,44 @@ router.get('/', async (req, res) => {
     // Load and parse the XML file
     const xmlData = fs.readFileSync(path.join(__dirname, '../public/data/podcast-stats.xml'), 'utf8');
     const parsedData = await parser.parseStringPromise(xmlData);
-    
+
     const listeners = parseInt(parsedData['podcast-stats'].listeners[0], 10);
     const countriesCount = parsedData['podcast-stats'].countries[0].country.length;
     const guestsCount = parsedData['podcast-stats'].guests[0].guest.length;
 
+    // Group by year and sort episodes within each year
     const episodesByYear = episodes.reduce((acc, item) => {
       const year = new Date(item.pubDate).getFullYear();
       if (!acc[year]) acc[year] = [];
-      
+
       // Extract episode number from title if it's not already present
       let episodeNum = item.episodeNum;
       if (!episodeNum) {
         const match = item.title.match(/^#?(\d+):/);
         episodeNum = match ? match[1] : 'undefined';
       }
-      
+
       acc[year].push({
         episodeNum: episodeNum,
         title: item.title,
+        pubDate: new Date(item.pubDate), // Keep the publication date for sorting
         // Add any other properties you need
       });
       return acc;
     }, {});
 
+    // Sort episodes within each year from oldest to newest
+    Object.keys(episodesByYear).forEach(year => {
+      episodesByYear[year].sort((a, b) => a.pubDate - b.pubDate);
+    });
+
+    // Sort years from newest to oldest
+    const sortedYears = Object.keys(episodesByYear).sort((a, b) => b - a);
+
     res.render('stats', {
       projectInfo,
       listeners,
-      totalHours: Math.round(totalDuration / 60 / 60), 
+      totalHours: Math.round(totalDuration / 60 / 60),
       countries: countriesCount,
       guests: guestsCount,
       episodesByYear,
