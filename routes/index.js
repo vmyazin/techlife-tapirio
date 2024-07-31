@@ -8,6 +8,8 @@ const { parse } = require("node-html-parser");
 const moment = require("moment");
 require("moment/locale/ru");
 
+const statsRouter = require('./stats');
+
 // Constants
 const BLOG_PATH = path.join(__dirname, "..", "content", "articles");
 const PODCAST_FEED_XML = path.join(__dirname, "..", "public", "podcast-feed.xml");
@@ -104,6 +106,8 @@ router.get("/resources", (req, res) => {
     pageDescription: "Дополнительные материалы в качестве приложения к подкасту; статьи, картинки, ссылки и т. п.",
   });
 });
+
+router.use('/stats', statsRouter);
 
 router.get("/guests", (req, res) => {
   res.render("guests", {

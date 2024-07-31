@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  
+  .container
+    include partials/_sec-nav
+
+    .row
+      .col-sm-12
+        h2 Визуализация подкаста
+
+        .stats-overview
+          .stat-box
+            .stat-number #{listeners}
+            .stat-label слушателей
+          .stat-box
+            .stat-number #{totalHours}
+            .stat-label часов аудио
+          .stat-box
+            .stat-number #{countries}
+            .stat-label стран, где записывали
+          .stat-box
+            .stat-number #{guests}
+            .stat-label гостей
+
+        h3 По годам
+        
+        .episodes-by-year
+          each episodes, year in episodesByYear
+            .year-row
+              .year-label #{year}
+              .episode-blocks
+                each episode in episodes
+                  .episode-block(title=episode.title)
+
+  include partials/footer
+  
+  include partials/_player

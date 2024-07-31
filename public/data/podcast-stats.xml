@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<podcast-stats>
+  <listeners>3433</listeners>
+  <countries>
+    <country>Russia</country>
+    <country>USA</country>
+    <country>Thailand</country>
+    <country>Mexico</country>
+    <country>Colombia</country>
+    <country>Brazil</country>
+    <country>Portugal</country>
+    <country>Spain</country>
+    <country>Germany</country>
+    <country>Poland</country>
+    <country>Latvia</country>
+    <country>Philippines</country>
+    <country>Hong Kong</country>
+    <country>United Arab Emirates</country>
+    <country>Armenia</country>
+    <country>Georgia</country>
+    <country>Turkey</country>
+  </countries>
+  <guests>
+    <guest>
+      <name>Александр Филипчик</name>
+      <episode>118</episode>
+    </guest>
+    <guest>
+      <name>Михаил Никипелов</name>
+      <episode>73</episode>
+    </guest>
+    <guest>
+      <name>Даниил Кравцов</name>
+      <episode>59</episode>
+    </guest>
+    <guest>
+      <name>Дмитрий Ежов</name>
+      <episode>67</episode>
+    </guest>
+    <guest>
+      <name>Алексей Альтеро</name>
+      <episode>75</episode>
+    </guest>
+    <guest>
+      <name>Таисия</name>
+      <episode>56</episode>
+    </guest>
+    <guest>
+      <name>Сергей Юдин</name>
+      <episode>42</episode>
+    </guest>
+    <guest>
+      <name>Гордей Завьялов</name>
+      <episode>135</episode>
+    </guest>
+  </guests>
+</podcast-stats>

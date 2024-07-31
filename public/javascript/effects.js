@@ -14,7 +14,6 @@
       parallaxAction() {
         let scrolledHeight= window.pageYOffset;
         let hero = document.getElementById(this.heroId);
-        console.log(this.parallaxClass)
       
         const limit = hero.offsetTop + hero.offsetHeight * 2;
         if( scrolledHeight > hero.offsetTop ) {
@@ -29,7 +28,6 @@
         let timeout;
 
         window.addEventListener( "scroll", function(event) {
-          console.log( 'no debounce' );
           // If there's a timer, cancel
           if (timeout) {
             window.cancelAnimationFrame(timeout);
