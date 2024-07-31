@@ -52,11 +52,22 @@ router.get('/', async (req, res) => {
     const countriesCount = parsedData['podcast-stats'].countries[0].country.length;
     const guestsCount = parsedData['podcast-stats'].guests[0].guest.length;
 
-    // Group by year
     const episodesByYear = episodes.reduce((acc, item) => {
       const year = new Date(item.pubDate).getFullYear();
       if (!acc[year]) acc[year] = [];
-      acc[year].push(item);
+      
+      // Extract episode number from title if it's not already present
+      let episodeNum = item.episodeNum;
+      if (!episodeNum) {
+        const match = item.title.match(/^#?(\d+):/);
+        episodeNum = match ? match[1] : 'undefined';
+      }
+      
+      acc[year].push({
+        episodeNum: episodeNum,
+        title: item.title,
+        // Add any other properties you need
+      });
       return acc;
     }, {});
 

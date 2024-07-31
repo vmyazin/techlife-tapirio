@@ -1,3 +1,4 @@
+//- pages/stats.pug
 extends layout
 
 block content
@@ -36,8 +37,7 @@ block content
               .year-label.mr-3 #{year}
               .episode-blocks
                 each episode in episodes
-                  .episode-block(title=episode.title)
-
+                  a.episode-block(href=`/episodes/${episode.episodeNum}` title=episode.title)
 
   include partials/footer
 
