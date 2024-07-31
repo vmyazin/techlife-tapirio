@@ -1,0 +1,44 @@
+.stats-overview {
+  padding: 20px;
+}
+
+.stat-box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  opacity: 0.8;
+}
+
+.year-label {
+  font-size: 1.2rem;
+}
+
+.episode-block {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #40caff;
+  margin: 5px;
+  text-align: center;
+  font-size: 0;
+  line-height: 50px;
+}

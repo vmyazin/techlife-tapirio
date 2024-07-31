@@ -1,15 +1,18 @@
 // routes/stats.js
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const xml2js = require('xml2js');
 const router = express.Router();
+
+const parser = new xml2js.Parser();
 
 router.get('/', async (req, res) => {
   try {
     const { episodes, projectInfo } = req.app.locals;
+    console.log(`Request path: ${req.path}`);
 
     console.log(`Total number of episodes: ${episodes.length}`);
-
-    // Log the structure of the first episode
-    console.log('First episode structure:', JSON.stringify(episodes[0], null, 2));
 
     function parseDuration(duration) {
       if (typeof duration !== 'string') {
@@ -18,7 +21,6 @@ router.get('/', async (req, res) => {
       }
     
       const parts = duration.split(':').map(part => parseInt(part, 10));
-      console.log('Parsed duration parts:', parts);
 
       if (parts.length === 2) {
         // MM:SS format
@@ -35,19 +37,20 @@ router.get('/', async (req, res) => {
     const totalDuration = episodes.reduce((total, item, index) => {
       // Change this line to correctly access the itunes:duration field
       const duration = item['itunes:duration'] || item.duration;
-      console.log(`Episode ${index + 1} raw duration:`, duration);
       const parsedDuration = parseDuration(duration);
-      console.log(`Episode ${index + 1}: ${duration} (parsed: ${parsedDuration} seconds)`);
       return total + parsedDuration;
     }, 0);
 
     const totalHours = Math.round(totalDuration / 3600); // Convert seconds to hours and round
     console.log(`Total duration: ${totalDuration} seconds (${totalHours} hours)`);
-      
-    // You might want to replace these with actual data
-    const listeners = 3433; 
-    const countriesCount = 17;
-    const guestsCount = 8;
+
+    // Load and parse the XML file
+    const xmlData = fs.readFileSync(path.join(__dirname, '../public/data/podcast-stats.xml'), 'utf8');
+    const parsedData = await parser.parseStringPromise(xmlData);
+    
+    const listeners = parseInt(parsedData['podcast-stats'].listeners[0], 10);
+    const countriesCount = parsedData['podcast-stats'].countries[0].country.length;
+    const guestsCount = parsedData['podcast-stats'].guests[0].guest.length;
 
     // Group by year
     const episodesByYear = episodes.reduce((acc, item) => {
@@ -64,10 +67,10 @@ router.get('/', async (req, res) => {
       countries: countriesCount,
       guests: guestsCount,
       episodesByYear,
-      path: req.path,
-      isHeroParallax: true,
+      path: `${req.baseUrl}${req.path}`, // Adjusted path
+      isHeroParallax: false,
       pageTitle: "Статистика подкаста",
-      heroImg: "/images/bg-photo-02.jpg",
+      pageShareImg: "/images/og-techlife-stats-1200.jpg",
       pageDescription: "Визуализация статистики подкаста Технологии и жизнь",
     });
 

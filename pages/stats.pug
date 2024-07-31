@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  
+
   .container
     include partials/_sec-nav
 
@@ -9,30 +9,36 @@ block content
       .col-sm-12
         h2 Визуализация подкаста
 
-        .stats-overview
-          .stat-box
-            .stat-number #{listeners}
-            .stat-label слушателей
-          .stat-box
-            .stat-number #{totalHours}
-            .stat-label часов аудио
-          .stat-box
-            .stat-number #{countries}
-            .stat-label стран, где записывали
-          .stat-box
-            .stat-number #{guests}
-            .stat-label гостей
+        .stats-overview.container.mt-5
+          .row
+            .col-md-3.col-sm-6.mb-4
+              .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
+                .stat-number.display-4 #{listeners}
+                .stat-label.text-center слушателей
+            .col-md-3.col-sm-6.mb-4
+              .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
+                .stat-number.display-4 #{totalHours}
+                .stat-label.text-center часов аудио
+            .col-md-3.col-sm-6.mb-4
+              .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
+                .stat-number.display-4 #{countries}
+                .stat-label.text-center стран, где записывали
+            .col-md-3.col-sm-6.mb-4
+              .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
+                .stat-number.display-4 #{guests}
+                .stat-label.text-center гостей
 
-        h3 По годам
-        
+        h3.mb-4 По годам
+
         .episodes-by-year
           each episodes, year in episodesByYear
-            .year-row
-              .year-label #{year}
+            .year-row.d-flex.align-items-center
+              .year-label.mr-3 #{year}
               .episode-blocks
                 each episode in episodes
                   .episode-block(title=episode.title)
 
+
   include partials/footer
-  
+
   include partials/_player
