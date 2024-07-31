@@ -44,11 +44,10 @@ router.get('/', async (req, res) => {
     const totalHours = Math.round(totalDuration / 3600); // Convert seconds to hours and round
     console.log(`Total duration: ${totalDuration} seconds (${totalHours} hours)`);
 
-        // Load and parse the XML file
-        const xmlData = fs.readFileSync(path.join(__dirname, '../public/data/podcast-stats.xml'), 'utf8');
-        const parsedData = await parser.parseStringPromise(xmlData);
+    // Load and parse the XML file
+    const xmlData = fs.readFileSync(path.join(__dirname, '../public/data/podcast-stats.xml'), 'utf8');
+    const parsedData = await parser.parseStringPromise(xmlData);
     
-      
     const listeners = parseInt(parsedData['podcast-stats'].listeners[0], 10);
     const countriesCount = parsedData['podcast-stats'].countries[0].country.length;
     const guestsCount = parsedData['podcast-stats'].guests[0].guest.length;
@@ -71,7 +70,7 @@ router.get('/', async (req, res) => {
       path: `${req.baseUrl}${req.path}`, // Adjusted path
       isHeroParallax: false,
       pageTitle: "Статистика подкаста",
-      heroImg: "/images/bg-photo-02.jpg",
+      pageShareImg: "/images/og-techlife-stats-1200.jpg",
       pageDescription: "Визуализация статистики подкаста Технологии и жизнь",
     });
 
