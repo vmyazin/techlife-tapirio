@@ -10,21 +10,21 @@ block content
       .col-sm-12
         h2 Визуализация подкаста
 
-        .stats-overview.container.mt-5
+        .stats-overview.mt-5
           .row
-            .col-md-3.col-sm-6.mb-4
+            .col-6.col-md-3.col-sm-6.mb-4
               .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
                 .stat-number.display-4 #{listeners}
                 .stat-label.text-center слушателей
-            .col-md-3.col-sm-6.mb-4
+            .col-6.col-md-3.col-sm-6.mb-4
               .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
                 .stat-number.display-4 #{totalHours}
                 .stat-label.text-center часов аудио
-            .col-md-3.col-sm-6.mb-4
+            .col-6.col-md-3.col-sm-6.mb-4
               .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
                 .stat-number.display-4 #{countries}
                 .stat-label.text-center стран, где записывали
-            .col-md-3.col-sm-6.mb-4
+            .col-6.col-md-3.col-sm-6.mb-4
               .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
                 .stat-number.display-4 #{guests}
                 .stat-label.text-center гостей
@@ -34,8 +34,8 @@ block content
 
           .episodes-by-year
             each episodes, year in episodesByYear
-              .year-row.d-flex.align-items-center
-                .year-label.mr-3 #{year}
+              .year-row.d-flex
+                .year-label.mr-3.pt-1 #{year}
                 .episode-blocks
                   each episode in episodesByYear[year]
                     .episode-block(
