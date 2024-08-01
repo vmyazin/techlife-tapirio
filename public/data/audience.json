@@ -1,0 +1,44 @@
+{
+  "audience": {
+    "dataSources": [
+      {
+        "name": "Soundcloud",
+        "years": {
+          "2024": [
+            {
+              "month": "January",
+              "plays": 1500
+            },
+            {
+              "month": "July",
+              "plays": 2000
+            },
+            {
+              "month": "October",
+              "plays": 1700
+            }
+          ]
+        }
+      },
+      {
+        "name": "YandexMusic",
+        "years": {
+          "2024": [
+            {
+              "month": "January",
+              "plays": 1200
+            },
+            {
+              "month": "May",
+              "plays": 1900
+            },
+            {
+              "month": "September",
+              "plays": 2300
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
