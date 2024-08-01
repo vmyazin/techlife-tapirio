@@ -9,8 +9,8 @@ const parser = new xml2js.Parser();
 
 router.get('/', async (req, res) => {
   try {
-    const { episodes, projectInfo } = req.app.locals;
-    console.log(`Request path: ${req.path}`);
+    const { episodes } = req.app.locals;
+    const { projectInfo } = req.app.locals;
 
     console.log(`Total number of episodes: ${episodes.length}`);
 
@@ -34,6 +34,9 @@ router.get('/', async (req, res) => {
       }
     }
 
+    // Load and parse the audience.json file
+    const audienceData = JSON.parse(await fs.readFile(path.join(__dirname, '../public/data/audience.json'), 'utf8'));
+
     const totalDuration = episodes.reduce((total, item, index) => {
       const duration = item['itunes:duration'] || item.duration;
       const parsedDuration = parseDuration(duration);
@@ -47,8 +50,6 @@ router.get('/', async (req, res) => {
     const xmlData = await fs.readFile(path.join(__dirname, '../public/data/podcast-stats.xml'), 'utf8');
     const parsedData = await parser.parseStringPromise(xmlData);
 
-    // Read and parse the audience.json file
-    const audienceData = JSON.parse(await fs.readFile(path.join(__dirname, '../public/data/audience.json'), 'utf8'));
 
     const listeners = parseInt(parsedData['podcast-stats'].listeners[0], 10);
     const countriesCount = parsedData['podcast-stats'].countries[0].country.length;
@@ -65,8 +66,6 @@ router.get('/', async (req, res) => {
         const match = item.title.match(/^#?(\d+):/);
         episodeNum = match ? match[1] : 'undefined';
       }
-
-      console.log(item);
 
       acc[year].push({
         episodeNum: episodeNum,
@@ -105,7 +104,7 @@ router.get('/', async (req, res) => {
       guests: guestsCount,
       episodesByYear,
       audienceSummary,
-      path: `${req.baseUrl}${req.path}`, // Adjusted path
+      path: `${req.baseUrl}${req.path}`,
       isHeroParallax: false,
       pageTitle: "Статистика подкаста",
       pageShareImg: "/images/og-techlife-stats-1200.jpg",

@@ -58,6 +58,12 @@ async function initializeProject() {
 
     return episode;
   });
+
+  // Make episodes available to the entire app
+  router.use((req, res, next) => {
+    req.app.locals.episodes = episodes;
+    next();
+  });
 }
 
 initializeProject();
