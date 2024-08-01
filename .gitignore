@@ -7,12 +7,9 @@ bin/
 github_actions_deploy_key*
 
 # build output
-public/stylesheets/*.css
-public/stylesheets/styles.css.map
 
 # macOS rubbish
 .DS_Store
-
 
 yarn.lock
 tmp/
