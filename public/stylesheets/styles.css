@@ -725,6 +725,7 @@ img.hero-image {
   font-size: 0;
   line-height: 50px;
   position: relative;
+  border: 0;
 }
 .episode-block:hover {
   background-color: #ffffff;

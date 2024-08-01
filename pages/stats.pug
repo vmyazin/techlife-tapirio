@@ -38,13 +38,12 @@ block content
                 .year-label.mr-3.pt-1 #{year}
                 .episode-blocks
                   each episode in episodesByYear[year]
-                    .episode-block(
+                    a.episode-block(
                       data-episode-num=episode.episodeNum
                       data-title=episode.title
                       data-date='00.00.00'
                       data-duration='99:99'
-                    )
-                      a(href=`/episodes/${episode.episodeNum}`)= episode.title
+                      href=`/episodes/${episode.episodeNum}`)= episode.title
 
 
         .mb-4
