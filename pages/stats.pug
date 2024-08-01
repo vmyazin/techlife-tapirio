@@ -29,15 +29,26 @@ block content
                 .stat-number.display-4 #{guests}
                 .stat-label.text-center гостей
 
-        h3.mb-4 По годам
+        .mb-4
+          h3.mb-4 По годам
 
-        .episodes-by-year
-          each episodes, year in episodesByYear
-            .year-row.d-flex.align-items-center
-              .year-label.mr-3 #{year}
-              .episode-blocks
-                each episode in episodesByYear[year]
-                  a.episode-block(href=`/episodes/${episode.episodeNum}` title=episode.title)
+          .episodes-by-year
+            each episodes, year in episodesByYear
+              .year-row.d-flex.align-items-center
+                .year-label.mr-3 #{year}
+                .episode-blocks
+                  each episode in episodesByYear[year]
+                    a.episode-block(href=`/episodes/${episode.episodeNum}` title=episode.title)
+
+        .mb-4
+          h3.text-white.mb-4 Источники слушателей
+
+        .row
+          each source in audienceSummary
+            .col  
+              h4.mb-2= source.sourceName
+              each yearSummary in source.yearSummaries
+                p #{yearSummary.year}: #{yearSummary.totalPlays} plays
 
   include partials/footer
 

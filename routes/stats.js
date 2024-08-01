@@ -1,6 +1,6 @@
 // routes/stats.js
 const express = require('express');
-const fs = require('fs');
+const fs = require('fs').promises;
 const path = require('path');
 const xml2js = require('xml2js');
 const router = express.Router();
@@ -44,8 +44,11 @@ router.get('/', async (req, res) => {
     console.log(`Total duration: ${totalDuration} seconds (${totalHours} hours)`);
 
     // Load and parse the XML file
-    const xmlData = fs.readFileSync(path.join(__dirname, '../public/data/podcast-stats.xml'), 'utf8');
+    const xmlData = await fs.readFile(path.join(__dirname, '../public/data/podcast-stats.xml'), 'utf8');
     const parsedData = await parser.parseStringPromise(xmlData);
+
+    // Read and parse the audience.json file
+    const audienceData = JSON.parse(await fs.readFile(path.join(__dirname, '../public/data/audience.json'), 'utf8'));
 
     const listeners = parseInt(parsedData['podcast-stats'].listeners[0], 10);
     const countriesCount = parsedData['podcast-stats'].countries[0].country.length;
@@ -79,6 +82,18 @@ router.get('/', async (req, res) => {
     // Sort years from newest to oldest
     const sortedYears = Object.keys(episodesByYear).sort((a, b) => b - a);
 
+    console.log(audienceData);
+
+    // Process audience data
+    const audienceSummary = audienceData.audience.dataSources.map(source => {
+      const sourceName = source.name;
+      const yearSummaries = Object.entries(source.years).map(([year, months]) => {
+        const totalPlays = months.reduce((sum, month) => sum + month.plays, 0);
+        return { year, totalPlays };
+      });
+      return { sourceName, yearSummaries };
+    });
+
     res.render('stats', {
       projectInfo,
       listeners,
@@ -86,6 +101,7 @@ router.get('/', async (req, res) => {
       countries: countriesCount,
       guests: guestsCount,
       episodesByYear,
+      audienceSummary,
       path: `${req.baseUrl}${req.path}`, // Adjusted path
       isHeroParallax: false,
       pageTitle: "Статистика подкаста",
