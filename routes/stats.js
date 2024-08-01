@@ -66,10 +66,13 @@ router.get('/', async (req, res) => {
         episodeNum = match ? match[1] : 'undefined';
       }
 
+      console.log(item);
+
       acc[year].push({
         episodeNum: episodeNum,
         title: item.title,
         pubDate: new Date(item.pubDate), // Keep the publication date for sorting
+        pubDateConverted: item.pubDateConverted,
       });
       return acc;
     }, {});

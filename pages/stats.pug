@@ -38,7 +38,14 @@ block content
                 .year-label.mr-3 #{year}
                 .episode-blocks
                   each episode in episodesByYear[year]
-                    a.episode-block(href=`/episodes/${episode.episodeNum}` title=episode.title)
+                    .episode-block(
+                      data-episode-num=episode.episodeNum
+                      data-title=episode.title
+                      data-date='00.00.00'
+                      data-duration='99:99'
+                    )
+                      a(href=`/episodes/${episode.episodeNum}`)= episode.title
+
 
         .mb-4
           h3.text-white.mb-4 Источники слушателей
@@ -53,3 +60,28 @@ block content
   include partials/footer
 
   include partials/_player
+
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      const episodeBlocks = document.querySelectorAll('.episode-block');
+
+      episodeBlocks.forEach(block => {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'episode-tooltip';
+        tooltip.innerHTML = `
+          <p><b>${block.dataset.title}</b></p>
+          <p>Дата: ${block.dataset.date}</p>
+          <p>Длительность: ${block.dataset.duration}</p>
+        `;
+        block.appendChild(tooltip);
+
+        block.addEventListener('mouseenter', () => {
+          tooltip.style.display = 'block';
+          console.log('entered');
+        });
+
+        block.addEventListener('mouseleave', () => {
+          tooltip.style.display = 'none';
+        });
+      });
+    });
