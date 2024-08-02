@@ -9,8 +9,7 @@ const parser = new xml2js.Parser();
 
 router.get('/', async (req, res) => {
   try {
-    const { episodes } = req.app.locals;
-    const { projectInfo } = req.app.locals;
+    const { episodes, projectInfo } = req.app.locals;
 
     console.log(`Total number of episodes: ${episodes.length}`);
 
@@ -44,7 +43,6 @@ router.get('/', async (req, res) => {
     }, 0);
 
     const totalHours = Math.round(totalDuration / 3600); // Convert seconds to hours and round
-    console.log(`Total duration: ${totalDuration} seconds (${totalHours} hours)`);
 
     // Load and parse the XML file
     const xmlData = await fs.readFile(path.join(__dirname, '../public/data/podcast-stats.xml'), 'utf8');
@@ -71,10 +69,13 @@ router.get('/', async (req, res) => {
         episodeNum: episodeNum,
         title: item.title,
         pubDate: new Date(item.pubDate), // Keep the publication date for sorting
-        pubDateConverted: item.pubDateConverted,
+        pubDateConverted: item.pubDateConverted || 'Date not available',
+        duration: item['itunes:duration'] || item.duration
       });
       return acc;
     }, {});
+
+    console.log('episodesByYear:', JSON.stringify(episodesByYear, null, 2));
 
     // Sort episodes within each year from oldest to newest
     Object.keys(episodesByYear).forEach(year => {

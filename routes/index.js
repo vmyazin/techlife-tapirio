@@ -52,6 +52,8 @@ async function initializeProject() {
     episode.title = titleParts.join(":").trim();
     episode.pubDateConverted = parseFlexibleDate(episode.pubDate);
 
+    console.log(`Episode ${episode.episodeNum}: pubDateConverted = ${episode.pubDateConverted}`);
+
     const root = parse(episode.description);
     const img = root.querySelector("img");
     episode.shareImg = img ? img.getAttribute("src") : null;
@@ -62,6 +64,7 @@ async function initializeProject() {
   // Make episodes available to the entire app
   router.use((req, res, next) => {
     req.app.locals.episodes = episodes;
+    req.app.locals.podcast = podcast;
     next();
   });
 }
