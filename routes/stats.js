@@ -4,6 +4,7 @@ const fs = require('fs').promises;
 const path = require('path');
 const xml2js = require('xml2js');
 const router = express.Router();
+const { parseFlexibleDate } = require('../scripts/utils/convert-date');
 
 const parser = new xml2js.Parser();
 
@@ -69,7 +70,7 @@ router.get('/', async (req, res) => {
         episodeNum: episodeNum,
         title: item.title,
         pubDate: new Date(item.pubDate), // Keep the publication date for sorting
-        pubDateConverted: item.pubDateConverted || 'Date not available',
+        pubDateConverted: parseFlexibleDate(item.pubDate), // Convert pubDate using parseFlexibleDate
         duration: item['itunes:duration'] || item.duration
       });
       return acc;
