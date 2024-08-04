@@ -680,6 +680,8 @@ img.hero-image {
   height: 100vh;
 }
 
+/* Font sizes */
+/* Colors */
 .stats-overview {
   padding: 20px;
 }
@@ -748,6 +750,10 @@ img.hero-image {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   line-height: 1.3;
+}
+.episode-tooltip h4 {
+  font-size: 1.2rem;
+  color: #048BD8;
 }
 
 /*# sourceMappingURL=styles.css.map */

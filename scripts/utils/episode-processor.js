@@ -25,6 +25,9 @@ function processEpisodes(episodes) {
     const img = root.querySelector("img");
     episode.shareImg = img ? img.getAttribute("src") : null;
 
+    // Add duration from 'itunes:duration'
+    episode.duration = episode['itunes:duration'] || '00:00';
+
     return episode;
   });
 }
