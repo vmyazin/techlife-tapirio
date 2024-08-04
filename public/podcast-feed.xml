@@ -75,7 +75,7 @@
               <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1827155829-techlifepodcast-133-uchim-yazyki-s-dmitriem-fedorovym.mp3" length="77925960"/>
               <guid>40dbbd8e-8bf5-42eb-a9a7-6551de43fd65</guid>
               
-              <itunes:duration>54:00ß</itunes:duration>
+              <itunes:duration>54:00</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Tue, 21 May 2024 17:30 UTC</pubDate>
@@ -140,7 +140,7 @@
               <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1722189351-techlifepodcast-128-robotizirovanie-rabot.mp3" length="39794152"/>
               <guid>28005dc6-a32e-40d6-ab3b-8321ac877632</guid>
               
-              <itunes:duration>33:1</itunes:duration>
+              <itunes:duration>33:10</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Fri, 19 Jan 2024 17:53 UTC</pubDate>
@@ -153,7 +153,7 @@
               <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1705894944-techlifepodcast-127-gadzhety-i-mysli.mp3" length="48266893"/>
               <guid>4122efab-c6b4-410f-a5b1-5cc10c07ed40</guid>
               
-              <itunes:duration>40:3</itunes:duration>
+              <itunes:duration>40:30</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Sun, 31 Dec 2023 09:48 UTC</pubDate>
@@ -166,7 +166,7 @@
               <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1699974492-techlifepodcast-126-ispolzovat-v-2024.mp3" length="53047891"/>
               <guid>7ef0cc9f-a195-45ca-8d9d-6324fee6d14e</guid>
               
-              <itunes:duration>44:0</itunes:duration>
+              <itunes:duration>44:00</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Tue, 26 Dec 2023 11:04 UTC</pubDate>
@@ -722,7 +722,7 @@
               <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1211414203-techlifepodcast-episode-83-teorii-zagovorov.mp3" length="31804666"/>
               <guid>5c9fa26b-7483-47eb-be5e-a22d9e55d647</guid>
               
-              <itunes:duration>33:0</itunes:duration>
+              <itunes:duration>33:00</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Tue, 8 Feb 2022 16:57 UTC</pubDate>
@@ -748,7 +748,7 @@
               <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1194373111-techlifepodcast-episode-81-tvorchestvo.mp3" length="26069926"/>
               <guid>16be12e0-a445-4b5f-b9df-d6ab7c2e539a</guid>
               
-              <itunes:duration>27:4</itunes:duration>
+              <itunes:duration>27:40</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Wed, 12 Jan 2022 07:12 UTC</pubDate>
@@ -865,7 +865,7 @@
               <enclosure type="audio/mpeg" url="https://feeds.soundcloud.com/stream/1120883986-techlifepodcast-episode-72-central.mp3" length="18305762"/>
               <guid>7684cba0-fe9f-4a7e-8992-1ac775051a6d</guid>
               
-              <itunes:duration>19:0</itunes:duration>
+              <itunes:duration>19:00</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Thu, 9 Sep 2021 07:12 UTC</pubDate>
@@ -1073,7 +1073,7 @@
               <enclosure type="audio/mpeg" url="http://feeds.soundcloud.com/stream/917355208-techlifepodcast-episode-56-techno-buddizm.mp3" length="30827195"/>
               <guid>e95cfd5b-5636-4f8d-ad93-1c26ba9973f1</guid>
               
-              <itunes:duration>32:0</itunes:duration>
+              <itunes:duration>32:00</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Mon, 26 Oct 2020 07:12 UTC</pubDate>
@@ -1255,7 +1255,7 @@
               <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-42-Yandex.mp3" length="39415601"/>
               <guid>8c2fe2aa-4fd4-4b22-849e-cb68a3b69f84</guid>
               
-              <itunes:duration>41:2</itunes:duration>
+              <itunes:duration>41:20</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Sat, 29 Feb 2020 07:05 UTC</pubDate>
@@ -1463,7 +1463,7 @@
               <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-26-Rasskazy-ob-azii-cherez-eirpods.mp3" length="33383905"/>
               <guid>http://feeds.soundcloud.com/stream/367668137-techlifepodcast-26-rasskazy-ob-azii-cherez-eirpods.mp3</guid>
               
-              <itunes:duration>40:0</itunes:duration>
+              <itunes:duration>40:00</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Wed, 6 Dec 2017 07:05 UTC</pubDate>
@@ -1541,7 +1541,7 @@
               <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-20-Razemy-Redaktirovanie-rechi-fakenews.mp3" length="23420000"/>
               <guid>http://techlifepodcast.com/Episodes/TechLife-20-2016-11-29.mp3</guid>
               
-              <itunes:duration>39:2</itunes:duration>
+              <itunes:duration>39:20</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Wed, 30 Nov 2016 07:05 UTC</pubDate>
@@ -1619,7 +1619,7 @@
               <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-14-Leto-bez-novostej.mp3" length="60045499"/>
               <guid>http://techlifepodcast.com/Episodes/Techlife-2015-09-12.mp3</guid>
               
-              <itunes:duration>50:2</itunes:duration>
+              <itunes:duration>50:20</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
               
               <pubDate>Fri, 18 Sep 2015 20:06 UTC</pubDate>
@@ -1786,7 +1786,7 @@
               
               <description><![CDATA[<p>Обсуждаем падение качества устройств и софта у Apple, отступление от их же принципов. Также обсуждаем Apple Watch.</p>]]></description>
               <enclosure type="audio/mpeg" url="https://www.techlifepodcast.com/Episodes/Techlife-01-Padenie-Apple.mp3" length="95429821"/>
-              <guid>http://techlifepodcast.com/Episodes/Techlife-2015-03-15.mp3</guid>
+              <guid>https://www.techlifepodcast.com/Episodes/Techlife-01-Padenie-Apple.mp3</guid>
               
               <itunes:duration>1:6:16</itunes:duration>
               <itunes:explicit>false</itunes:explicit>
