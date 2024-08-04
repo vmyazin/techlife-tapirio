@@ -20,8 +20,6 @@ function processEpisodes(episodes) {
     // Convert the publication date to a more readable format
     episode.pubDateConverted = parseFlexibleDate(episode.pubDate);
 
-    console.log(`Episode ${episode.episodeNum}: pubDateConverted = ${episode.pubDateConverted}`);
-
     // Extract the share image from the episode description
     const root = parse(episode.description);
     const img = root.querySelector("img");
