@@ -4,8 +4,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const Project = require("../scripts/app.functions");
-const { parse } = require("node-html-parser");
-const { parseFlexibleDate } = require('../scripts/utils/convert-date');
+const { processEpisodes } = require('../scripts/utils/episode-processor');
 
 const statsRouter = require('./stats');
 
@@ -28,20 +27,7 @@ async function initializeProject() {
   project.sortBy({ property: "date", asc: false });
 
   podcast = project.podcastModule.json.rss;
-  episodes = podcast.channel.item.map((episode) => {
-    const [episodeNumber, ...titleParts] = episode.title.split(":");
-    episode.episodeNum = episodeNumber.replace("#", "");
-    episode.title = titleParts.join(":").trim();
-    episode.pubDateConverted = parseFlexibleDate(episode.pubDate);
-
-    console.log(`Episode ${episode.episodeNum}: pubDateConverted = ${episode.pubDateConverted}`);
-
-    const root = parse(episode.description);
-    const img = root.querySelector("img");
-    episode.shareImg = img ? img.getAttribute("src") : null;
-
-    return episode;
-  });
+  episodes = processEpisodes(podcast.channel.item);
 
   // Make episodes available to the entire app
   router.use((req, res, next) => {
@@ -108,7 +94,7 @@ router.get("/guests", (req, res) => {
     projectInfo,
     path: req.path,
     isHeroParallax: true,
-    pageTitle: "Инструкции для гостей ��одкаста",
+    pageTitle: "Инструкции для гостей подкаста",
     pageDescription: "Если вас пригласили на подкаст в гости, вам надо подготовится. Мы объясняем как это сделать.",
     heroImg: "",
     pageShareImg: "/images/og-techlife-guests-1200.jpg",
