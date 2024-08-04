@@ -100,6 +100,16 @@ block content
           block.addEventListener('mouseleave', () => {
             tooltip.style.display = 'none';
           });
+
+          block.addEventListener('click', (event) => {
+            if (tooltip.style.display === 'block') {
+              tooltip.style.display = 'none';
+              setTimeout(() => {
+                window.location.href = block.href;
+              }, 0);
+              event.preventDefault();
+            }
+          });
         });
       });
 
