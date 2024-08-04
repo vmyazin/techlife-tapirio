@@ -5,8 +5,7 @@ const router = express.Router();
 const path = require("path");
 const Project = require("../scripts/app.functions");
 const { parse } = require("node-html-parser");
-const moment = require("moment");
-require("moment/locale/ru");
+const { parseFlexibleDate } = require('../scripts/utils/convert-date');
 
 const statsRouter = require('./stats');
 
@@ -23,23 +22,6 @@ let episodes = [];
 
 // Update current year
 projectInfo.currentYear = new Date().getFullYear();
-
-function parseFlexibleDate(dateString) {
-  const formats = ["ddd, D MMM YYYY HH:mm:ss [UTC]", "ddd, D MMM YYYY HH:mm [UTC]"];
-  let parsedDate = moment(dateString, formats, 'en', true);
-
-  if (!parsedDate.isValid()) {
-    const regex = /(\w{3}), (\d{1,2}) (\w{3}) (\d{4}) (\d{2}):(\d{2})(?::(\d{2}))? UTC/;
-    const match = dateString.match(regex);
-    if (match) {
-      const [, , day, monthStr, year, hours, minutes, seconds] = match;
-      const month = moment().month(monthStr).format('M') - 1;
-      parsedDate = moment.utc([year, month, day, hours, minutes, seconds || 0]);
-    }
-  }
-
-  return parsedDate.isValid() ? parsedDate.locale('ru').format('D MMMM YYYY') : 'Дата не указана';
-}
 
 async function initializeProject() {
   await project.init();
@@ -126,7 +108,7 @@ router.get("/guests", (req, res) => {
     projectInfo,
     path: req.path,
     isHeroParallax: true,
-    pageTitle: "Инструкции для гостей подкаста",
+    pageTitle: "Инструкции для гостей ��одкаста",
     pageDescription: "Если вас пригласили на подкаст в гости, вам надо подготовится. Мы объясняем как это сделать.",
     heroImg: "",
     pageShareImg: "/images/og-techlife-guests-1200.jpg",
