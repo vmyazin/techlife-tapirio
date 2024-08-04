@@ -14,8 +14,8 @@ block content
           .row
             .col-6.col-md-3.col-sm-6.mb-4
               .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
-                .stat-number.display-4 #{listeners}
-                .stat-label.text-center слушателей
+                .stat-number.display-4 #{episodes.length}
+                .stat-label.text-center эпизодов
             .col-6.col-md-3.col-sm-6.mb-4
               .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
                 .stat-number.display-4 #{totalHours}
@@ -29,7 +29,7 @@ block content
                 .stat-number.display-4 #{guests}
                 .stat-label.text-center гостей
 
-        .mb-4
+        .mb-5
           h3.mb-4 По годам
 
           .episodes-by-year
@@ -46,7 +46,9 @@ block content
                       href=`/episodes/${episode.episodeNum}`)= episode.title
 
         .mb-4
-          h3.text-white.mb-4 Источники слушателей
+          h3.text-white.mb-4 Источники прослушиваний
+
+        p Всего слушателей: #{listeners}
 
         .row
           each source in audienceSummary
