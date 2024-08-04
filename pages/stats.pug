@@ -10,7 +10,7 @@ block content
       .col-sm-12
         h2 Визуализация подкаста
 
-        .stats-overview.mt-5
+        .stats-overview.mt-3
           .row
             .col-6.col-md-3.col-sm-6.mb-4
               .stat-box.rounded-circle.d-flex.flex-column.justify-content-center.align-items-center
@@ -61,7 +61,47 @@ block content
 
   script.
     document.addEventListener('DOMContentLoaded', function() {
-      const episodeBlocks = document.querySelectorAll('.episode-block');
+      const yearRows = document.querySelectorAll('.year-row');
+      const endColor = [64, 202, 255]; // A more purple color
+      const startColor = [57, 24, 178]; // 40caff - accent
+      const startYear = Math.min(...Array.from(yearRows).map(row => parseInt(row.querySelector('.year-label').textContent)));
+      const endYear = Math.max(...Array.from(yearRows).map(row => parseInt(row.querySelector('.year-label').textContent)));
+      const yearRange = endYear - startYear;
+
+      function interpolateColor(startColor, endColor, factor) {
+        const result = startColor.map((start, i) => {
+          return Math.round(start + factor * (endColor[i] - start));
+        });
+        return `rgb(${result.join(',')})`;
+      }
+
+      yearRows.forEach(row => {
+        const year = parseInt(row.querySelector('.year-label').textContent);
+        const factor = (year - startYear) / yearRange;
+        const color = interpolateColor(startColor, endColor, factor);
+        
+        const episodeBlocks = row.querySelectorAll('.episode-block');
+        episodeBlocks.forEach(block => {
+          block.style.backgroundColor = color;
+
+          const tooltip = document.createElement('div');
+          tooltip.className = 'episode-tooltip';
+          tooltip.innerHTML = `
+            <h4><b>${block.dataset.title}</b></h4>
+            <p>Дата: <b>${block.dataset.date}</b></p>
+            <p>Длительность: <b>${formatDuration(block.dataset.duration)}</b></p>
+          `;
+          block.appendChild(tooltip);
+
+          block.addEventListener('mouseenter', () => {
+            tooltip.style.display = 'block';
+          });
+
+          block.addEventListener('mouseleave', () => {
+            tooltip.style.display = 'none';
+          });
+        });
+      });
 
       function formatDuration(duration) {
         const parts = duration.split(':');
@@ -72,23 +112,4 @@ block content
         }
         return duration;
       }
-
-      episodeBlocks.forEach(block => {
-        const tooltip = document.createElement('div');
-        tooltip.className = 'episode-tooltip';
-        tooltip.innerHTML = `
-          <h4><b>${block.dataset.title}</b></h4>
-          <p>Дата: <b>${block.dataset.date}</b></p>
-          <p>Длительность: <b>${formatDuration(block.dataset.duration)}</b></p>
-        `;
-        block.appendChild(tooltip);
-
-        block.addEventListener('mouseenter', () => {
-          tooltip.style.display = 'block';
-        });
-
-        block.addEventListener('mouseleave', () => {
-          tooltip.style.display = 'none';
-        });
-      });
     });
