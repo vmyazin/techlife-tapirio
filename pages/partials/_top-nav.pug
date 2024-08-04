@@ -1,13 +1,12 @@
 if path
-  .d-flex.flex-column.align-items-end.top-nav
+  .d-flex.justify-content-end.top-nav.align-items-center
+    //- a.stats-dot.me-3(href="/stats" title="Statistics")
     nav.mt-3
-      ul.list-inline
+      ul.list-inline.mb-3
         li.list-inline-item
           a.nav-pill(href="/" class=(path.includes('home') ? 'active' : ''))
-            //- img(src="/images/icon-home.svg", alt="Домашняя")
             include ../../public/images/icon-home.svg
         li.list-inline-item
           a.nav-pill(href="/about" class=(path.includes('about') ? 'active' : '')) О нас
         li.list-inline-item
           a.nav-pill(href="/resources" class=(path.includes('resources') ? 'active' : '')) Pecypcы
-

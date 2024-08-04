@@ -808,3 +808,12 @@ img.hero-image {
 }
 
 @import "stats.scss";
+
+
+.stats-dot {
+  width: 8px;
+  height: 8px;
+  background-color: $accent;
+  border-radius: 50%;
+  display: inline-block;
+}
