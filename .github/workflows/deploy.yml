@@ -21,6 +21,7 @@ jobs:
     - name: Deploy to Linode
       run: |
         ssh -p 2209 www-data@23.239.16.189 << EOF
+          set -e
           export HOME=/home/www-data
           export NVM_DIR="\$HOME/.nvm"
           [ -s "\$NVM_DIR/nvm.sh" ] && \. "\$NVM_DIR/nvm.sh"
@@ -34,7 +35,16 @@ jobs:
           npm install
           npm run sass-build
           echo "SASS build completed"
-          ls -l /var/www/techlifepodcast.com/stylesheets/styles.css
+          if [ -f public/stylesheets/styles.css ]; then
+            echo "CSS file successfully generated"
+            ls -l public/stylesheets/styles.css
+          else
+            echo "Error: CSS file not found at public/stylesheets/styles.css"
+            echo "Current directory contents:"
+            ls -R
+            exit 1
+          fi
           mkdir -p /var/www/techlifepodcast.com/tmp
           touch /var/www/techlifepodcast.com/tmp/restart.txt
+          echo "Deployment completed successfully"
         EOF
