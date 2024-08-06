@@ -1,35 +1,50 @@
 /* Font sizes */
 /* Colors */
-.stats-overview {
-  padding: 20px;
-}
-
 .stat-box {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #ffffff;
-  background-color: transparent;
-  color: #ffffff;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  width: 20vw;
+  height: 20vw;
+  max-width: 200px;
+  max-height: 200px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
 }
 
 .stat-number {
   font-size: 4rem;
   font-weight: 600;
   line-height: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .stat-label {
   font-size: 1.4rem;
   line-height: 1.2;
   opacity: 0.8;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .stat-box {
+    width: 18vw;
+    height: 18vw;
+  }
+  .stat-label {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .stat-box {
+    width: 40vw;
+    height: 40vw;
+  }
+  .stat-label {
+    font-size: 1rem;
+  }
+}
 .year-label {
   font-size: 1.2rem;
   min-width: 40px;
