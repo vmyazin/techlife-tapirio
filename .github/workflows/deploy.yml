@@ -6,6 +6,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      SSH_PORT: 22
+      REMOTE_HOST: www-data@23.239.16.189
     steps:
     - uses: actions/checkout@v2
 
@@ -16,7 +19,7 @@ jobs:
         known_hosts: unnecessary
 
     - name: Adding Known Hosts
-      run: ssh-keyscan -p 2209 -H 23.239.16.189 >> ~/.ssh/known_hosts
+      run: ssh-keyscan -p ${{ env.SSH_PORT }} -H ${{ env.REMOTE_HOST }} >> ~/.ssh/known_hosts
 
     - name: Deploy to Linode
       run: |
