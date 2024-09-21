@@ -23,7 +23,7 @@ jobs:
 
     - name: Deploy to Linode
       run: |
-        ssh -p 2209 www-data@23.239.16.189 << EOF
+        ssh www-data@23.239.16.189 << EOF
           set -e
           export HOME=/home/www-data
           export NVM_DIR="\$HOME/.nvm"
