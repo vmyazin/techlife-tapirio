@@ -36,7 +36,7 @@ jobs:
 
     - name: Test SSH connection
       run: |
-        ssh -i ~/.ssh/techlifer-linode-github-vasilymac -o StrictHostKeyChecking=no -vvv ${{ secrets.USERNAME }}@${{ secrets.HOST }} echo "SSH connection successful"
+        ssh -i ~/.ssh/techlifer-linode-github-vasilymac -o StrictHostKeyChecking=no -vvv ${{ secrets.USERNAME }}@${{ secrets.HOST }} "echo 'SSH connection successful' && ls -la ~/.ssh"
 
     - name: Deploy to Ubuntu server
       uses: appleboy/ssh-action@master
@@ -44,8 +44,6 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        key_path: ~/.ssh/techlifer-linode-github-vasilymac
-        port: 22
         script: |
           echo "Connection successful"
           echo "Current user: $(whoami)"
