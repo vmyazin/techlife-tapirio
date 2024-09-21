@@ -12,18 +12,31 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Use Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20'
-
     - name: Debug SSH key
       run: |
         if [ -n "${{ secrets.SSH_PRIVATE_KEY }}" ]; then
           echo "SSH_PRIVATE_KEY is set"
+          echo "Length of SSH_PRIVATE_KEY: $(echo "${{ secrets.SSH_PRIVATE_KEY }}" | wc -c) characters"
+          echo "First few characters of SSH_PRIVATE_KEY: $(echo "${{ secrets.SSH_PRIVATE_KEY }}" | cut -c 1-10)..."
+          echo "Does it start with '-----BEGIN'?: $(echo "${{ secrets.SSH_PRIVATE_KEY }}" | grep -q '^-----BEGIN' && echo "Yes" || echo "No")"
         else
           echo "SSH_PRIVATE_KEY is not set"
         fi
+
+    - name: Set up SSH key
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
+        echo "Public key generated from private key:"
+        cat ~/.ssh/id_rsa.pub
+
+    - name: Test SSH connection
+      run: |
+        ssh -o StrictHostKeyChecking=no -vvv ${{ secrets.USERNAME }}@${{ secrets.HOST }} echo "SSH connection successful"
 
     - name: Deploy to Ubuntu server
       uses: appleboy/ssh-action@master
