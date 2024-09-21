@@ -28,15 +28,15 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/techlifer-linode-github-vasilymac
+        chmod 600 ~/.ssh/techlifer-linode-github-vasilymac
+        ssh-keygen -y -f ~/.ssh/techlifer-linode-github-vasilymac > ~/.ssh/techlifer-linode-github-vasilymac.pub
         echo "Public key generated from private key:"
-        cat ~/.ssh/id_rsa.pub
+        cat ~/.ssh/techlifer-linode-github-vasilymac.pub
 
     - name: Test SSH connection
       run: |
-        ssh -o StrictHostKeyChecking=no -vvv ${{ secrets.USERNAME }}@${{ secrets.HOST }} echo "SSH connection successful"
+        ssh -i ~/.ssh/techlifer-linode-github-vasilymac -o StrictHostKeyChecking=no -vvv ${{ secrets.USERNAME }}@${{ secrets.HOST }} echo "SSH connection successful"
 
     - name: Deploy to Ubuntu server
       uses: appleboy/ssh-action@master
@@ -44,6 +44,7 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
+        key_path: ~/.ssh/techlifer-linode-github-vasilymac
         port: 22
         script: |
           echo "Connection successful"
