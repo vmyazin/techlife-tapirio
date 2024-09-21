@@ -1,13 +1,23 @@
+name: Deploy to Ubuntu Server
+
 on:
   push:
     branches: [ master ]
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Deploy using SSH
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Deploy to Ubuntu server
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
@@ -15,8 +25,45 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          cd /var/www/techlifpodcast.com/
-          git pull origin master
+          # Debugging: Print current directory
+          echo "Current directory: $(pwd)"
+          
+          # Debugging: Print Git status before changes
+          echo "Git status before pull:"
           git status
+          
+          # Debugging: Print Node.js and npm versions
+          echo "Node version:"
+          node --version
+          echo "NPM version:"
+          npm --version
+          
+          # Change to the project directory
+          cd /var/www/techlifpodcast.com
+          echo "Changed to directory: $(pwd)"
+          
+          # Pull the latest changes from the master branch
+          echo "Pulling latest changes..."
+          git pull origin master
+          
+          # Debugging: Print Git status after pull
+          echo "Git status after pull:"
+          git status
+          
+          # Install or update npm dependencies
+          echo "Installing npm dependencies..."
           npm install
           
+          # Create tmp directory if it doesn't exist
+          echo "Creating tmp directory..."
+          mkdir -p tmp
+          
+          # Touch restart.txt to trigger application restart
+          echo "Touching restart.txt..."
+          touch tmp/restart.txt
+          
+          # Debugging: List contents of tmp directory
+          echo "Contents of tmp directory:"
+          ls -la tmp
+          
+          echo "Deployment script completed."
