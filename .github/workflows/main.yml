@@ -1,7 +1,7 @@
 name: Test SSH Connection 2
 on:
   push:
-    branches: [ master ]
+    branches: [ deploy-tests ]
   workflow_dispatch:
 
 jobs:
