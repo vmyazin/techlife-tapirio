@@ -31,23 +31,24 @@ jobs:
 
     - name: Deploy to server
       run: |
-        # Add your deployment commands here
-        cd /var/www/techlifepodcast.com
-        git fetch origin master
-        git reset --hard origin/master
-        npm config set cache /var/www/.npm-cache --global
-        npm install
-        npm run sass-build
-        echo "SASS build completed"
-        if [ -f public/stylesheets/styles.css ]; then
-          echo "CSS file successfully generated"
-          ls -l public/stylesheets/styles.css
-        else
-          echo "Error: CSS file not found at public/stylesheets/styles.css"
-          echo "Current directory contents:"
-          ls -R
-          exit 1
-        mkdir -p tmp
-        touch tmp/restart.txt
-        echo "Deployment completed successfully"
-      
+        ssh -i ~/.ssh/techlifer-linode-github-vasilymac -o StrictHostKeyChecking=no vasily@${{ secrets.HOST }} "
+          cd /var/www/techlifepodcast.com
+          git fetch origin master
+          git reset --hard origin/master
+          npm config set cache /var/www/.npm-cache --global
+          npm install
+          npm run sass-build
+          echo 'SASS build completed'
+          if [ -f public/stylesheets/styles.css ]; then
+            echo 'CSS file successfully generated'
+            ls -l public/stylesheets/styles.css
+          else
+            echo 'Error: CSS file not found at public/stylesheets/styles.css'
+            echo 'Current directory contents:'
+            ls -R
+            exit 1
+          fi
+          mkdir -p tmp
+          touch tmp/restart.txt
+          echo 'Deployment completed successfully'
+        "
