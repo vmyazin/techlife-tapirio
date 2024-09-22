@@ -12,6 +12,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
     - name: Setup SSH key
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -27,9 +32,22 @@ jobs:
     - name: Deploy to server
       run: |
         # Add your deployment commands here
-        echo "Deployment steps would go here"
-
-        git pull origin
+        cd /var/www/techlifepodcast.com
+        git fetch origin master
+        git reset --hard origin/master
+        npm config set cache /var/www/.npm-cache --global
         npm install
+        npm run sass-build
+        echo "SASS build completed"
+        if [ -f public/stylesheets/styles.css ]; then
+          echo "CSS file successfully generated"
+          ls -l public/stylesheets/styles.css
+        else
+          echo "Error: CSS file not found at public/stylesheets/styles.css"
+          echo "Current directory contents:"
+          ls -R
+          exit 1
         mkdir -p tmp
         touch tmp/restart.txt
+        echo "Deployment completed successfully"
+      
