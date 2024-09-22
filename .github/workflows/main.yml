@@ -9,20 +9,22 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-    - name: Test SSH Connection
+    - name: Setup SSH key
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        ssh -i ~/.ssh/techlifer-linode-github-vasilymac -o StrictHostKeyChecking=no vasily@${{ secrets.HOST }} "echo 'SSH connection successful'"
+        mkdir -p ~/.ssh
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/techlifer-linode-github-vasilymac
+        chmod 600 ~/.ssh/techlifer-linode-github-vasilymac
+        ssh-keygen -y -f ~/.ssh/techlifer-linode-github-vasilymac > ~/.ssh/techlifer-linode-github-vasilymac.pub
 
-    - name: Deploy to Test Server
-      if: github.ref == 'refs/heads/deploy-tests'
-      run: |
-        echo "Deploying to test server..."
-        # Add your test deployment steps here
+    - name: Test SSH connection
+      run: ssh -i ~/.ssh/techlifer-linode-github-vasilymac -o StrictHostKeyChecking=no vasily@${{ secrets.HOST }} "echo 'SSH connection successful'"
 
-    - name: Deploy to Production Server
-      if: github.ref == 'refs/heads/master'
+    - name: Deploy to server
       run: |
-        echo "Deploying to production server..."
-        # Add your production deployment steps here
+        # Add your deployment commands here
+        echo "Deployment steps would go here"
