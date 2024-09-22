@@ -1,35 +1,68 @@
-name: Test SSH Connection
+name: Deploy to Server
+
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   workflow_dispatch:
 
 jobs:
-  test-ssh:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Debug SSH key
-      run: |
-        if [ -n "${{ secrets.SSH_PRIVATE_KEY }}" ]; then
-          echo "SSH_PRIVATE_KEY is set"
-          echo "Length of SSH_PRIVATE_KEY: $(echo "${{ secrets.SSH_PRIVATE_KEY }}" | wc -c) characters"
-          echo "First few characters of SSH_PRIVATE_KEY: $(echo "${{ secrets.SSH_PRIVATE_KEY }}" | cut -c 1-10)..."
-          echo "Does it start with '-----BEGIN'?: $(echo "${{ secrets.SSH_PRIVATE_KEY }}" | grep -q '^-----BEGIN' && echo "Yes" || echo "No")"
-        else
-          echo "SSH_PRIVATE_KEY is not set"
-        fi
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-    - name: Set up SSH key
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Setup SSH
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         mkdir -p ~/.ssh
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
-        echo "Public key generated from private key:"
-        cat ~/.ssh/id_rsa.pub
+        ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
 
-    - name: Test SSH connection
+    - name: Deploy to server
+      env:
+        HOST: ${{ secrets.HOST }}
+        USER: vasily
       run: |
-        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -vvv ${{ secrets.USERNAME }}@${{ secrets.HOST }} "echo 'SSH connection successful'"
+        ssh $USER@$HOST << 'ENDSSH'
+          set -e
+          cd /var/www/techlifepodcast.com
+          git fetch origin master
+          git reset --hard origin/master
+          
+          # Setup npm
+          mkdir -p ~/.npm-cache
+          npm config set cache ~/.npm-cache --no-global
+          
+          # Install dependencies and build
+          if [ -f package-lock.json ]; then
+            npm ci --no-bin-links
+          else
+            npm install --no-bin-links
+          fi
+          
+          # Install Sass locally
+          npm install sass --save-dev
+          
+          # Run Sass build
+          npx sass scss/styles.scss:public/stylesheets/styles.css --style compressed
+          
+          # Verify build
+          if [ ! -f public/stylesheets/styles.css ]; then
+            echo "Error: CSS file not found at public/stylesheets/styles.css"
+            ls -R public/stylesheets
+            exit 1
+          fi
+          
+          # Finalize deployment
+          sudo mkdir -p tmp
+          sudo touch tmp/restart.txt
+          echo "Deployment completed successfully"
+        ENDSSH
