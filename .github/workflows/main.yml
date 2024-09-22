@@ -1,17 +1,13 @@
-name: Deploy to Ubuntu Server
-
+name: Test SSH Connection
 on:
   push:
     branches: [ master ]
   workflow_dispatch:
 
 jobs:
-  deploy:
+  test-ssh:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
     - name: Debug SSH key
       run: |
         if [ -n "${{ secrets.SSH_PRIVATE_KEY }}" ]; then
@@ -28,30 +24,12 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/techlifer-linode-github-vasilymac
-        chmod 600 ~/.ssh/techlifer-linode-github-vasilymac
-        ssh-keygen -y -f ~/.ssh/techlifer-linode-github-vasilymac > ~/.ssh/techlifer-linode-github-vasilymac.pub
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.pub
         echo "Public key generated from private key:"
-        cat ~/.ssh/techlifer-linode-github-vasilymac.pub
+        cat ~/.ssh/id_rsa.pub
 
     - name: Test SSH connection
       run: |
-        ssh -i ~/.ssh/techlifer-linode-github-vasilymac -o StrictHostKeyChecking=no -vvv ${{ secrets.USERNAME }}@${{ secrets.HOST }} "echo 'SSH connection successful' && ls -la ~/.ssh"
-
-    - name: Deploy to Ubuntu server
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        script: |
-          echo "Connection successful"
-          echo "Current user: $(whoami)"
-          echo "Current directory: $(pwd)"
-          
-          # Rest of your deployment script...
-          cd /var/www/techlifpodcast.com
-          git pull origin master
-          npm install
-          mkdir -p tmp
-          touch tmp/restart.txt
+        ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -vvv ${{ secrets.USERNAME }}@${{ secrets.HOST }} "echo 'SSH connection successful'"
