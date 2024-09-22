@@ -28,3 +28,8 @@ jobs:
       run: |
         # Add your deployment commands here
         echo "Deployment steps would go here"
+
+        git pull origin
+        npm install
+        mkdir -p tmp
+        touch tmp/restart.txt
