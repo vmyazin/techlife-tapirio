@@ -47,7 +47,12 @@ jobs:
           else
             npm install --no-bin-links
           fi
-          npm run sass-build
+          
+          # Install Sass globally
+          npm install -g sass
+          
+          # Run Sass build
+          npx sass scss/styles.scss:public/stylesheets/styles.css --style compressed
           
           # Verify build
           if [ ! -f public/stylesheets/styles.css ]; then
