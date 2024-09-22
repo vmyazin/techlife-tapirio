@@ -35,8 +35,9 @@ jobs:
           cd /var/www/techlifepodcast.com
           git fetch origin master
           git reset --hard origin/master
-          npm config set cache /var/www/.npm-cache --global
-          npm install
+          mkdir -p ~/.npm-cache
+          npm config set cache ~/.npm-cache --no-global
+          npm ci --no-bin-links
           npm run sass-build
           echo 'SASS build completed'
           if [ -f public/stylesheets/styles.css ]; then
@@ -48,7 +49,7 @@ jobs:
             ls -R
             exit 1
           fi
-          mkdir -p tmp
-          touch tmp/restart.txt
+          sudo mkdir -p tmp
+          sudo touch tmp/restart.txt
           echo 'Deployment completed successfully'
         "
