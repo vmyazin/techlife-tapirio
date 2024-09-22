@@ -48,8 +48,8 @@ jobs:
             npm install --no-bin-links
           fi
           
-          # Install Sass globally
-          npm install -g sass
+          # Install Sass locally
+          npm install sass --save-dev
           
           # Run Sass build
           npx sass scss/styles.scss:public/stylesheets/styles.css --style compressed
