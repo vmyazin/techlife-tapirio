@@ -33,6 +33,8 @@ jobs:
       run: |
         ssh -i ~/.ssh/techlifer-linode-github-vasilymac -o StrictHostKeyChecking=no vasily@${{ secrets.HOST }} "
           cd /var/www/techlifepodcast.com
+          echo "Installing NPM packages..."
+          npm i
           git fetch origin master
           git reset --hard origin/master
           mkdir -p ~/.npm-cache
