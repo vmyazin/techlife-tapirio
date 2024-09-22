@@ -1,4 +1,4 @@
-name: Test SSH Connection
+name: Test SSH Connection 2
 on:
   push:
     branches: [ master ]
