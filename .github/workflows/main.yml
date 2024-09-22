@@ -17,6 +17,7 @@ jobs:
       with:
         node-version: '20'
         cache: 'npm'
+        cache-dependency-path: '**/package-lock.json'
 
     - name: Setup SSH
       env:
@@ -43,7 +44,11 @@ jobs:
           npm config set cache ~/.npm-cache --no-global
           
           # Install dependencies and build
-          npm ci --no-bin-links
+          if [ -f package-lock.json ]; then
+            npm ci --no-bin-links
+          else
+            npm install --no-bin-links
+          fi
           npm run sass-build
           
           # Verify build
