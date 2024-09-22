@@ -1,4 +1,4 @@
-name: Deploy to Server (Simple)
+name: Deploy to Server (Optimized)
 
 on:
   push:
@@ -10,48 +10,51 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: '20'
+        cache: 'npm'
 
-    - name: Setup SSH key
+    - name: Setup SSH
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         mkdir -p ~/.ssh
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/techlifer-linode-github-vasilymac
-        chmod 600 ~/.ssh/techlifer-linode-github-vasilymac
-        ssh-keygen -y -f ~/.ssh/techlifer-linode-github-vasilymac > ~/.ssh/techlifer-linode-github-vasilymac.pub
-
-    - name: Test SSH connection
-      run: ssh -i ~/.ssh/techlifer-linode-github-vasilymac -o StrictHostKeyChecking=no vasily@${{ secrets.HOST }} "echo 'SSH connection successful'"
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
 
     - name: Deploy to server
+      env:
+        HOST: ${{ secrets.HOST }}
+        USER: vasily
       run: |
-        ssh -i ~/.ssh/techlifer-linode-github-vasilymac -o StrictHostKeyChecking=no vasily@${{ secrets.HOST }} "
+        ssh $USER@$HOST << 'ENDSSH'
+          set -e
           cd /var/www/techlifepodcast.com
-          echo "Installing NPM packages..."
-          npm i
           git fetch origin master
           git reset --hard origin/master
+          
+          # Setup npm
           mkdir -p ~/.npm-cache
           npm config set cache ~/.npm-cache --no-global
+          
+          # Install dependencies and build
           npm ci --no-bin-links
           npm run sass-build
-          echo 'SASS build completed'
-          if [ -f public/stylesheets/styles.css ]; then
-            echo 'CSS file successfully generated'
-            ls -l public/stylesheets/styles.css
-          else
-            echo 'Error: CSS file not found at public/stylesheets/styles.css'
-            echo 'Current directory contents:'
-            ls -R
+          
+          # Verify build
+          if [ ! -f public/stylesheets/styles.css ]; then
+            echo "Error: CSS file not found at public/stylesheets/styles.css"
+            ls -R public/stylesheets
             exit 1
           fi
+          
+          # Finalize deployment
           sudo mkdir -p tmp
           sudo touch tmp/restart.txt
-          echo 'Deployment completed successfully'
-        "
+          echo "Deployment completed successfully"
+        ENDSSH
