@@ -29,7 +29,7 @@ jobs:
     - name: Deploy to server
       env:
         HOST: ${{ secrets.HOST }}
-        USER: vasily
+        USER: ${{ secrets.USERNAME }}
       run: |
         ssh $USER@$HOST << 'ENDSSH'
           set -e
