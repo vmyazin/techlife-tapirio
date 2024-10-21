@@ -2,68 +2,72 @@
 # Updated podcast-feed with new hosting and file names, based on config file and the list of new file names.
 # Run "Get-ChildItem -Path . -Filter *.mp3 -Name > list-of-episodes.txt" to create the list in the folder with all the mp3 files 
 
-# Load the configuration file
-$configFile = "host-url-updater-config.json"
-$config = Get-Content $configFile | ConvertFrom-Json
+# Read the config file
+$config = Get-Content -Raw -Path "host-url-updater-config.json" | ConvertFrom-Json
 
-# Resolve relative paths to absolute paths
-$episodeListFile = Resolve-Path $config.episodeListFile
-$newBaseUrl = $config.newBaseUrl
-$xmlFile = Resolve-Path $config.xmlFile
+# Convert relative paths to absolute paths
+$scriptDir = $PSScriptRoot
+$episodeListFile = Join-Path $scriptDir $config.episodeListFile
+$xmlFile = Join-Path $scriptDir $config.xmlFile
+$outputFile = Join-Path $scriptDir $config.outputFile
 
-# Handle output file path
-$outputFile = $config.outputFile
-$outputFileFullPath = Join-Path (Get-Location) $outputFile
+# Read the episode list file
+$episodeList = Get-Content -Path $episodeListFile
 
-# Ensure the directory for the output file exists
-$outputDir = Split-Path $outputFileFullPath
-if (-not (Test-Path $outputDir)) {
-    Write-Host "Creating directory: $outputDir"
-    New-Item -Path $outputDir -ItemType Directory | Out-Null
-}
+# Read the XML file
+[xml]$xml = Get-Content -Path $xmlFile -Encoding UTF8
 
-# Load XML file with UTF-8 encoding
-[xml]$xmlDoc = [xml](Get-Content $xmlFile -Encoding UTF8)
-
-# Load the episode list and build the episode mapping
+# Create a hashtable to store episode numbers and filenames
 $episodeMap = @{}
-Get-Content $episodeListFile | ForEach-Object {
-    if ($_ -match 'techlife-\d+-.*\.mp3') {
-        $fileName = $_.Trim()
-        $episodeNumber = ($fileName -split '-')[1].TrimStart('0')  # Remove leading zeros
-        Write-Host "Loaded episode number: $episodeNumber from file: $fileName"
-        $episodeMap[$episodeNumber] = $fileName
+foreach ($episode in $episodeList) {
+    if ($episode -match "techlife-(\d+)-.*\.mp3") {
+        $episodeNumber = [int]$Matches[1]
+        $episodeMap[$episodeNumber] = $episode
     }
 }
 
-# Update the XML with new URLs
-$xmlDoc.rss.channel.item | ForEach-Object {
-    $title = $_.title.InnerText
+# Update the enclosure URLs in the XML
+foreach ($item in $xml.rss.channel.item) {
+    $enclosure = $item.enclosure
+    $url = $enclosure.url
 
-    # Extract the episode number using a specific pattern #XXX:
-    if ($title -match '#(\d+):') {
-        $episodeNumber = $matches[1].TrimStart('0')  # Remove leading zeros
-        Write-Host "Parsed episode number from title: $episodeNumber"
-
-        if ($episodeMap.ContainsKey($episodeNumber)) {
-            $newFileName = $episodeMap[$episodeNumber]
-            $newUrl = "$newBaseUrl$newFileName"
+    if ($url -like "*$($config.oldHost)*") {
+        # Extract episode number from the title
+        if ($item.title -match "#(\d+):") {
+            $episodeNumber = [int]$Matches[1]
             
-            $enclosure = $_.enclosure
-            if ($enclosure.url -match $config.oldHost) {
-                Write-Host "Updating episode ${episodeNumber}: $($enclosure.url) -> $newUrl"
-                $enclosure.url = $newUrl
-            } else {
-                Write-Host "Skipping episode ${episodeNumber}: No $($config.oldHost) URL found."
+            if ($episodeMap.ContainsKey($episodeNumber)) {
+                $newFileName = $episodeMap[$episodeNumber]
+                $newUrl = "$($config.newBaseUrl)$newFileName"
+                $enclosure.SetAttribute("url", $newUrl)
             }
-        } else {
-            Write-Host "No matching episode found for episode number ${episodeNumber}"
         }
-    } else {
-        Write-Host "Could not extract episode number from title: $title"
     }
 }
 
-# Save the updated XML file with UTF-8 encoding
-$xmlDoc.Save([System.IO.StreamWriter]::new($outputFileFullPath, $false, [System.Text.Encoding]::UTF8))
-Write-Host "Updated podcast feed saved to $outputFileFullPath"
+# Ensure the output directory exists
+$outputDir = Split-Path -Parent $outputFile
+if (-not (Test-Path -Path $outputDir)) {
+    New-Item -ItemType Directory -Path $outputDir -Force | Out-Null
+}
+
+# Save the updated XML
+$xmlSettings = New-Object System.Xml.XmlWriterSettings
+$xmlSettings.Indent = $true
+$xmlSettings.IndentChars = "  "
+$xmlSettings.Encoding = [System.Text.Encoding]::UTF8
+
+try {
+    $xmlWriter = [System.Xml.XmlWriter]::Create($outputFile, $xmlSettings)
+    $xml.Save($xmlWriter)
+}
+catch {
+    Write-Error "An error occurred while saving the XML file: $_"
+}
+finally {
+    if ($xmlWriter) {
+        $xmlWriter.Dispose()
+    }
+}
+
+Write-Host "Podcast feed XML has been updated and saved to $outputFile"
