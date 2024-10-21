@@ -1,0 +1,7 @@
+{
+    "episodeListFile": "list-of-episodes.txt",
+    "newBaseUrl": "https://media.techlifepodcast.com/e/",
+    "xmlFile": "../../public/podcast-feed.xml",
+    "oldHost": "soundcloud.com",
+    "outputFile": "../../public/updated-podcast-feed.xml"
+}
