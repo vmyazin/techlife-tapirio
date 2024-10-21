@@ -10,6 +10,7 @@ github_actions_deploy_key*
 
 # macOS rubbish
 .DS_Store
+icon?
 
 yarn.lock
 tmp/
