@@ -1,4 +1,5 @@
 // app.js
+require('dotenv').config({ path: '.server' }); // Keep at very top
 
 const createError = require("http-errors");
 const express = require("express");
@@ -46,7 +47,6 @@ async function initializeProject() {
 
   const podcast = project.podcastModule.json.rss;
   const episodes = podcast.channel.item.map((episode) => {
-    // Your episode mapping logic here
     return episode;
   });
 
@@ -84,9 +84,5 @@ app.use(function (err, req, res, next) {
   });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`App listening at http://localhost:${PORT}`);
-});
-
+// Remove the duplicate port setting and listening here since it's handled in www-techlife
 module.exports = app;
