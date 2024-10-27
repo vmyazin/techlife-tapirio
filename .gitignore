@@ -1,7 +1,6 @@
 **/node_modules
 package-lock.json
 public/Episodes
-bin/
 
 # secret keys
 github_actions_deploy_key*
