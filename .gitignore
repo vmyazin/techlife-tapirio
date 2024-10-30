@@ -1,15 +1,26 @@
+
+# Existing entries
 **/node_modules
 package-lock.json
 public/Episodes
-
-# secret keys
 github_actions_deploy_key*
-
-# build output
-
-# macOS rubbish
 .DS_Store
 Icon?
-
 yarn.lock
 tmp/
+
+# New entries
+# Environment files
+.env
+.server
+
+# PM2 files
+ecosystem.config.js
+deploy.sh
+
+# Logs
+logs/
+*.log
+
+# CSS maps
+*.css.map
