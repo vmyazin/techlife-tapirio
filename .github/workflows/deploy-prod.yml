@@ -1,0 +1,24 @@
+# .github/workflows/deploy-prod.yml
+name: Deploy to Production
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Production
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /var/www/techlifepodcast.com
+            git pull origin master
+            npm install --production
+            mkdir -p tmp
+            touch tmp/restart.txt
